@@ -18,9 +18,12 @@
 
 #' Cleavage of polypeptide sequences
 #'
-#' This package cleaves polypeptide sequences. The cleavage
-#' rules are taken from:
+#' This package cleaves polypeptide sequences.
+#' It provides one function: \code{\link[cleaver]{cleave}}
+#'
+#' The cleavage rules are taken from:
 #' \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
+#'
 #'
 #' \tabular{ll}{
 #' Package: \tab cleaver\cr
@@ -33,7 +36,10 @@
 #' @docType package
 #' @name cleaver-package
 #' @author Sebastian Gibb \email{mail@@sebastiangibb.de}
-#' @references \url{https://github.com/sgibb/cleaver/}
+#' @references
+#' \url{https://github.com/sgibb/cleaver/}
+#'
+#' \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 #' @seealso \code{\link[cleaver]{cleave}}
 #' @keywords package
 #'
