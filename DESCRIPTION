@@ -1,0 +1,22 @@
+Package: cleaver
+Version: 0.1
+Date: 2013-04-07
+Title: Cleavage of polypeptide sequences
+Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
+    email="mail@sebastiangibb.de"))
+Depends:
+    R (>= 2.14.0)
+Suggests:
+    testthat
+Description: This package cleaves polpeptide sequences. The
+    cleavage rules are taken from:
+    http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
+License: GPL (>= 3)
+URL: https://github.com/sgibb/cleaver/
+BugReports: https://github.com/sgibb/cleaver/issues/
+LazyLoad: yes
+Collate:
+    'cleave-functions.R'
+    'package.R'
+    'helper-functions.R'
+    'rules.R'
