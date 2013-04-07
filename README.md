@@ -2,7 +2,7 @@
 
 ## Description
 
-This package cleaves polpeptide sequences. The
+This package cleaves polypeptide sequences. The
 cleavage rules are taken from:
 http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 

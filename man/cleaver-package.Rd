@@ -3,7 +3,7 @@
 \alias{cleaver-package}
 \title{Cleavage of polypeptide sequences}
 \description{
-  This package cleaves polpeptide sequences. The cleavage
+  This package cleaves polypeptide sequences. The cleavage
   rules are taken from:
   \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 }

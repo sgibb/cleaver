@@ -15,7 +15,7 @@
 
 #' Cleavage of polypeptide sequences
 #'
-#' This function cleaves polpeptide sequences.
+#' This function cleaves polypeptide sequences.
 #'
 #' @details
 #' The cleavage rules are taken from:

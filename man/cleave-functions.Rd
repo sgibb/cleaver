@@ -13,7 +13,7 @@
   a \code{list} of splitted polypeptides.
 }
 \description{
-  This function cleaves polpeptide sequences.
+  This function cleaves polypeptide sequences.
 }
 \details{
   The cleavage rules are taken from:
