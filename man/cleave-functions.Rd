@@ -20,8 +20,8 @@
   \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 
   Cleavage rules (cleavage between P1 and P1'):
-  \tabular{llllllll}{ Name \tab Enzyme name \tab P4 \tab P3
-  \tab P2 \tab P1 \tab P1' \tab P2' \cr
+  \tabular{llllllll}{ Rule name \tab Enzyme name \tab P4
+  \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr
   \code{chymotrypsin-high} \tab Chymotrypsin-high
   specificity (C-term to [FYW], not before P) \tab - \tab -
   \tab - \tab F or Y \tab not P \tab - \cr \tab \tab - \tab
@@ -38,11 +38,14 @@
   \tab - \tab not P \cr \code{pepsin} \tab Pepsin (pH>2)
   \tab - \tab not H,K or R \tab not P \tab not R \tab F or
   L \tab not P \cr \tab \tab - \tab not H,K or R \tab not P
-  \tab F or L \tab - \tab not P \cr }
+  \tab F or L \tab - \tab not P \cr \code{trypsin} \tab
+  Trypsin \tab - \tab - \tab - \tab K or R \tab not P \tab
+  - \cr \tab \tab - \tab - \tab W \tab K \tab P \tab - \cr
+  \tab \tab - \tab - \tab M \tab R \tab P \tab - \cr }
 
-  Exceptions: \tabular{llllllll}{ Name \tab Enzyme name
-  \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr
-  trypsin \tab Trypsin \tab - \tab - \tab C or D \tab K
+  Exceptions: \tabular{llllllll}{ Rule name \tab Enzyme
+  name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2'
+  \cr trypsin \tab Trypsin \tab - \tab - \tab C or D \tab K
   \tab D \tab - \cr \tab \tab - \tab - \tab C \tab K \tab H
   or Y \tab - \cr \tab \tab - \tab - \tab C \tab R \tab K
   \tab - \cr \tab \tab - \tab - \tab R \tab R \tab H or R
