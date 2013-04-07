@@ -21,14 +21,24 @@
 
   Cleavage rules (cleavage between P1 and P1'):
   \tabular{llllllll}{ Name \tab Enzyme name \tab P4 \tab P3
-  \tab P2 \tab P1 \tab P1' \tab P2' \cr \code{pepsin1.3}
-  \tab Pepsin (pH1.3) \tab - \tab not H,K, or R \tab not P
-  \tab not R F,L,W or Y \tab not P \tab - \cr \tab \tab -
-  \tab not H,K, or R \tab not P F,L,W or Y \tab - \tab not
-  P \tab - \cr \code{pepsin} \tab Pepsin (pH>2) \tab - \tab
-  not H,K or R \tab not P \tab not R F or L \tab not P \tab
-  - \cr \tab \tab - \tab not H,K or R \tab not P F or L
-  \tab - \tab not P \tab - \cr }
+  \tab P2 \tab P1 \tab P1' \tab P2' \cr
+  \code{chymotrypsin-high} \tab Chymotrypsin-high
+  specificity (C-term to [FYW], not before P) \tab - \tab -
+  \tab - \tab F or Y \tab not P \tab - \cr \tab \tab - \tab
+  - \tab - \tab W \tab not M or P \tab - \cr
+  \code{chymotrypsin-low} \tab Chymotrypsin-low specificity
+  (C-term to [FYWML], not before P) \tab - \tab - \tab -
+  \tab F,L or Y \tab not P \tab - \cr \tab \tab - \tab -
+  \tab - \tab W \tab not M or P \tab - \cr \tab \tab - \tab
+  - \tab - \tab M \tab not P or Y \tab - \cr \tab \tab -
+  \tab - \tab - \tab H \tab not D,M,P or W \tab - \cr
+  \code{pepsin1.3} \tab Pepsin (pH1.3) \tab - \tab not H,K,
+  or R \tab not P \tab not R \tab F,L,W or Y \tab not P \cr
+  \tab \tab - \tab not H,K, or R \tab not P \tab F,L,W or Y
+  \tab - \tab not P \cr \code{pepsin} \tab Pepsin (pH>2)
+  \tab - \tab not H,K or R \tab not P \tab not R \tab F or
+  L \tab not P \cr \tab \tab - \tab not H,K or R \tab not P
+  \tab F or L \tab - \tab not P \cr }
 
   Exceptions: \tabular{llllllll}{ Name \tab Enzyme name
   \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr

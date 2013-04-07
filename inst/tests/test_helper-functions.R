@@ -16,6 +16,28 @@ test_that(".cleavePos", {
                  "LNQLCVLHEKTPVSDRVTKCCTESLVNRRPCFSALEVDETYVPKEFNAETFTFHADICTL",
                  "SEKERQIKKQTALVELVKHKPKATKEQLKAVMDDFAAFVEKCCKADDKETCFAEEGKKLV",
                  "AASQAALGL", sep=""))
+  chymotrypsin_high <- list(
+    "gaju"=integer(0),
+    "ins"=c(17, 25, 40, 48, 49, 50, 103, 108),
+    "albu"=c(3, 6, 11, 13, 17, 22, 35, 43, 51, 54, 60, 73, 94, 108, 126,
+             151, 158, 162, 164, 172, 173, 174, 180, 181, 185, 189, 230, 235,
+             238, 252, 287, 333, 343, 350, 354, 356, 358, 365, 377, 394, 398,
+             401, 419, 425, 427, 435, 476, 512, 521, 526, 531, 533, 575, 578,
+             592))
+  chymotrypsin_low <- list(
+    "gaju"=1,
+    "ins"=c(1, 3, 5, 7, 10, 11, 13, 14, 16, 17, 25, 29, 30, 34, 35, 39,
+            40, 41, 48, 49, 50, 61, 68, 77, 80, 82, 86, 102, 103, 105, 108),
+    "albu"=c(1, 3, 6, 9, 10, 11, 12, 13, 17, 22, 27, 33, 35, 38, 43, 46,
+             48, 51, 54, 55, 60, 63, 66, 73, 90, 91, 93, 94, 98, 104, 108,
+             111, 126, 127, 129, 139, 147, 151, 158, 159, 162, 163, 164, 172,
+             173, 174, 178, 179, 180, 181, 185, 189, 202, 206, 209, 222, 227,
+             230, 235, 238, 243, 252, 258, 262, 266, 271, 274, 275, 284, 287,
+             299, 307, 308, 312, 329, 333, 343, 350, 351, 353, 354, 355, 356,
+             358, 365, 369, 370, 371, 373, 377, 381, 391, 394, 398, 401, 404,
+             411, 418, 419, 422, 425, 427, 431, 432, 435, 447, 454, 476, 477,
+             481, 484, 487, 488, 505, 512, 515, 521, 526, 531, 533, 534, 540,
+             553, 556, 559, 568, 572, 575, 578, 592, 599, 607))
   pepsin1.3 <- list(
     "gaju"=integer(0),
     "ins"=c(2, 3, 4, 9, 11, 12, 13, 14, 15, 16, 24, 25, 29, 30, 34, 35,
@@ -58,6 +80,12 @@ test_that(".cleavePos", {
              310, 337, 341, 347, 360, 372, 375, 383, 396, 413, 426, 434, 437,
              438, 452, 456, 460, 468, 469, 490, 496, 499, 508, 524, 543, 545,
              548, 549, 558, 562, 565, 569, 581, 584, 588, 597, 598))
+  expect_equal(cleaver:::.cleavePos(peptides,
+                                    cleaver:::rules["chymotrypsin-high"]),
+               unname(chymotrypsin_high))
+  expect_equal(cleaver:::.cleavePos(peptides,
+                                    cleaver:::rules["chymotrypsin-low"]),
+               unname(chymotrypsin_low))
   expect_equal(cleaver:::.cleavePos(peptides, cleaver:::rules["pepsin1.3"]),
                unname(pepsin1.3))
   expect_equal(cleaver:::.cleavePos(peptides, cleaver:::rules["pepsin"]),

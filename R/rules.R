@@ -16,6 +16,10 @@
 ## cleavage rules are taken from:
 ## http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 rules <- c(
+  ## Chymotrypsin - high specifity
+  "chymotrypsin-high"="([FY](?=[^P]))|(W(?=[^MP]))",
+  ## Chymotrypsin - low specifity
+  "chymotrypsin-low"="([FLY](?=[^P]))|(W(?=[^MP]))|(M(?=[^PY]))|(H(?=[^DMPW]))",
   ## Pepsin (pH 1.3)
   "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
   ## Pepsin (pH > 2.0)
