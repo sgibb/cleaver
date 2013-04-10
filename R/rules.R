@@ -16,6 +16,8 @@
 ## cleavage rules are taken from:
 ## http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 rules <- c(
+  ## Arg-C proteinase
+  "arg-c"="R",
   ## Chymotrypsin - high specifity
   "chymotrypsin-high"="([FY](?=[^P]))|(W(?=[^MP]))",
   ## Chymotrypsin - low specifity
