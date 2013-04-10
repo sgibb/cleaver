@@ -26,6 +26,7 @@
 #' Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr
 #' \code{arg-c} \tab Arg-C proteinase \tab - \tab - \tab - \tab R \tab - \tab - \cr
 #' \code{asp-n} \tab Asp-N endopeptidase \tab - \tab - \tab - \tab - \tab D \tab - \cr
+#' \code{bnps-skatole-c} \tab BNPS-Skatole \tab - \tab - \tab - \tab W \tab - \tab - \cr
 #' \code{chymotrypsin-high} \tab Chymotrypsin-high specificity (C-term to
 #'  [FYW], not before P) \tab - \tab - \tab - \tab F or Y \tab not P \tab - \cr
 #'  \tab \tab - \tab - \tab - \tab W \tab not M or P \tab - \cr

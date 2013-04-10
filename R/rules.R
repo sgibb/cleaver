@@ -20,6 +20,8 @@ rules <- c(
   "arg-c"="R",
   ## Asp-N endopeptidase
   "asp-n"="\\w(?=D)",
+  ## BNPS-Skatole
+  "bnps-skatole"="W",
   ## Chymotrypsin - high specifity
   "chymotrypsin-high"="([FY](?=[^P]))|(W(?=[^MP]))",
   ## Chymotrypsin - low specifity
