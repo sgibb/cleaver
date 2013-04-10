@@ -1,17 +1,20 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.7 [2013-04-10]:
+- add clostripain and cnbr.
+
 Version 0.6 [2013-04-10]:
-- add caspase 1 to 10
+- add caspase 1 to 10.
 
 Version 0.5 [2013-04-10]:
-- add bnps-skatole
+- add bnps-skatole.
 
 Version 0.4 [2013-04-10]:
-- add asp-n
+- add asp-n.
 
 Version 0.3 [2013-04-10]:
-- add arg-c
+- add arg-c.
 
 Version 0.2 [2013-04-07]:
 - Add chymotrypsin.

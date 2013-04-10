@@ -53,7 +53,10 @@
   \tab - \cr \tab \tab - \tab - \tab - \tab W \tab not M or
   P \tab - \cr \tab \tab - \tab - \tab - \tab M \tab not P
   or Y \tab - \cr \tab \tab - \tab - \tab - \tab H \tab not
-  D,M,P or W \tab - \cr \code{pepsin1.3} \tab Pepsin
+  D,M,P or W \tab - \cr \code{clostripain} \tab Clostripain
+  (Clostridiopeptidase B) \tab - \tab - \tab - \tab R \tab
+  - \tab - \cr \code{cnbr} \tab CNBr \tab - \tab - \tab -
+  \tab M \tab - \tab - \cr \code{pepsin1.3} \tab Pepsin
   (pH1.3) \tab - \tab not H,K, or R \tab not P \tab not R
   \tab F,L,W or Y \tab not P \cr \tab \tab - \tab not H,K,
   or R \tab not P \tab F,L,W or Y \tab - \tab not P \cr
