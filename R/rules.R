@@ -18,6 +18,8 @@
 rules <- c(
   ## Arg-C proteinase
   "arg-c"="R",
+  ## Asp-N endopeptidase
+  "asp-n"="\\w(?=D)",
   ## Chymotrypsin - high specifity
   "chymotrypsin-high"="([FY](?=[^P]))|(W(?=[^MP]))",
   ## Chymotrypsin - low specifity
