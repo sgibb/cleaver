@@ -22,6 +22,26 @@ rules <- c(
   "asp-n"="\\w(?=D)",
   ## BNPS-Skatole
   "bnps-skatole"="W",
+  ## Caspase 1
+  "caspase1"="(?<=[FWYL]\\w[HAT])D(?=[^PEDQKR])",
+  ## Caspase 2
+  "caspase2"="(?<=DVA)D(?=[^PEDQKR])",
+  ## Caspase 3
+  "caspase3"="(?<=DMQ)D(?=[^PEDQKR])",
+  ## Caspase 4
+  "caspase4"="(?<=LEV)D(?=[^PEDQKR])",
+  ## Caspase 5
+  "caspase5"="(?<=[LW]EH)D",
+  ## Caspase 6
+  "caspase6"="(?<=VE[HI])D(?=[^PEDQKR])",
+  ## Caspase 7
+  "caspase7"="(?<=DEV)D(?=[^PEDQKR])",
+  ## Caspase 8
+  "caspase8"="(?<=[IL]ET)D(?=[^PEDQKR])",
+  ## Caspase 9
+  "caspase9"="(?<=LEH)D",
+  ## Caspase 10
+  "caspase10"="(?<=IEA)D",
   ## Chymotrypsin - high specifity
   "chymotrypsin-high"="([FY](?=[^P]))|(W(?=[^MP]))",
   ## Chymotrypsin - low specifity

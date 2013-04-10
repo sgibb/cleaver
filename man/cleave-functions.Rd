@@ -26,8 +26,25 @@
   \tab R \tab - \tab - \cr \code{asp-n} \tab Asp-N
   endopeptidase \tab - \tab - \tab - \tab - \tab D \tab -
   \cr \code{bnps-skatole-c} \tab BNPS-Skatole \tab - \tab -
-  \tab - \tab W \tab - \tab - \cr \code{chymotrypsin-high}
-  \tab Chymotrypsin-high specificity (C-term to [FYW], not
+  \tab - \tab W \tab - \tab - \cr \code{caspase1} \tab
+  Caspase 1 \tab F,W,Y or L \tab - \tab H,A or T \tab D
+  \tab not P,E,D,Q,K or R \tab - \cr \code{caspase2} \tab
+  Caspase 2 \tab D \tab V \tab A \tab D \tab not P,E,D,Q,K
+  or R \tab - \cr \code{caspase3} \tab Caspase 3 \tab D
+  \tab M \tab Q \tab D \tab not P,E,D,Q,K or R \tab - \cr
+  \code{caspase4} \tab Caspase 4 \tab L \tab E \tab V \tab
+  D \tab not P,E,D,Q,K or R \tab - \cr \code{caspase5} \tab
+  Caspase 5 \tab L or W \tab E \tab H \tab D \tab - \tab -
+  \cr \code{caspase6} \tab Caspase 6 \tab V \tab E \tab H
+  or I \tab D \tab not P,E,D,Q,K or R \tab - \cr
+  \code{caspase7} \tab Caspase 7 \tab D \tab E \tab V \tab
+  D \tab not P,E,D,Q,K or R \tab - \cr \code{caspase8} \tab
+  Caspase 8 \tab I or L \tab E \tab T \tab D \tab not
+  P,E,D,Q,K or R \tab - \cr \code{caspase9} \tab Caspase 9
+  \tab L \tab E \tab H \tab D \tab - \tab - \cr
+  \code{caspase10} \tab Caspase 10 \tab I \tab E \tab A
+  \tab D \tab - \tab - \cr \code{chymotrypsin-high} \tab
+  Chymotrypsin-high specificity (C-term to [FYW], not
   before P) \tab - \tab - \tab - \tab F or Y \tab not P
   \tab - \cr \tab \tab - \tab - \tab - \tab W \tab not M or
   P \tab - \cr \code{chymotrypsin-low} \tab
