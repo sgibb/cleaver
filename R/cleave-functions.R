@@ -23,10 +23,14 @@
 #'
 #' Cleavage rules (cleavage between P1 and P1'):
 #' \tabular{llllllll}{
-#' Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr
-#' \code{arg-c proteinase} \tab Arg-C proteinase \tab - \tab - \tab - \tab R \tab - \tab - \cr
-#' \code{asp-n endopeptidase} \tab Asp-N endopeptidase \tab - \tab - \tab - \tab - \tab D \tab - \cr
-#' \code{bnps-skatole-c} \tab BNPS-Skatole \tab - \tab - \tab - \tab W \tab - \tab - \cr
+#' Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1'
+#'  \tab P2' \cr
+#' \code{arg-c proteinase} \tab Arg-C proteinase \tab - \tab - \tab - \tab R
+#'  \tab - \tab - \cr
+#' \code{asp-n endopeptidase} \tab Asp-N endopeptidase \tab - \tab - \tab -
+#'  \tab - \tab D \tab - \cr
+#' \code{bnps-skatole-c} \tab BNPS-Skatole \tab - \tab - \tab - \tab W \tab -
+#'  \tab - \cr
 #' \code{caspase1} \tab Caspase 1 \tab F,W,Y or L \tab - \tab H,A or T \tab D
 #'  \tab not P,E,D,Q,K or R \tab - \cr
 #' \code{caspase2} \tab Caspase 2 \tab D \tab V \tab A \tab D
@@ -59,6 +63,12 @@
 #' \code{clostripain} \tab Clostripain (Clostridiopeptidase B) \tab - \tab -
 #'  \tab - \tab R \tab - \tab - \cr
 #' \code{cnbr} \tab CNBr \tab - \tab - \tab - \tab M \tab - \tab - \cr
+#' \code{enterokinase} \tab Enterokinase \tab D or E \tab D or E \tab D or E
+#'  \tab K \tab - \tab - \cr
+#' \code{factor xa} \tab Factor Xa \tab A,F,G,I,L,T,V or M \tab D or E \tab G
+#'  \tab R \tab - \tab - \cr
+#' \code{formic acid} \tab Formic acid \tab - \tab - \tab - \tab D \tab -
+#'  \tab - \cr
 #' \code{pepsin1.3} \tab Pepsin (pH1.3) \tab - \tab not H,K, or R \tab not P
 #'  \tab not R \tab F,L,W or Y \tab not P \cr
 #'  \tab \tab - \tab not H,K, or R \tab not P \tab F,L,W or Y \tab - \tab not P \cr

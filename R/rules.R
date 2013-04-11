@@ -17,11 +17,11 @@
 ## http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 rules <- c(
   ## Arg-C proteinase
-  "arg-c proteinase"="R",
+  "arg-c proteinase"="R(?=\\w)",
   ## Asp-N endopeptidase
   "asp-n endopeptidase"="\\w(?=D)",
   ## BNPS-Skatole
-  "bnps-skatole"="W",
+  "bnps-skatole"="W(?=\\w)",
   ## Caspase 1
   "caspase1"="(?<=[FWYL]\\w[HAT])D(?=[^PEDQKR])",
   ## Caspase 2
@@ -31,7 +31,7 @@ rules <- c(
   ## Caspase 4
   "caspase4"="(?<=LEV)D(?=[^PEDQKR])",
   ## Caspase 5
-  "caspase5"="(?<=[LW]EH)D",
+  "caspase5"="(?<=[LW]EH)D(?=\\w)",
   ## Caspase 6
   "caspase6"="(?<=VE[HI])D(?=[^PEDQKR])",
   ## Caspase 7
@@ -39,17 +39,23 @@ rules <- c(
   ## Caspase 8
   "caspase8"="(?<=[IL]ET)D(?=[^PEDQKR])",
   ## Caspase 9
-  "caspase9"="(?<=LEH)D",
+  "caspase9"="(?<=LEH)D(?=\\w)",
   ## Caspase 10
-  "caspase10"="(?<=IEA)D",
+  "caspase10"="(?<=IEA)D(?=\\w)",
   ## Chymotrypsin - high specifity
   "chymotrypsin-high"="([FY](?=[^P]))|(W(?=[^MP]))",
   ## Chymotrypsin - low specifity
   "chymotrypsin-low"="([FLY](?=[^P]))|(W(?=[^MP]))|(M(?=[^PY]))|(H(?=[^DMPW]))",
   ## Clostripain
-  "clostripain"="R",
+  "clostripain"="R(?=\\w)",
   ## CNBr
-  "cnbr"="M",
+  "cnbr"="M(?=\\w)",
+  ## Enterokinase
+  "enterokinase"="(?<=[DE][DE][DE])K(?=\\w)",
+  ## Factor Xa
+  "factor xa"="(?<=[AFGILTVM][DE]G)R(?=\\w)",
+  ## Formic acid
+  "formic acid"="D(?=\\w)",
   ## Pepsin (pH 1.3)
   "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
   ## Pepsin (pH > 2.0)

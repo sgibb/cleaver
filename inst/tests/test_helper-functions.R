@@ -106,6 +106,20 @@ test_that(".cleavePos", {
       "gaju"=integer(0),
       "ins"=c(1, 5),
       "albu"=c(1, 111, 147, 322, 353, 470, 572)),
+    enterokinase=list(
+      "gaju"=integer(0),
+      "ins"=integer(0),
+      "albu"=integer(0)),
+    "factor xa"=list(
+      "gaju"=integer(0),
+      "ins"=integer(0),
+      "albu"=integer(0)),
+    "formic acid"=list(
+      "gaju"=8,
+      "ins"=c(20, 60),
+      "albu"=c(25, 37, 62, 80, 87, 96, 113, 131, 132, 145, 153, 197, 207,
+               211, 261, 273, 279, 280, 283, 293, 320, 325, 332, 338, 348, 364,
+               389, 399, 475, 495, 518, 536, 573, 574, 586, 587)),
     pepsin1.3=list(
       "gaju"=integer(0),
       "ins"=c(2, 3, 4, 9, 11, 12, 13, 14, 15, 16, 24, 25, 29, 30, 34, 35,

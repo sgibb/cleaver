@@ -1,6 +1,6 @@
 Package: cleaver
-Version: 0.7
-Date: 2013-04-10
+Version: 0.8
+Date: 2013-04-11
 Title: Cleavage of polypeptide sequences
 Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
     email="mail@sebastiangibb.de"))
