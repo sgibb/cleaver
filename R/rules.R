@@ -17,9 +17,9 @@
 ## http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 rules <- c(
   ## Arg-C proteinase
-  "arg-c"="R",
+  "arg-c proteinase"="R",
   ## Asp-N endopeptidase
-  "asp-n"="\\w(?=D)",
+  "asp-n endopeptidase"="\\w(?=D)",
   ## BNPS-Skatole
   "bnps-skatole"="W",
   ## Caspase 1

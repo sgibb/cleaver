@@ -18,19 +18,19 @@ test_that(".cleavePos", {
                  "AASQAALGL", sep=""))
 
   cleavageResults <- list(
-    arg_c=list(
+    "arg-c proteinase"=list(
       "gaju"=integer(0),
       "ins"=c(6, 46, 55, 56, 89),
       "albu"=c(19, 23, 24, 34, 105, 122, 138, 141, 168, 169, 184, 210, 221,
                233, 242, 246, 281, 360, 361, 372, 434, 452, 469, 496, 508, 509,
                545)),
-    asp_n=list(
+    "asp-n endopeptidase"=list(
       "gaju"=c(7, 9),
       "ins"=c(19, 59),
       "albu"=c(24, 36, 61, 79, 86, 95, 112, 130, 131, 144, 152, 196, 206,
                210, 260, 272, 278, 279, 282, 292, 319, 324, 331, 337, 347, 363,
                388, 398, 474, 494, 517, 535, 572, 573, 585, 586)),
-    bnps_skatole=list(
+    "bnps-skatole"=list(
       "gaju"=integer(0),
       "ins"=c(4, 17),
       "albu"=c(3, 238)),
@@ -74,7 +74,7 @@ test_that(".cleavePos", {
       "gaju"=integer(0),
       "ins"=integer(0),
       "albu"=integer(0)),
-    chymotrypsin_high=list(
+    "chymotrypsin-high"=list(
       "gaju"=integer(0),
       "ins"=c(17, 25, 40, 48, 49, 50, 103, 108),
       "albu"=c(3, 6, 11, 13, 17, 22, 35, 43, 51, 54, 60, 73, 94, 108, 126,
@@ -82,7 +82,7 @@ test_that(".cleavePos", {
                238, 252, 287, 333, 343, 350, 354, 356, 358, 365, 377, 394, 398,
                401, 419, 425, 427, 435, 476, 512, 521, 526, 531, 533, 575, 578,
                592)),
-    chymotrypsin_low=list(
+    "chymotrypsin-low"=list(
       "gaju"=1,
       "ins"=c(1, 3, 5, 7, 10, 11, 13, 14, 16, 17, 25, 29, 30, 34, 35, 39,
               40, 41, 48, 49, 50, 61, 68, 77, 80, 82, 86, 102, 103, 105, 108),
@@ -150,7 +150,7 @@ test_that(".cleavePos", {
                548, 549, 558, 562, 565, 569, 581, 584, 588, 597, 598)))
 
   for (i in seq(along=cleavageResults)) {
-    enzyme <- gsub(pattern="_", replacement="-", x=names(cleavageResults)[i])
+    enzyme <- names(cleavageResults)[i]
     expect_equal(cleaver:::.cleavePos(peptides, cleaver:::rules[enzyme],
                                       cleaver:::exceptions[enzyme]),
                  unname(cleavageResults[[i]]))

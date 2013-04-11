@@ -24,8 +24,8 @@
 #' Cleavage rules (cleavage between P1 and P1'):
 #' \tabular{llllllll}{
 #' Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr
-#' \code{arg-c} \tab Arg-C proteinase \tab - \tab - \tab - \tab R \tab - \tab - \cr
-#' \code{asp-n} \tab Asp-N endopeptidase \tab - \tab - \tab - \tab - \tab D \tab - \cr
+#' \code{arg-c proteinase} \tab Arg-C proteinase \tab - \tab - \tab - \tab R \tab - \tab - \cr
+#' \code{asp-n endopeptidase} \tab Asp-N endopeptidase \tab - \tab - \tab - \tab - \tab D \tab - \cr
 #' \code{bnps-skatole-c} \tab BNPS-Skatole \tab - \tab - \tab - \tab W \tab - \tab - \cr
 #' \code{caspase1} \tab Caspase 1 \tab F,W,Y or L \tab - \tab H,A or T \tab D
 #'  \tab not P,E,D,Q,K or R \tab - \cr
