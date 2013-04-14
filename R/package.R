@@ -27,8 +27,8 @@
 #'
 #' \tabular{ll}{
 #' Package: \tab cleaver\cr
-#' Version: \tab 0.8\cr
-#' Date: \tab 2013-04-11\cr
+#' Version: \tab 0.9\cr
+#' Date: \tab 2013-04-14\cr
 #' License: \tab GPL (>= 3)\cr
 #' URL: \tab https://github.com/sgibb/cleaver/\cr
 #' }

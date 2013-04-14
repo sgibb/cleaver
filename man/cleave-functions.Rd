@@ -61,17 +61,20 @@
   \tab - \tab - \cr \code{factor xa} \tab Factor Xa \tab
   A,F,G,I,L,T,V or M \tab D or E \tab G \tab R \tab - \tab
   - \cr \code{formic acid} \tab Formic acid \tab - \tab -
-  \tab - \tab D \tab - \tab - \cr \code{pepsin1.3} \tab
-  Pepsin (pH1.3) \tab - \tab not H,K, or R \tab not P \tab
-  not R \tab F,L,W or Y \tab not P \cr \tab \tab - \tab not
-  H,K, or R \tab not P \tab F,L,W or Y \tab - \tab not P
-  \cr \code{pepsin} \tab Pepsin (pH>2) \tab - \tab not H,K
-  or R \tab not P \tab not R \tab F or L \tab not P \cr
-  \tab \tab - \tab not H,K or R \tab not P \tab F or L \tab
-  - \tab not P \cr \code{trypsin} \tab Trypsin \tab - \tab
-  - \tab - \tab K or R \tab not P \tab - \cr \tab \tab -
-  \tab - \tab W \tab K \tab P \tab - \cr \tab \tab - \tab -
-  \tab M \tab R \tab P \tab - \cr }
+  \tab - \tab D \tab - \tab - \cr \code{glutamyl
+  endopeptidase} \tab Glutamyl endopeptidase \tab - \tab -
+  \tab - \tab D \tab - \tab - \cr \code{granzyme-b} \tab
+  Granzyme B \tab I \tab E \tab P \tab D \tab - \tab - \cr
+  \code{pepsin1.3} \tab Pepsin (pH1.3) \tab - \tab not H,K,
+  or R \tab not P \tab not R \tab F,L,W or Y \tab not P \cr
+  \tab \tab - \tab not H,K, or R \tab not P \tab F,L,W or Y
+  \tab - \tab not P \cr \code{pepsin} \tab Pepsin (pH>2)
+  \tab - \tab not H,K or R \tab not P \tab not R \tab F or
+  L \tab not P \cr \tab \tab - \tab not H,K or R \tab not P
+  \tab F or L \tab - \tab not P \cr \code{trypsin} \tab
+  Trypsin \tab - \tab - \tab - \tab K or R \tab not P \tab
+  - \cr \tab \tab - \tab - \tab W \tab K \tab P \tab - \cr
+  \tab \tab - \tab - \tab M \tab R \tab P \tab - \cr }
 
   Exceptions: \tabular{llllllll}{ Rule name \tab Enzyme
   name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2'

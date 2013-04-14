@@ -56,6 +56,10 @@ rules <- c(
   "factor xa"="(?<=[AFGILTVM][DE]G)R(?=\\w)",
   ## Formic acid
   "formic acid"="D(?=\\w)",
+  ## Glutamyl endopeptidase
+  "glutamyl endopeptidase"="E(?=\\w)",
+  ## Granzyme B
+  "granzyme-b"="IEPD(?=\\w)",
   ## Pepsin (pH 1.3)
   "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
   ## Pepsin (pH > 2.0)

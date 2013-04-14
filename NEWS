@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.9 [2013-04-14]:
+- add glutamyl endopeptidase and granzyme-b
+
 Version 0.8 [2013-04-11]:
 - add enterokinase, factor xa and formic acid
 
