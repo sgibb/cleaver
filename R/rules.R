@@ -60,6 +60,18 @@ rules <- c(
   "glutamyl endopeptidase"="E(?=\\w)",
   ## Granzyme B
   "granzyme-b"="(?<=IEP)D(?=\\w)",
+  ## Hydroxylamine
+  "hydroxylamine"="N(?=G)",
+  ## Iodosobenzoic acid
+  "iodosobenzoic acid"="W(?=\\w)",
+  ## LysC
+  "lysc"="K(?=\\w)",
+  ## LysN
+  "lysn"="\\w(?=K)",
+  ## Neutrophil elastase
+  "neutrophil elastase"="[AV](?=\\w)",
+  ## NTCB (2-nitro-5-thiocyanobenzoic acid)
+  "ntcb"="\\w(?=C)",
   ## Pepsin (pH 1.3)
   "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
   ## Pepsin (pH > 2.0)
