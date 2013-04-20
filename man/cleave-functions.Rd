@@ -81,10 +81,21 @@
   \code{pepsin} \tab Pepsin (pH>2) \tab - \tab not H,K or R
   \tab not P \tab not R \tab F or L \tab not P \cr \tab
   \tab - \tab not H,K or R \tab not P \tab F or L \tab -
-  \tab not P \cr \code{trypsin} \tab Trypsin \tab - \tab -
-  \tab - \tab K or R \tab not P \tab - \cr \tab \tab - \tab
-  - \tab W \tab K \tab P \tab - \cr \tab \tab - \tab - \tab
-  M \tab R \tab P \tab - \cr }
+  \tab not P \cr \code{proline endopeptidase} \tab
+  Proline-endopeptidase \tab - \tab - \tab not H,K or R
+  \tab P \tab not P \tab - \cr \code{proteinase k} \tab
+  Proteinase K \tab - \tab - \tab - \tab A,E,F,I,L,T,V,W or
+  Y \tab - \tab - \cr \code{staphylococcal peptidase i}
+  \tab Staphylococcal Peptidase I \tab - \tab - \tab not E
+  \tab E \tab - \tab - \cr \code{thermolysin} \tab
+  Thermolysin \tab - \tab - \tab - \tab not D or E \tab
+  A,F,I,L,M or V \tab - \cr \code{thrombin} \tab Thrombin
+  \tab - \tab - \tab G \tab R \tab G \tab - \cr \tab \tab
+  A,F,G,I,L,T,V or M \tab A,F,G,I,L,T,V, or W \tab P \tab R
+  \tab not D or E \tab not D or E \cr \code{trypsin} \tab
+  Trypsin \tab - \tab - \tab - \tab K or R \tab not P \tab
+  - \cr \tab \tab - \tab - \tab W \tab K \tab P \tab - \cr
+  \tab \tab - \tab - \tab M \tab R \tab P \tab - \cr }
 
   Exceptions: \tabular{llllllll}{ Rule name \tab Enzyme
   name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2'

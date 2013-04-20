@@ -76,6 +76,16 @@ rules <- c(
   "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
   ## Pepsin (pH > 2.0)
   "pepsin"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FL][^P]))|((?<=([^HKR][^P])|(^[^P]))[FL](?=\\w[^P]))",
+  ## Proline endopeptidase
+  "proline endopeptidase"="(?<=[HKR])P(?=[^P])",
+  ## Proteinase K
+  "proteinase k"="[AEFILTVWY](?=\\w)",
+  ## Staphylococcal Peptidase I
+  "staphylococcal peptidase i"="(?<=[^E])E(?=\\w)",
+  ## Thermolysin
+  "thermolysin"="[^DE](?=[AFILMV])",
+  ## Thrombin
+  "thrombin"="((?<=G)R(?=G))|((?<=[AFGILTVM][AFGILTVW]P)R(?=[^DE][^DE]))",
   ## Trypsin
   "trypsin"="([KR](?=[^P]))|((?<=W)K(?=P))|((?<=M)R(?=P))")
 

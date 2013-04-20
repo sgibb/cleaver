@@ -1,6 +1,12 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.12 [2013-04-20]:
+- add thermolysin and thrombin
+
+Version 0.11 [2013-04-20]:
+- add proline endopeptidase, proteinase k, staphylococcal peptidase i
+
 Version 0.10 [2013-04-18]:
 - add hydroxylamine, iodosobenzoic acid, lysc, lysn, neutrophil elastase, ntcb.
 
