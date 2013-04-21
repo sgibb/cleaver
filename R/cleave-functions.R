@@ -116,6 +116,7 @@
 #'
 #' @param x \code{character}, polypeptide sequences.
 #' @param enzym \code{character}, cleavage rule.
+#' @param missedCleavages \code{numeric}, number of missed cleavages.
 #'
 #' @return a \code{list} of splitted polypeptides.
 #' @author Sebastian Gibb
@@ -132,6 +133,14 @@
 #' # $LAAGKVEDSD
 #' # [1] "LAAGK" "VEDSD"
 #'
+#' cleave(gaju, "trypsin", missedCleavages=1)
+#' # $LAAGKVEDSD
+#' # [1] "LAAGKVEDSD"
+#'
+#' cleave(gaju, "trypsin", missedCleavages=0:1)
+#' # $LAAGKVEDSD
+#' # [1] "LAAGK" "VEDSD" "LAAGKVEDSD"
+#'
 #' cleave(gaju, "pepsin")
 #' # $LAAGKVEDSD
 #' # [1] "LAAGKVEDSD"
@@ -139,7 +148,7 @@
 #'
 #' @rdname cleave-functions
 #' @export
-cleave <- function(x, enzym="trypsin") {
+cleave <- function(x, enzym="trypsin", missedCleavages=0) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
@@ -150,6 +159,20 @@ cleave <- function(x, enzym="trypsin") {
     pEnd <- c(pStart[-1]-1, nchar(y))
     return(substring(y, pStart, pEnd))
   }, y=x, p=pos, SIMPLIFY=FALSE)
+
+  if (any(missedCleavages != 0)) {
+    missedCleavages <- missedCleavages+1
+    peptides <- lapply(peptides, function(p) {
+      n <- length(p)
+      idx <- 1:n
+      p <- unlist(lapply(missedCleavages, function(m) {
+        if (n >= m) {
+          comb <- embed(idx, m)
+          return(apply(comb, 1, function(i){paste0(p[rev(i)], collapse="")}))
+        }
+      }))
+    })
+  }
 
   return(peptides)
 }

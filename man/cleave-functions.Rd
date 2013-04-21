@@ -2,12 +2,15 @@
 \alias{cleave}
 \title{Cleavage of polypeptide sequences}
 \usage{
-  cleave(x, enzym = "trypsin")
+  cleave(x, enzym = "trypsin", missedCleavages = 0)
 }
 \arguments{
   \item{x}{\code{character}, polypeptide sequences.}
 
   \item{enzym}{\code{character}, cleavage rule.}
+
+  \item{missedCleavages}{\code{numeric}, number of missed
+  cleavages.}
 }
 \value{
   a \code{list} of splitted polypeptides.
@@ -114,6 +117,14 @@ gaju <- "LAAGKVEDSD"
 cleave(gaju, "trypsin")
 # $LAAGKVEDSD
 # [1] "LAAGK" "VEDSD"
+
+cleave(gaju, "trypsin", missedCleavages=1)
+# $LAAGKVEDSD
+# [1] "LAAGKVEDSD"
+
+cleave(gaju, "trypsin", missedCleavages=0:1)
+# $LAAGKVEDSD
+# [1] "LAAGK" "VEDSD" "LAAGKVEDSD"
 
 cleave(gaju, "pepsin")
 # $LAAGKVEDSD
