@@ -27,6 +27,14 @@ cleave(gaju, "trypsin")
 # $LAAGKVEDSD
 # [1] "LAAGK" "VEDSD"
 
+cleave(gaju, "trypsin", missedCleavages=1)
+# $LAAGKVEDSD
+# [1] "LAAGKVEDSD"
+
+cleave(gaju, "trypsin", missedCleavages=0:1)
+# $LAAGKVEDSD
+# [1] "LAAGK" "VEDSD" "LAAGKVEDSD"
+
 cleave(gaju, "pepsin")
 # $LAAGKVEDSD
 # [1] "LAAGKVEDSD"
