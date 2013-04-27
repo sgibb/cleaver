@@ -1,38 +1,41 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.14 [2013-04-27]:
+- Depends on R >= 3.0.0 because using a knitr vignette. 
+
 Version 0.13 [2013-04-21]:
-- add possibility to miss cleavages.
+- Add possibility to miss cleavages.
 
 Version 0.12 [2013-04-20]:
-- add thermolysin and thrombin.
+- Add thermolysin and thrombin.
 
 Version 0.11 [2013-04-20]:
-- add proline endopeptidase, proteinase k, staphylococcal peptidase i.
+- Add proline endopeptidase, proteinase k, staphylococcal peptidase i.
 
 Version 0.10 [2013-04-18]:
-- add hydroxylamine, iodosobenzoic acid, lysc, lysn, neutrophil elastase, ntcb.
+- Add hydroxylamine, iodosobenzoic acid, lysc, lysn, neutrophil elastase, ntcb.
 
 Version 0.9 [2013-04-14]:
-- add glutamyl endopeptidase and granzyme-b.
+- Add glutamyl endopeptidase and granzyme-b.
 
 Version 0.8 [2013-04-11]:
-- add enterokinase, factor xa and formic acid.
+- Add enterokinase, factor xa and formic acid.
 
 Version 0.7 [2013-04-10]:
-- add clostripain and cnbr.
+- Add clostripain and cnbr.
 
 Version 0.6 [2013-04-10]:
-- add caspase 1 to 10.
+- Add caspase 1 to 10.
 
 Version 0.5 [2013-04-10]:
-- add bnps-skatole.
+- Add bnps-skatole.
 
 Version 0.4 [2013-04-10]:
-- add asp-n.
+- Add asp-n.
 
 Version 0.3 [2013-04-10]:
-- add arg-c.
+- Add arg-c.
 
 Version 0.2 [2013-04-07]:
 - Add chymotrypsin.
