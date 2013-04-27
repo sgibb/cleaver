@@ -121,6 +121,10 @@
 #' @return a \code{list} of splitted polypeptides.
 #' @author Sebastian Gibb
 #' @references
+#' Gasteiger E., Hoogland C., Gattiker A., Duvaud S., Wilkins M.R., Appel R.D.,
+#' Bairoch A.; "Protein Identification and Analysis Tools on the ExPASy Server".
+#' (In) John M. Walker (ed): The Proteomics Protocols Handbook, Humana Press
+#' (2005).\cr 
 #' \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 #' @examples
 #'
