@@ -4,7 +4,7 @@
 %\VignettePackage{cleaver}
 \documentclass[12pt,a4paper,english]{scrartcl}
 \usepackage{hyperref}
-\usepackage[numbers]{natbib}
+\usepackage[super]{natbib}
 
 \newcommand{\cleaver}{\texttt{cleaver} }
 \newcommand{\mailaddr}[1]{\href{mailto:#1}{\normalfont\texttt{#1}}}
