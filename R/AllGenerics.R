@@ -13,25 +13,7 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
-## helper functions
-.cleavePos <- function(x, pattern, exception) {
-  pos <- .rxPos(x, pattern=pattern)
-
-  if (!missing(exception) && !is.na(exception)) {
-    pos <- mapply(setdiff, x=pos, y=.rxPos(x, pattern=exception),
-                  SIMPLIFY=FALSE)
-  }
-
-  return(pos)
-}
-
-.rxPos <- function(x, pattern) {
-  rx <- gregexpr(pattern=pattern, text=x, perl=TRUE)
-  return(lapply(rx, function(x)as.vector(x[x > 0])))
-}
-
-.AAStringSetList <- function(x) {
-  stopifnot(all(sapply(x, is, "AAStringSet")))
-  IRanges:::newList("AAStringSetList", x)
+if (is.null(getGeneric("cleave"))) {
+  setGeneric("cleave", function(x, ...)standardGeneric("cleave"))
 }
 

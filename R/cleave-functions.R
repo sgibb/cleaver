@@ -13,7 +13,7 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
-cleave <- function(x, enzym="trypsin", missedCleavages=0) {
+.cleave <- function(x, enzym="trypsin", missedCleavages=0) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
