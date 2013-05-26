@@ -11,12 +11,7 @@ TESTDIR := $(PACKAGE_NAME)/inst/tests
 
 all: clean check build
 
-roxygen:
-	cd .. ;\
-	$(R_BIN) -q -e "library(\"roxygen2\")" \
-				      -e "roxygenize(\"$(PACKAGE_NAME)\")"
-
-build: roxygen
+build:
 	cd .. ;\
 	$(R_BIN) CMD build $(SRC)
 
