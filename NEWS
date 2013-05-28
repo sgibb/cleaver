@@ -3,6 +3,7 @@ RELEASE HISTORY OF THE "cleaver" PACKAGE
 
 Version 0.99.1 [2013-05-26]:
 - Add S4-methods for character, AAString, AAStringSet.
+- man/cleave-methods.Rd: split table of cleavage rules to reduce table width.
 
 Version 0.99.0 [2013-04-27]:
 - Initial release.

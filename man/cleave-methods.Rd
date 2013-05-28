@@ -34,96 +34,116 @@
 
   Cleavage rules (cleavage between P1 and P1'):
   \tabular{llllllll}{
-  Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1'
-    \tab P2' \cr
-  \code{arg-c proteinase} \tab Arg-C proteinase \tab - \tab - \tab - \tab R
-    \tab - \tab - \cr
-  \code{asp-n endopeptidase} \tab Asp-N endopeptidase \tab - \tab - \tab -
-    \tab - \tab D \tab - \cr
-  \code{bnps-skatole-c} \tab BNPS-Skatole \tab - \tab - \tab - \tab W \tab -
-    \tab - \cr
-  \code{caspase1} \tab Caspase 1 \tab F,W,Y or L \tab - \tab H,A or T \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase2} \tab Caspase 2 \tab D \tab V \tab A \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase3} \tab Caspase 3 \tab D \tab M \tab Q \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase4} \tab Caspase 4 \tab L \tab E \tab V \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase5} \tab Caspase 5 \tab L or W \tab E \tab H \tab D \tab -
-    \tab - \cr
-  \code{caspase6} \tab Caspase 6 \tab V \tab E \tab H or I \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase7} \tab Caspase 7 \tab D \tab E \tab V \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase8} \tab Caspase 8 \tab I or L \tab E \tab T \tab D
-    \tab not P,E,D,Q,K or R \tab - \cr
-  \code{caspase9} \tab Caspase 9 \tab L \tab E \tab H \tab D \tab - \tab - \cr
-  \code{caspase10} \tab Caspase 10 \tab I \tab E \tab A \tab D \tab -
-    \tab - \cr
-  \code{chymotrypsin-high}
-    \tab Chymotrypsin-high specificity (C-term to [FYW], not before P) \tab -
-    \tab - \tab - \tab F or Y \tab not P \tab - \cr
-  \tab \tab - \tab - \tab - \tab W \tab not M or P \tab - \cr
-  \code{chymotrypsin-low}
-    \tab Chymotrypsin-low specificity (C-term to [FYWML], not before P) \tab -
-    \tab - \tab - \tab F,L or Y \tab not P \tab - \cr
-  \tab \tab - \tab - \tab - \tab W \tab not M or P \tab - \cr
-  \tab \tab - \tab - \tab - \tab M \tab not P or Y \tab - \cr
-  \tab \tab - \tab - \tab - \tab H \tab not D,M,P or W \tab - \cr
-  \code{clostripain} \tab Clostripain (Clostridiopeptidase B) \tab - \tab -
-    \tab - \tab R \tab - \tab - \cr
-  \code{cnbr} \tab CNBr \tab - \tab - \tab - \tab M \tab - \tab - \cr
-  \code{enterokinase} \tab Enterokinase \tab D or E \tab D or E \tab D or E
-    \tab K \tab - \tab - \cr
-  \code{factor xa} \tab Factor Xa \tab A,F,G,I,L,T,V or M \tab D or E \tab G
-    \tab R \tab - \tab - \cr
-  \code{formic acid} \tab Formic acid \tab - \tab - \tab - \tab D \tab -
-    \tab - \cr
-  \code{glutamyl endopeptidase} \tab Glutamyl endopeptidase \tab - \tab -
-    \tab - \tab D \tab - \tab - \cr
-  \code{granzyme-b} \tab Granzyme B \tab I \tab E \tab P \tab D \tab -
-    \tab - \cr
-  \code{hydroxylamine} \tab Hydroxylamine \tab - \tab - \tab - \tab N \tab G
-    \tab - \cr
-  \code{iodosobenzoic acid} \tab Iodosobenzoic acid \tab - \tab - \tab -
-    \tab W \tab - \tab - \cr
-  \code{lysc} \tab LysC \tab - \tab - \tab - \tab K \tab - \tab - \cr
-  \code{lysn} \tab LysN \tab - \tab - \tab - \tab - \tab K \tab - \cr
-  \code{neutrophil elastase} \tab Neutrophil elastase \tab - \tab - \tab -
-    \tab A or V \tab - \tab - \cr
-  \code{ntcb} \tab NTCB (2-nitro-5-thiocyanobenzoic acid) \tab - \tab - \tab -
-    \tab - \tab C \tab - \cr
-  \code{pepsin1.3} \tab Pepsin (pH1.3) \tab - \tab not H,K, or R \tab not P
-    \tab not R \tab F,L,W or Y \tab not P \cr
-  \tab \tab - \tab not H,K, or R \tab not P \tab F,L,W or Y \tab - \tab not P \cr
-  \code{pepsin} \tab Pepsin (pH>2) \tab - \tab not H,K or R \tab not P
-    \tab not R \tab F or L \tab not P \cr
-  \tab \tab - \tab not H,K or R \tab not P \tab F or L \tab - \tab not P \cr
-  \code{proline endopeptidase} \tab Proline-endopeptidase \tab - \tab -
-    \tab not H,K or R \tab P \tab not P \tab - \cr
-  \code{proteinase k} \tab Proteinase K \tab - \tab - \tab -
-    \tab A,E,F,I,L,T,V,W or Y \tab - \tab - \cr
-  \code{staphylococcal peptidase i} \tab Staphylococcal Peptidase I \tab - \tab -
-    \tab not E \tab E \tab - \tab - \cr
-  \code{thermolysin} \tab Thermolysin \tab - \tab - \tab - \tab not D or E
-    \tab A,F,I,L,M or V \tab - \cr
-  \code{thrombin} \tab Thrombin \tab - \tab - \tab G \tab R \tab G \tab - \cr
-  \tab \tab A,F,G,I,L,T,V or M \tab A,F,G,I,L,T,V, or W \tab P \tab R
-    \tab not D or E \tab not D or E \cr
-  \code{trypsin} \tab Trypsin \tab - \tab - \tab - \tab K or R \tab not P
-    \tab - \cr \tab \tab - \tab - \tab W \tab K \tab P \tab - \cr
-  \tab \tab - \tab - \tab M \tab R \tab P \tab - \cr
+    Rule name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1' \tab P2' \cr
+    \code{arg-c proteinase} \tab - \tab - \tab - \tab R \tab - \tab - \cr
+    \code{asp-n endopeptidase} \tab - \tab - \tab - \tab - \tab D \tab - \cr
+    \code{bnps-skatole-c} \tab - \tab - \tab - \tab W \tab - \tab - \cr
+    \code{caspase1} \tab F,W,Y,L \tab - \tab H,A,T \tab D \tab not P,E,D,Q,K,R
+      \tab - \cr
+    \code{caspase2} \tab D \tab V \tab A \tab D \tab not P,E,D,Q,K,R \tab - \cr
+    \code{caspase3} \tab D \tab M \tab Q \tab D \tab not P,E,D,Q,K,R \tab - \cr
+    \code{caspase4} \tab L \tab E \tab V \tab D \tab not P,E,D,Q,K,R \tab - \cr
+    \code{caspase5} \tab L,W \tab E \tab H \tab D \tab - \tab - \cr
+    \code{caspase6} \tab V \tab E \tab H,I \tab D
+      \tab not P,E,D,Q,K,R \tab - \cr
+    \code{caspase7} \tab D \tab E \tab V \tab D \tab not P,E,D,Q,K,R \tab - \cr
+    \code{caspase8} \tab I,L \tab E \tab T \tab D \tab not P,E,D,Q,K,R
+      \tab - \cr
+    \code{caspase9} \tab L \tab E \tab H \tab D \tab - \tab - \cr
+    \code{caspase10} \tab I \tab E \tab A \tab D \tab - \tab - \cr
+    \code{chymotrypsin-high} \tab - \tab - \tab - \tab F,Y \tab not P \tab - \cr
+    \tab - \tab - \tab - \tab W \tab not M,P \tab - \cr
+    \code{chymotrypsin-low} \tab - \tab - \tab - \tab F,L,Y \tab not P
+      \tab - \cr
+    \tab - \tab - \tab - \tab W \tab not M,P \tab - \cr
+    \tab - \tab - \tab - \tab M \tab not P,Y \tab - \cr
+    \tab - \tab - \tab - \tab H \tab not D,M,P,W \tab - \cr
+    \code{clostripain} \tab - \tab - \tab - \tab R \tab - \tab - \cr
+    \code{cnbr} \tab - \tab - \tab - \tab M \tab - \tab - \cr
+    \code{enterokinase} \tab D,E \tab D,E \tab D,E \tab K \tab - \tab - \cr
+    \code{factor xa} \tab A,F,G,I,L,T,V,M \tab D,E \tab G \tab R \tab -
+      \tab - \cr
+    \code{formic acid} \tab - \tab - \tab - \tab D \tab - \tab - \cr
+    \code{glutamyl endopeptidase} \tab - \tab - \tab - \tab D \tab - \tab - \cr
+    \code{granzyme-b} \tab I \tab E \tab P \tab D \tab - \tab - \cr
+    \code{hydroxylamine} \tab - \tab - \tab - \tab N \tab G \tab - \cr
+    \code{iodosobenzoic acid} \tab - \tab - \tab - \tab W \tab - \tab - \cr
+    \code{lysc} \tab - \tab - \tab - \tab K \tab - \tab - \cr
+    \code{lysn} \tab - \tab - \tab - \tab - \tab K \tab - \cr
+    \code{neutrophil elastase} \tab - \tab - \tab - \tab A,V \tab - \tab - \cr
+    \code{ntcb} \tab - \tab - \tab - \tab - \tab C \tab - \cr
+    \code{pepsin1.3} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L,W,Y
+      \tab not P \cr
+    \tab - \tab not H,K,R \tab not P \tab F,L,W,Y \tab - \tab not P \cr
+    \code{pepsin} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L
+      \tab not P \cr
+    \tab - \tab not H,K,R \tab not P \tab F,L \tab - \tab not P \cr
+    \code{proline endopeptidase} \tab - \tab - \tab not H,K,R \tab P \tab not P
+      \tab - \cr
+    \code{proteinase k} \tab - \tab - \tab - \tab A,E,F,I,L,T,V,W,Y \tab -
+      \tab - \cr
+    \code{staphylococcal peptidase i} \tab - \tab - \tab not E \tab E \tab -
+      \tab - \cr
+    \code{thermolysin} \tab - \tab - \tab - \tab not D,E \tab A,F,I,L,M,V
+      \tab - \cr
+    \code{thrombin} \tab - \tab - \tab G \tab R \tab G \tab - \cr
+    \tab A,F,G,I,L,T,V,M \tab A,F,G,I,L,T,V,W \tab P \tab R \tab not D,E
+      \tab not D,E \cr
+    \code{trypsin} \tab - \tab - \tab - \tab K,R \tab not P \tab - \cr
+    \tab - \tab - \tab W \tab K \tab P \tab - \cr
+    \tab - \tab - \tab M \tab R \tab P \tab - \cr
   }
 
   Exceptions:
   \tabular{llllllll}{
-  Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1'
-    \tab P2' \cr
-  trypsin \tab Trypsin \tab - \tab - \tab C or D \tab K \tab D \tab - \cr
-  \tab \tab - \tab - \tab C \tab K \tab H or Y \tab - \cr
-  \tab \tab - \tab - \tab C \tab R \tab K \tab - \cr
-  \tab \tab - \tab - \tab R \tab R \tab H or R \tab - \cr
+    Rule name \tab Enzyme name \tab P4 \tab P3 \tab P2 \tab P1 \tab P1'
+      \tab P2' \cr
+    trypsin \tab - \tab - \tab C,D \tab K \tab D \tab - \cr \tab \tab -
+      \tab - \tab C \tab K \tab H,Y \tab - \cr
+    \tab \tab - \tab - \tab C \tab R \tab K \tab - \cr
+    \tab \tab - \tab - \tab R \tab R \tab H,R \tab - \cr
+  }
+
+  \tabular{ll}{
+    Rule name \tab Enzyme name \cr
+    \code{arg-c proteinase} \tab Arg-C proteinase \cr
+    \code{asp-n endopeptidase} \tab Asp-N endopeptidase \cr
+    \code{bnps-skatole-c} \tab BNPS-Skatole \cr
+    \code{caspase1} \tab Caspase 1 \cr
+    \code{caspase2} \tab Caspase 2 \cr
+    \code{caspase3} \tab Caspase 3 \cr
+    \code{caspase4} \tab Caspase 4 \cr
+    \code{caspase5} \tab Caspase 5 \cr
+    \code{caspase6} \tab Caspase 6 \cr
+    \code{caspase7} \tab Caspase 7 \cr
+    \code{caspase8} \tab Caspase 8 \cr
+    \code{caspase9} \tab Caspase 9 \cr
+    \code{caspase10} \tab Caspase 10 \cr
+    \code{chymotrypsin-high}
+      \tab Chymotrypsin-high specificity (C-term to [FYW], not before P) \cr
+    \code{chymotrypsin-low}
+      \tab Chymotrypsin-low specificity (C-term to [FYWML], not before P) \cr
+    \code{clostripain} \tab Clostripain (Clostridiopeptidase B) \cr
+    \code{cnbr} \tab CNBr \cr
+    \code{enterokinase} \tab Enterokinase \cr
+    \code{factor xa} \tab Factor Xa \cr
+    \code{formic acid} \tab Formic acid \cr
+    \code{glutamyl endopeptidase} \tab Glutamyl endopeptidase \cr
+    \code{granzyme-b} \tab Granzyme B \cr
+    \code{hydroxylamine} \tab Hydroxylamine \cr
+    \code{iodosobenzoic acid} \tab Iodosobenzoic acid \cr
+    \code{lysc} \tab LysC \cr
+    \code{lysn} \tab LysN \cr
+    \code{neutrophil elastase} \tab Neutrophil elastase \cr
+    \code{ntcb} \tab NTCB (2-nitro-5-thiocyanobenzoic acid) \cr
+    \code{pepsin1.3} \tab Pepsin (pH == 1.3) \cr
+    \code{pepsin} \tab Pepsin (pH > 2) \cr
+    \code{proline endopeptidase} \tab Proline-endopeptidase \cr
+    \code{proteinase k} \tab Proteinase K \cr
+    \code{staphylococcal peptidase i} \tab Staphylococcal Peptidase I \cr
+    \code{thermolysin} \tab Thermolysin \cr
+    \code{thrombin} \tab Thrombin \cr
+    \code{trypsin} \tab Trypsin \cr
   }
 }
 \examples{
