@@ -12,7 +12,9 @@ Imports:
     IRanges
 Suggests:
     testthat,
-    knitr
+    knitr,
+    BRAIN,
+    UniProt.ws
 Description: In-silico cleavage of polypeptide sequences. The
     cleavage rules are taken from:
     http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
