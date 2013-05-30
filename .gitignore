@@ -2,3 +2,11 @@
 *.so
 *.o
 *.rds
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.tex
+vignettes/*.pdf
+vignettes/figure

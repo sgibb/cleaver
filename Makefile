@@ -49,4 +49,6 @@ clean: local_remove
 	cd .. ;\
 	$(RM) -rf $(PACKAGE_NAME).Rcheck/ \
 	$(RM) -rf $(PACKAGE_NAME)_*.tar.gz
+	$(RM) -rf $(PACKAGE_NAME)/vignettes/*.{aux,bbl,blg,log,out,tex}
+	$(RM) -rf $(PACKAGE_NAME)/vignettes/figure
 
