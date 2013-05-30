@@ -10,9 +10,13 @@
   The cleavage rules are taken from:
   \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 
-  \tabular{ll}{ Package: \tab cleaver\cr Version: \tab
-  0.99.0\cr Date: \tab 2013-04-27\cr License: \tab GPL (>=
-  3)\cr URL: \tab https://github.com/sgibb/cleaver/\cr }
+  \tabular{ll}{
+    Package: \tab cleaver\cr
+Version: \tab 0.99.1\cr
+Date: \tab 2013-05-30\cr
+    License: \tab GPL (>= 3)\cr
+    URL: \tab https://github.com/sgibb/cleaver/\cr
+  }
 }
 \author{
   Sebastian Gibb \email{mail@sebastiangibb.de}
