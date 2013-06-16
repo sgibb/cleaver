@@ -87,7 +87,7 @@ the \texttt{UniProt.ws} R package\citep{UniProt.ws}.
 library("UniProt.ws")
 
 ## download sequences of Insulin/Somatostatin
-s <- select(UniProt.ws, keys=c("P01308", "P61278"), cols=c("SEQUENCE"))
+s <- select(UniProt.ws, keys=c("P01308", "P61278"), columns=c("SEQUENCE"))
 
 ## fetch only sequences
 sequences <- setNames(s$SEQUENCE, s$UNIPROTKB)
