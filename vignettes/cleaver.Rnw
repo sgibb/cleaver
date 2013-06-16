@@ -20,7 +20,6 @@ opts_chunk$set(tidy.opts=list(width.cutoff=45, tidy=FALSE), fig.align='center', 
 @
 
 <<libraries, echo=FALSE>>=
-suppressPackageStartupMessages(library("Biostrings"))
 suppressPackageStartupMessages(library("UniProt.ws"))
 suppressPackageStartupMessages(library("BRAIN"))
 @
