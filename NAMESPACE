@@ -1,4 +1,1 @@
-import(IRanges)
-importClassesFrom(Biostrings, AAString, AAStringSet, AAStringSetList)
-
 exportMethods(cleave)
