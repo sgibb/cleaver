@@ -12,6 +12,7 @@
 \author{Sebastian Gibb%
   \thanks{\mailaddr{mail@sebastiangibb.de}}
 }
+\date{\today}
 
 <<setup, include=FALSE, cache=FALSE>>=
 library("knitr")
