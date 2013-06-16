@@ -69,9 +69,6 @@ cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
 
 Combine \cleaver{} and the \texttt{Biostrings} R package\citep{Biostrings}:
 <<>>=
-## load Biostrings library
-library("Biostrings")
-
 ## create AAStringSet object
 gaju <- AAStringSet("LAAGKVEDSD")
 
