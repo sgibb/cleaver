@@ -1,7 +1,8 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
-Version 0.99.1.1 [2013-06-16]:
+Version 0.99.2 [2013-06-17]:
+- Replace own AAStringSetList constructor by Biostrings::AAStringSetList.
 - man/cleaver-package.Rd: remove static date.
 - vignette: add dynamic date and don't load Biostrings manually anymore.
 - NAMESPACE: don't import from Biostrings and IRanges.
