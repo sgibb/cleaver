@@ -30,8 +30,3 @@
   return(lapply(rx, function(x)as.vector(x[x > 0])))
 }
 
-.AAStringSetList <- function(x) {
-  stopifnot(all(sapply(x, is, "AAStringSet")))
-  IRanges:::newList("AAStringSetList", x)
-}
-
