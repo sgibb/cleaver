@@ -12,6 +12,7 @@
 \author{Sebastian Gibb%
   \thanks{\mailaddr{mail@sebastiangibb.de}}
 }
+\date{\today}
 
 <<setup, include=FALSE, cache=FALSE>>=
 library("knitr")
@@ -19,7 +20,6 @@ opts_chunk$set(tidy.opts=list(width.cutoff=45, tidy=FALSE), fig.align='center', 
 @
 
 <<libraries, echo=FALSE>>=
-suppressPackageStartupMessages(library("Biostrings"))
 suppressPackageStartupMessages(library("UniProt.ws"))
 suppressPackageStartupMessages(library("BRAIN"))
 @
@@ -69,9 +69,6 @@ cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
 
 Combine \cleaver{} and the \texttt{Biostrings} R package\citep{Biostrings}:
 <<>>=
-## load Biostrings library
-library("Biostrings")
-
 ## create AAStringSet object
 gaju <- AAStringSet("LAAGKVEDSD")
 
@@ -90,7 +87,7 @@ the \texttt{UniProt.ws} R package\citep{UniProt.ws}.
 library("UniProt.ws")
 
 ## download sequences of Insulin/Somatostatin
-s <- select(UniProt.ws, keys=c("P01308", "P61278"), cols=c("SEQUENCE"))
+s <- select(UniProt.ws, keys=c("P01308", "P61278"), columns=c("SEQUENCE"))
 
 ## fetch only sequences
 sequences <- setNames(s$SEQUENCE, s$UNIPROTKB)
