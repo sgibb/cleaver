@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.99.3 [2013-07-08]:
+- vignette: add second BRAIN reference.
+
 Version 0.99.2 [2013-06-17]:
 - Replace own AAStringSetList constructor by Biostrings::AAStringSetList.
 - man/cleaver-package.Rd: remove static date.
