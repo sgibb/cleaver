@@ -106,7 +106,7 @@ cleave(sequences, enzym="pepsin")
 A common use case of in-silico cleavage is the calculation of the
 isotopic distribution of peptides (which were enzymatic digested in the
 in-vitro experimental workflow). Here the
-\texttt{BRAIN} R package\citep{BRAIN} is used to calculate the isotopic
+\texttt{BRAIN} R package\citep{BRAIN, BRAIN2} is used to calculate the isotopic
 distribution of \cleaver{}'s output.
 (please note: it is only a toy example, e.g. the relation of intensity values
 between peptides isn't correct).
@@ -132,6 +132,8 @@ for (i in seq(along=cleavedInsulin)) {
   lines(d$masses, d$isoDistr, type="h", col=2)
 }
 @
+
+\newpage
 
 \bibliographystyle{plainnat}
 \bibliography{cleaver}
