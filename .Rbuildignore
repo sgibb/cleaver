@@ -1,0 +1,12 @@
+^README\.md$
+^Makefile$
+^\.git$
+^\.gitignore$
+^vignettes/figure$
+^vignettes/*.pdf$
+.*.aux$
+.*.bbl$
+.*.blg$
+.*.log$
+.*.out$
+.*.tex$
