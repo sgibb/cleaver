@@ -133,6 +133,8 @@ for (i in seq(along=cleavedInsulin)) {
 }
 @
 
+\newpage
+
 \bibliographystyle{plainnat}
 \bibliography{cleaver}
 
