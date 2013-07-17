@@ -4,6 +4,7 @@ Date: 2013-07-08
 Title: Cleavage of polypeptide sequences
 Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
     email="mail@sebastiangibb.de"))
+Maintainer: Sebastian Gibb <mail@sebastiangibb.de>
 Depends:
     R (>= 3.0.0),
     methods,
