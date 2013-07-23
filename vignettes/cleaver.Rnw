@@ -137,6 +137,11 @@ for (i in seq(along=cleavedInsulin)) {
 
 \newpage
 
+\section*{Session Information}
+<<sessioninfo, echo=FALSE, results="asis">>=
+toLatex(sessionInfo())
+@
+
 \bibliographystyle{plainnat}
 \bibliography{cleaver}
 
