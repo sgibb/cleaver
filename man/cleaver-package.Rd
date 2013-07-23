@@ -12,7 +12,6 @@
 
   \tabular{ll}{
     Package: \tab cleaver\cr
-    Version: \tab 0.99.4\cr
     License: \tab GPL (>= 3)\cr
     URL: \tab https://github.com/sgibb/cleaver/\cr
   }
