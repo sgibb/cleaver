@@ -7,7 +7,7 @@ SRC := $(shell basename $(PWD))
 LOCALDIR := .local
 TESTDIR := $(PACKAGE_NAME)/inst/tests
 
-.PHONY: clean check build install remove local_install local_remove test vignette
+.PHONY: clean check build install remove local_install local_remove test vignette clean_vignette
 
 all: clean check build
 
@@ -49,10 +49,13 @@ vignette:
 	cd vignettes ;\
 	$(R_BIN) --vanilla -e "library(knitr); knit2pdf(\"cleaver.Rnw\");"
 
-clean: local_remove
+clean_vignette:
+	cd vignettes ;\
+	$(RM) *.aux *.bbl *.blg *.log *.out *.pdf *.tex *.toc ;\
+	$(RM) -r figure
+
+clean: local_remove clean_vignette
 	cd .. ;\
-	$(RM) -rf $(PACKAGE_NAME).Rcheck/ \
-	$(RM) -rf $(PACKAGE_NAME)_*.tar.gz
-	$(RM) -rf $(PACKAGE_NAME)/vignettes/*.{aux,bbl,blg,log,out,tex}
-	$(RM) -rf $(PACKAGE_NAME)/vignettes/figure
+	$(RM) -r $(PACKAGE_NAME).Rcheck/ ;\
+	$(RM) $(PACKAGE_NAME)_*.tar.gz
 

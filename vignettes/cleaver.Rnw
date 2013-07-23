@@ -32,7 +32,9 @@ suppressPackageStartupMessages(library("BRAIN"))
 
 \maketitle
 
-\section*{Introduction}
+\tableofcontents
+
+\section{Introduction}
 
 Most proteomics experiments need protein (peptide) separation and cleavage
 procedures before these molecules could be analyzed or identified
@@ -43,7 +45,7 @@ The cleavage rules are taken from the
 \href{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}{ExPASy
 PeptideCutter tool}\citep{peptidecutter}.
 
-\section*{Simple Usage}
+\section{Simple Usage}
 
 Loading the \cleaver{} package:
 <<>>=
@@ -79,7 +81,7 @@ cleave(gaju, enzym="trypsin")
 @
 
 
-\section*{Insulin \& Somatostatin Example}
+\section{Insulin \& Somatostatin Example}
 
 Downloading \emph{Insulin (P01308)} and \emph{Somatostatin (P61278)} sequences
 from the \href{http://www.uniprot.org}{UniProt}\citep{uniprot} database using
@@ -103,7 +105,7 @@ Cleaving using \emph{Pepsin}:
 cleave(sequences, enzym="pepsin")
 @
 
-\section*{Isotopic Distribution Of Tryptic Digested Insulin}
+\section{Isotopic Distribution Of Tryptic Digested Insulin}
 
 A common use case of in-silico cleavage is the calculation of the
 isotopic distribution of peptides (which were enzymatic digested in the
@@ -135,7 +137,10 @@ for (i in seq(along=cleavedInsulin)) {
 }
 @
 
-\newpage
+\section{Session Information}
+<<sessioninfo, echo=FALSE, results="asis">>=
+toLatex(sessionInfo())
+@
 
 \section*{Session Information}
 <<sessioninfo, echo=FALSE, results="asis">>=
