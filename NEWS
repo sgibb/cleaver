@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.99.4 [2013-07-23]:
+- vignette: use BiocStyle.
+
 Version 0.99.3 [2013-07-08]:
 - vignette: add second BRAIN reference.
 

@@ -3,14 +3,16 @@
 %\VignetteKeyword{polypeptide, cleavage}
 %\VignettePackage{cleaver}
 \documentclass[12pt,a4paper,english]{scrartcl}
-\usepackage{hyperref}
 \usepackage[super]{natbib}
 
-\newcommand{\cleaver}{\texttt{cleaver}}
-\newcommand{\mailaddr}[1]{\href{mailto:#1}{\normalfont\texttt{#1}}}
+<<style, eval=TRUE, echo=FALSE, results="asis">>=
+BiocStyle::latex()
+@
+
+\newcommand{\cleaver}{\Biocpkg{cleaver}}
 
 \author{Sebastian Gibb%
-  \thanks{\mailaddr{mail@sebastiangibb.de}}
+  \thanks{\email{mail@sebastiangibb.de}}
 }
 \date{\today}
 
@@ -67,7 +69,7 @@ cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=1)
 cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
 @
 
-Combine \cleaver{} and the \texttt{Biostrings} R package\citep{Biostrings}:
+Combine \cleaver{} and the \Biocpkg{Biostrings} R package\citep{Biostrings}:
 <<>>=
 ## create AAStringSet object
 gaju <- AAStringSet("LAAGKVEDSD")
@@ -81,7 +83,7 @@ cleave(gaju, enzym="trypsin")
 
 Downloading \emph{Insulin (P01308)} and \emph{Somatostatin (P61278)} sequences
 from the \href{http://www.uniprot.org}{UniProt}\citep{uniprot} database using
-the \texttt{UniProt.ws} R package\citep{UniProt.ws}.
+the \Biocpkg{UniProt.ws} R package\citep{UniProt.ws}.
 <<>>=
 ## load UniProt.ws library
 library("UniProt.ws")
@@ -106,7 +108,7 @@ cleave(sequences, enzym="pepsin")
 A common use case of in-silico cleavage is the calculation of the
 isotopic distribution of peptides (which were enzymatic digested in the
 in-vitro experimental workflow). Here the
-\texttt{BRAIN} R package\citep{BRAIN, BRAIN2} is used to calculate the isotopic
+\Biocpkg{BRAIN} R package\citep{BRAIN, BRAIN2} is used to calculate the isotopic
 distribution of \cleaver{}'s output.
 (please note: it is only a toy example, e.g. the relation of intensity values
 between peptides isn't correct).
