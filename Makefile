@@ -7,7 +7,7 @@ SRC := $(shell basename $(PWD))
 LOCALDIR := .local
 TESTDIR := $(PACKAGE_NAME)/inst/tests
 
-.PHONY: clean check build install remove local_install local_remove test
+.PHONY: clean check build install remove local_install local_remove test vignette
 
 all: clean check build
 
@@ -44,6 +44,10 @@ check: build
 win-builder: check
 	cd .. ;\
 	ncftpput -u anonymous -p '' win-builder.r-project.org R-devel $(PACKAGE_NAME)_$(PACKAGE_VERSION).tar.gz
+
+vignette:
+	cd vignettes ;\
+	$(R_BIN) --vanilla -e "library(knitr); knit2pdf(\"cleaver.Rnw\");"
 
 clean: local_remove
 	cd .. ;\
