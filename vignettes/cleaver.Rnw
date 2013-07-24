@@ -142,11 +142,6 @@ for (i in seq(along=cleavedInsulin)) {
 toLatex(sessionInfo())
 @
 
-\section*{Session Information}
-<<sessioninfo, echo=FALSE, results="asis">>=
-toLatex(sessionInfo())
-@
-
 \bibliographystyle{plainnat}
 \bibliography{cleaver}
 

@@ -1,6 +1,10 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 0.99.5 [2013-07-24]:
+- vignette:
+  - remove duplicated sessionInfo entries.
+
 Version 0.99.4 [2013-07-23]:
 - vignette:
   - use BiocStyle.
