@@ -5,10 +5,11 @@
 \documentclass[12pt,a4paper,english]{scrartcl}
 
 <<style, eval=TRUE, echo=FALSE, results="asis">>=
-BiocStyle::latex()
+BiocStyle::latex(bibstyle="plainnat")
 @
 
 \newcommand{\cleaver}{\Biocpkg{cleaver}}
+\usepackage[authoryear,round]{natbib}
 
 \author{Sebastian Gibb%
   \thanks{\email{mail@sebastiangibb.de}}
@@ -141,7 +142,6 @@ for (i in seq(along=cleavedInsulin)) {
 toLatex(sessionInfo())
 @
 
-\bibliographystyle{plainnat}
 \bibliography{cleaver}
 
 \end{document}
