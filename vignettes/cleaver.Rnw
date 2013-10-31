@@ -3,13 +3,13 @@
 %\VignetteKeyword{polypeptide, cleavage}
 %\VignettePackage{cleaver}
 \documentclass[12pt,a4paper,english]{scrartcl}
+\usepackage[super]{natbib}
 
 <<style, eval=TRUE, echo=FALSE, results="asis">>=
-BiocStyle::latex(bibstyle="plainnat")
+BiocStyle::latex(use.unsrturl=FALSE)
 @
 
 \newcommand{\cleaver}{\Biocpkg{cleaver}}
-\usepackage[authoryear,round]{natbib}
 
 \author{Sebastian Gibb%
   \thanks{\email{mail@sebastiangibb.de}}
@@ -142,6 +142,7 @@ for (i in seq(along=cleavedInsulin)) {
 toLatex(sessionInfo())
 @
 
+\bibliographystyle{plainnat}
 \bibliography{cleaver}
 
 \end{document}
