@@ -1,0 +1,28 @@
+RELEASE HISTORY OF THE "cleaver" PACKAGE
+========================================
+
+Version 0.99.5 [2013-07-24]:
+- vignette:
+  - remove duplicated sessionInfo entries.
+
+Version 0.99.4 [2013-07-23]:
+- vignette:
+  - use BiocStyle.
+  - add sessionInfo() and TOC.
+
+Version 0.99.3 [2013-07-08]:
+- vignette: add second BRAIN reference.
+
+Version 0.99.2 [2013-06-17]:
+- Replace own AAStringSetList constructor by Biostrings::AAStringSetList.
+- man/cleaver-package.Rd: remove static date.
+- vignette: add dynamic date and don't load Biostrings manually anymore.
+- NAMESPACE: don't import from Biostrings and IRanges.
+
+Version 0.99.1 [2013-05-30]:
+- Add S4-methods for character, AAString, AAStringSet.
+- man/cleave-methods.Rd: split table of cleavage rules to reduce table width.
+- Extend vignette (add BRAIN and UniProt.ws based examples).
+
+Version 0.99.0 [2013-04-27]:
+- Initial release.
