@@ -1,6 +1,11 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.1.4 [2013-12-20]:
+- tests:
+  - move tests into tests/testthat to adapt to testthat 0.8 and new
+    CRAN policy.
+
 Version 0.99.5 [2013-07-24]:
 - vignette:
   - remove duplicated sessionInfo entries.
