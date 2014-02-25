@@ -1,6 +1,11 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.1.5 [2014-02-25]:
+- Using AAStringSetList constructor for list of characters instead of 
+  creating a lot of AAStringSets dramatically decreases running time for
+  cleave,AAStringSet-method.
+
 Version 1.1.4 [2013-12-20]:
 - tests:
   - move tests into tests/testthat to adapt to testthat 0.8 and new

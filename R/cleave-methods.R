@@ -28,7 +28,7 @@ setMethod(f="cleave",
 setMethod(f="cleave",
           signature=signature(x="AAStringSet"),
           definition=function(x, enzym="trypsin", missedCleavages=0) {
-  cl <- .cleave(x=as.character(x), enzym=enzym, missedCleavages=missedCleavages)
-  return(Biostrings::AAStringSetList(lapply(cl, AAStringSet)))
+  return(Biostrings::AAStringSetList(cleave(as.character(x), enzym=enzym, 
+                                            missedCleavages=missedCleavages)))
 })
 
