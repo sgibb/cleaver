@@ -22,7 +22,7 @@ install_github("cleaver", "sgibb")
 ## load library
 library("cleaver")
 
-## Gastic juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)
+## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)
 gaju <- "LAAGKVEDSD"
 
 cleave(gaju, "trypsin")
