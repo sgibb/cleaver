@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.1.7 [2014-03-25]:
+- Typo in the manual page.
+
 Version 1.1.5 [2014-02-25]:
 - Using AAStringSetList constructor for list of characters instead of 
   creating a lot of AAStringSets dramatically decreases running time for
