@@ -1,4 +1,4 @@
-## Copyright 2013 Sebastian Gibb
+## Copyright 2013-2014 Sebastian Gibb
 ## <mail@sebastiangibb.de>
 ##
 ## This is free software: you can redistribute it and/or modify
@@ -13,32 +13,45 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
-.cleave <- function(x, enzym="trypsin", missedCleavages=0) {
+.cleave <- function(x, enzym="trypsin", missedCleavages=0,
+                    unique=FALSE, use.names=TRUE) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
   pos <- .cleavePos(x, pattern=rules[enzym], exception=exceptions[enzym])
 
   peptides <- mapply(function(y, p) {
-    pStart <- c(1, p+1)
-    pEnd <- c(pStart[-1]-1, nchar(y))
-    return(substring(y, pStart, pEnd))
+    .pep <- .peptides(x=y, pos=p, missedCleavages=missedCleavages)
+    if (unique) {
+      unique(.pep)
+    } else {
+      .pep
+    }
   }, y=x, p=pos, SIMPLIFY=FALSE)
 
-  if (any(missedCleavages != 0)) {
-    missedCleavages <- missedCleavages+1
-    peptides <- lapply(peptides, function(p) {
-      n <- length(p)
-      idx <- 1:n
-      p <- unlist(lapply(missedCleavages, function(m) {
-        if (n >= m) {
-          comb <- embed(idx, m)
-          return(apply(comb, 1, function(i){paste0(p[rev(i)], collapse="")}))
-        }
-      }))
-    })
+  if (use.names) {
+    if (is.null(names(x))) {
+      names(peptides) <- x
+    } else {
+      names(peptides) <- names(x)
+    }
   }
 
-  return(peptides)
+  peptides
+}
+
+.peptides <- function(x, pos, missedCleavages) {
+  .unlist(lapply(missedCleavages, function(m) {
+    if (m < length(pos)) {
+      .digest(x=x, pos=pos, missedCleavages=m)
+    } else {
+      x
+    }
+  }))
+}
+
+.digest <- function(x, pos, missedCleavages) {
+  .unlist(combn(seq_along(pos), length(pos)-missedCleavages,
+                FUN=function(i).substrings(x=x, pos=pos[i]), simplify=FALSE))
 }
 
