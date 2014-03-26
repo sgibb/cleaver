@@ -32,7 +32,13 @@
 
 .substrings <- function(x, pos) {
   pStart <- c(1, pos+1)
-  pEnd <- c(pStart[-1]-1, nchar(x))
+  pEnd <- c(pos, nchar(x))
+  substring(x, pStart, pEnd)
+}
+
+.substrings.matrix <- function(x, pos) {
+  pStart <- cbind(1, pos+1)
+  pEnd <- cbind(pos, nchar(x))
   substring(x, pStart, pEnd)
 }
 

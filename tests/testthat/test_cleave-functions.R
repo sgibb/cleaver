@@ -27,22 +27,20 @@ test_that("cleave missedCleavages > 1", {
   peptides <- c(
     "enob"="SITKIKAREILD")
   trypsinMissed2 <- list(
-    "enob"=c("SITK", "IKAREILD",
-             "SITKIK", "AREILD",
-             "SITKIKAR", "EILD"))
+    "enob"=c("SITK", "SITKIK", "SITKIKAR",
+             "IKAREILD","AREILD", "EILD"))
   trypsinMissed02 <- list(
     "enob"=c("SITK", "IK", "AR", "EILD", # 0
-             "SITK", "IK", "AREILD",     # 1
-             "SITK", "IKAR", "EILD",
-             "SITKIK", "AR", "EILD",
-             "SITK", "IKAREILD",         # 2
-             "SITKIK", "AREILD",
-             "SITKIKAR", "EILD"))
+             "SITK", "SITK", "SITKIK",   # 1
+             "IK", "IKAR",  "AR",
+             "AREILD", "EILD", "EILD",
+             "SITK", "SITKIK",          # 2
+             "SITKIKAR", "IKAREILD",
+             "AREILD", "EILD"))
   trypsinUniqueMissed02 <- list(
     "enob"=c("SITK", "IK", "AR", "EILD",
-             "AREILD", "IKAR",
-             "SITKIK", "IKAREILD",
-             "SITKIKAR"))
+             "SITKIK", "IKAR", "AREILD",
+             "SITKIKAR", "IKAREILD"))
 
   expect_equal(cleave(peptides, "trypsin", missedCleavages=2), trypsinMissed2)
   expect_equal(cleave(peptides, "trypsin", missedCleavages=0:2),

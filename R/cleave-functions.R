@@ -21,7 +21,11 @@
   pos <- .cleavePos(x, pattern=rules[enzym], exception=exceptions[enzym])
 
   peptides <- mapply(function(y, p) {
-    .pep <- .peptides(x=y, pos=p, missedCleavages=missedCleavages)
+    if (any(missedCleavages > 0)) {
+      .pep <- .peptides(x=y, pos=p, missedCleavages=missedCleavages)
+    } else {
+      .pep <- .substrings(x=y, pos=p)
+    }
     if (unique) {
       unique(.pep)
     } else {
@@ -42,7 +46,9 @@
 
 .peptides <- function(x, pos, missedCleavages) {
   .unlist(lapply(missedCleavages, function(m) {
-    if (m < length(pos)) {
+    if (m == 0) {
+      .substrings(x=x, pos=pos)
+    } else if (m < length(pos)) {
       .digest(x=x, pos=pos, missedCleavages=m)
     } else {
       x
@@ -51,7 +57,10 @@
 }
 
 .digest <- function(x, pos, missedCleavages) {
-  .unlist(combn(seq_along(pos), length(pos)-missedCleavages,
-                FUN=function(i).substrings(x=x, pos=pos[i]), simplify=FALSE))
+  n <- length(pos)
+  cb <- combn(n, n-missedCleavages)
+  cb[] <- pos[cb]
+  cb <- t(cb)
+  .substrings.matrix(x=x, pos=cb)
 }
 
