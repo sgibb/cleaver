@@ -1,1 +1,6 @@
+import(methods)
+import(IRanges)
+importFrom(Biostrings, AAString,
+                       AAStringSet,
+                       AAStringSetList)
 exportMethods(cleave)

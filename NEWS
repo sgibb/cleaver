@@ -1,9 +1,10 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
-Version 1.1.8 [2014-03-25]:
+Version 1.1.8 [2014-03-26]:
 - Fix missedCleavages>1.
 - Add argument "unique".
+- Add methods, Biostrings, IRanges to NAMESPACE.
 
 Version 1.1.7 [2014-03-25]:
 - Typo in the manual page.
