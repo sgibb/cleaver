@@ -1,4 +1,4 @@
-## Copyright 2013 Sebastian Gibb
+## Copyright 2013-2014 Sebastian Gibb
 ## <mail@sebastiangibb.de>
 ##
 ## This is free software: you can redistribute it and/or modify
@@ -22,11 +22,26 @@
                   SIMPLIFY=FALSE)
   }
 
-  return(pos)
+  pos
 }
 
 .rxPos <- function(x, pattern) {
   rx <- gregexpr(pattern=pattern, text=x, perl=TRUE)
-  return(lapply(rx, function(x)as.vector(x[x > 0])))
+  lapply(rx, function(x)as.vector(x[x > 0]))
 }
 
+.substrings <- function(x, pos) {
+  pStart <- c(1, pos+1)
+  pEnd <- c(pos, nchar(x))
+  substring(x, pStart, pEnd)
+}
+
+.substrings.matrix <- function(x, pos) {
+  pStart <- cbind(1, pos+1)
+  pEnd <- cbind(pos, nchar(x))
+  substring(x, pStart, pEnd)
+}
+
+.unlist <- function(x) {
+  unlist(x=x, recursive=FALSE, use.names=FALSE)
+}
