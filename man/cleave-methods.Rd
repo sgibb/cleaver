@@ -6,11 +6,14 @@
 \alias{cleave,AAStringSet-method}
 \title{Cleavage of polypeptide sequences}
 \usage{
-\S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0)
+\S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
+                             unique = FALSE)
 
-\S4method{cleave}{AAString}(x, enzym = "trypsin", missedCleavages = 0)
+\S4method{cleave}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
+                            unique = FALSE)
 
-\S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0)
+\S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
+                               unique = FALSE)
 }
 \arguments{
   \item{x}{polypeptide sequences.}
@@ -19,6 +22,9 @@
 
   \item{missedCleavages}{\code{numeric}, number of missed
   cleavages.}
+
+  \item{unique}{\code{logical}, if \code{TRUE} all duplicated cleavage products
+    per peptide are removed.}
 }
 \value{
   a \code{list} of splitted polypeptides if input \code{x} was a
@@ -176,6 +182,26 @@ gaju <- AAStringSet("LAAGKVEDSD")
 cleave(gaju)
 # AAStringSetList of length 1
 # [["LAAGKVEDSD"]] LAAGK VEDSD LAAGKVEDSD
+
+
+## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)
+enob <- "SITKIKAREILD"
+
+cleave(enob, "trypsin", missedCleavages=2)
+# $SITKIKAREILD
+# [1] "SITK"     "IKAREILD" "SITKIK"   "AREILD"   "SITKIKAR" "EILD"
+
+cleave(enob, "trypsin", missedCleavages=0:2)
+# $SITKIKAREILD
+#  [1] "SITK"     "IK"       "AR"       "EILD"     "SITK"     "IK"
+#  [7] "AREILD"   "SITK"     "IKAR"     "EILD"     "SITKIK"   "AR"
+# [13] "EILD"     "SITK"     "IKAREILD" "SITKIK"   "AREILD"   "SITKIKAR"
+# [19] "EILD"
+
+cleave(enob, "trypsin", missedCleavages=0:2, unique=TRUE)
+# $SITKIKAREILD
+# [1] "SITK"     "IK"       "AR"       "EILD"     "AREILD"   "IKAR"
+# [7] "SITKIK"   "IKAREILD" "SITKIKAR"
 }
 \author{
   Sebastian Gibb

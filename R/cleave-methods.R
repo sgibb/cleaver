@@ -1,4 +1,4 @@
-## Copyright 2013 Sebastian Gibb
+## Copyright 2013-2014 Sebastian Gibb
 ## <mail@sebastiangibb.de>
 ##
 ## This is free software: you can redistribute it and/or modify
@@ -15,20 +15,26 @@
 
 setMethod(f="cleave",
           signature=signature(x="character"),
-          definition=function(x, enzym="trypsin", missedCleavages=0) {
-  return(.cleave(x=x, enzym=enzym, missedCleavages=missedCleavages))
+          definition=function(x, enzym="trypsin", missedCleavages=0,
+                              unique=FALSE) {
+  return(.cleave(x=x, enzym=enzym, missedCleavages=missedCleavages,
+                 unique=unique))
 })
 
 setMethod(f="cleave",
           signature=signature(x="AAString"),
-          definition=function(x, enzym="trypsin", missedCleavages=0) {
-  return(cleave(AAStringSet(x), enzym=enzym, missedCleavages=missedCleavages))
+          definition=function(x, enzym="trypsin", missedCleavages=0,
+                              unique=FALSE) {
+  return(cleave(AAStringSet(x), enzym=enzym, missedCleavages=missedCleavages,
+                unique=unique))
 })
 
 setMethod(f="cleave",
           signature=signature(x="AAStringSet"),
-          definition=function(x, enzym="trypsin", missedCleavages=0) {
-  return(Biostrings::AAStringSetList(cleave(as.character(x), enzym=enzym, 
-                                            missedCleavages=missedCleavages)))
+          definition=function(x, enzym="trypsin", missedCleavages=0,
+                              unique=FALSE) {
+  return(Biostrings::AAStringSetList(cleave(as.character(x), enzym=enzym,
+                                            missedCleavages=missedCleavages,
+                                            unique=unique)))
 })
 
