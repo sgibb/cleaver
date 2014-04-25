@@ -1,4 +1,5 @@
 ^README\.md$
+^Makefile$
 ^\.git$
 ^\.gitignore$
 ^vignettes/figure$
