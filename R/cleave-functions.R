@@ -13,8 +13,9 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
-.cleave <- function(x, enzym="trypsin", missedCleavages=0,
-                    custom=NULL, unique=FALSE, use.names=TRUE) {
+.cleave <- function(x, enzym="trypsin", missedCleavages=0L,
+                    custom=NULL, unique=FALSE, use.names=TRUE,
+                    memoryThreshold=c(2L, 4L)*1024L^3L) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
@@ -22,20 +23,22 @@
     pattern <- rules[enzym]
     exception <- exceptions[enzym]
   } else {
-    if(!length(custom) %in% c(1, 2)) {
+    if(!length(custom) %in% c(1L, 2L)) {
       stop(sQuote("custom"), " has to be of length 1 or 2!")
     }
     if (!is.character(custom)) {
       stop(sQuote("custom"), " has to be of type ", sQuote("character"), "!")
     }
-    pattern <- custom[1]
-    exception <- custom[2]
+    pattern <- custom[1L]
+    exception <- custom[2L]
   }
 
   pos <- .cleavePos(x, pattern=pattern, exception=exception)
 
+  .testMemoryUsage(pos, missedCleavages, memoryThreshold)
+
   peptides <- mapply(function(y, p) {
-    if (any(missedCleavages > 0)) {
+    if (any(missedCleavages > 0L)) {
       .pep <- .peptides(x=y, pos=p, missedCleavages=missedCleavages)
     } else {
       .pep <- .substrings(x=y, pos=p)
@@ -60,7 +63,7 @@
 
 .peptides <- function(x, pos, missedCleavages) {
   .unlist(lapply(missedCleavages, function(m) {
-    if (m == 0) {
+    if (m == 0L) {
       .substrings(x=x, pos=pos)
     } else if (m < length(pos)) {
       .digest(x=x, pos=pos, missedCleavages=m)

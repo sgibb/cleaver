@@ -7,13 +7,16 @@
 \title{Cleavage of polypeptide sequences}
 \usage{
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
-                             custom = NULL, unique = FALSE)
+                             custom = NULL, unique = FALSE,
+                             memoryThreshold = c(2L, 4L)*1024L^3L)
 
 \S4method{cleave}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
-                            custom = NULL, unique = FALSE)
+                            custom = NULL, unique = FALSE,
+                            memoryThreshold = c(2L, 4L)*1024L^3L)
 
 \S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
-                               custom = NULL, unique = FALSE)
+                               custom = NULL, unique = FALSE,
+                               memoryThreshold = c(2L, 4L)*1024L^3L)
 }
 \arguments{
   \item{x}{polypeptide sequences.}
@@ -31,6 +34,13 @@
 
   \item{unique}{\code{logical}, if \code{TRUE} all duplicated cleavage products
     per peptide are removed.}
+
+  \item{memoryThreshold}{\code{numeric}, of length 2. \code{cleave} guesses
+    the memory usage of the cleavage result. If the guessed memory usage is
+    above \code{memoryThreshold[1]} (default: 2 GiB) or above
+    \code{memoryThreshold[2]} (default: 4 GiB) a warning respectively an error
+    is thrown. This test is only used if there is any \code{missedCleavages}
+    above 0. You should think twice before you change these thresholds.}
 }
 \value{
   a \code{list} of splitted polypeptides if input \code{x} was a
