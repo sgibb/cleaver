@@ -49,3 +49,22 @@ test_that("cleave missedCleavages > 1", {
                trypsinUniqueMissed02)
 })
 
+test_that("cleave custom rules", {
+  peptides <- c(
+    "enob"="SITKIKAREILD")
+  custom1 <- list(
+    "enob"=c("SITK", "IK", "AREILD"))
+  custom2 <- list(
+    "enob"=c("SITK", "IKAREILD"))
+  custom3 <- list(
+    "enob"=c("SI", "TK", "I", "K", "AREI", "LD"))
+
+  expect_error(cleave(peptides, custom=LETTERS[1:4]),
+               "has to be of length 1 or 2")
+  expect_error(cleave(peptides, custom=1:2), "has to be of type .*character.*")
+
+  expect_equal(cleave(peptides, custom="K"), custom1)
+  expect_equal(cleave(peptides, custom=c("K", "KA")), custom2)
+  expect_equal(cleave(peptides, custom="[KI]"), custom3)
+})
+
