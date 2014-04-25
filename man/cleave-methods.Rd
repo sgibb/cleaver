@@ -7,13 +7,13 @@
 \title{Cleavage of polypeptide sequences}
 \usage{
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
-                             unique = FALSE)
+                             custom = NULL, unique = FALSE)
 
 \S4method{cleave}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
-                            unique = FALSE)
+                            custom = NULL, unique = FALSE)
 
 \S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
-                               unique = FALSE)
+                               custom = NULL, unique = FALSE)
 }
 \arguments{
   \item{x}{polypeptide sequences.}
@@ -22,6 +22,12 @@
 
   \item{missedCleavages}{\code{numeric}, number of missed
   cleavages.}
+
+  \item{custom}{\code{character}, of length 1 or 2. Could be used to define own
+    cleaveage rules. The first element would be the pattern and the optional
+    second element would be an exception (non-cleavage) pattern. Perl-like
+    regular expressions are supported, see \code{\link[base]{gregexpr}} for
+    details. If \code{custom} is set the \code{enzym} is ignored.}
 
   \item{unique}{\code{logical}, if \code{TRUE} all duplicated cleavage products
     per peptide are removed.}
@@ -202,9 +208,20 @@ cleave(enob, "trypsin", missedCleavages=0:2, unique=TRUE)
 # $SITKIKAREILD
 # [1] "SITK"     "IK"       "AR"       "EILD"     "AREILD"   "IKAR"
 # [7] "SITKIK"   "IKAREILD" "SITKIKAR"
+
+## define own cleavage rule: cleave at K
+cleave(enob, custom="K")
+# $SITKIKAREILD
+# [1] "SITK"   "IK"     "AREILD"
+
+## define own cleavage rule: cleave at K but not if followed by A
+cleave(enob, custom=c("K", "KA"))
+# $SITKIKAREILD
+# [1] "SITK"     "IKAREILD"
+
 }
 \author{
-  Sebastian Gibb
+  Sebastian Gibb <mail@sebastiangibb.de>
 }
 \references{
   Gasteiger E., Hoogland C., Gattiker A., Duvaud S.,

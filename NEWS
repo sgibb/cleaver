@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.3.1 [2014-04-25]:
+- Add "custom" argument to allow the user defining own cleavage rules.
+
 Version 1.1.8 [2014-03-26]:
 - Fix missedCleavages>1.
 - Add argument "unique".
