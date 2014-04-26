@@ -14,8 +14,7 @@
 ## See <http://www.gnu.org/licenses/>
 
 .cleave <- function(x, enzym="trypsin", missedCleavages=0L,
-                    custom=NULL, unique=FALSE, use.names=TRUE,
-                    memoryThreshold=c(2L, 4L)*1024L^3L) {
+                    custom=NULL, unique=FALSE, use.names=TRUE) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
@@ -35,49 +34,35 @@
 
   pos <- .cleavePos(x, pattern=pattern, exception=exception)
 
-  .testMemoryUsage(pos, missedCleavages, memoryThreshold)
-
   peptides <- mapply(function(y, p) {
-    if (any(missedCleavages > 0L)) {
-      .pep <- .peptides(x=y, pos=p, missedCleavages=missedCleavages)
-    } else {
-      .pep <- .substrings(x=y, pos=p)
-    }
-    if (unique) {
-      unique(.pep)
-    } else {
-      .pep
-    }
+    pStart <- c(1L, p+1L)
+    pEnd <- c(pStart[-1L]-1L, nchar(y))
+    substring(y, pStart, pEnd)
   }, y=x, p=pos, SIMPLIFY=FALSE)
 
-  if (use.names) {
-    if (is.null(names(x))) {
-      names(peptides) <- x
-    } else {
-      names(peptides) <- names(x)
+  if (any(missedCleavages != 0L)) {
+    missedCleavages <- missedCleavages+1L
+    peptides <- lapply(peptides, function(p) {
+      n <- length(p)
+      idx <- 1L:n
+      p <- .unlist(lapply(missedCleavages, function(m) {
+        if (m != 1L && n >= m) {
+          comb <- embed(idx, m)
+          comb <- comb[, ncol(comb):1L, drop=FALSE]
+          p <- apply(comb, 1L, function(i){paste0(p[i], collapse="")})
+        }
+        if (unique) {
+          p <- unique(p)
+        }
+        p
+      }))
+      p
+    })
+  } else {
+    if (unique) {
+      peptides <- lapply(peptides, unique)
     }
   }
-
-  peptides
-}
-
-.peptides <- function(x, pos, missedCleavages) {
-  .unlist(lapply(missedCleavages, function(m) {
-    if (m == 0L) {
-      .substrings(x=x, pos=pos)
-    } else if (m < length(pos)) {
-      .digest(x=x, pos=pos, missedCleavages=m)
-    } else {
-      x
-    }
-  }))
-}
-
-.digest <- function(x, pos, missedCleavages) {
-  n <- length(pos)
-  cb <- combn(n, n-missedCleavages)
-  cb[] <- pos[cb]
-  cb <- t(cb)
-  .substrings.matrix(x=x, pos=cb)
+  return(peptides)
 }
 
