@@ -50,6 +50,8 @@
           comb <- embed(idx, m)
           comb <- comb[, ncol(comb):1L, drop=FALSE]
           p <- apply(comb, 1L, function(i){paste0(p[i], collapse="")})
+        } else if (n < m) {
+          p <- character()
         }
         if (unique) {
           p <- unique(p)
