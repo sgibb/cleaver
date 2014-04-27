@@ -31,7 +31,7 @@
 }
 
 .substrings <- function(x, pos) {
-  pStart <- c(1, pos+1)
+  pStart <- c(1L, pos+1L)
   pEnd <- c(pos, nchar(x))
   substring(x, pStart, pEnd)
 }
