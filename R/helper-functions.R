@@ -30,7 +30,7 @@
   lapply(rx, function(x)as.vector(x[x > 0L]))
 }
 
-.substrings <- function(x, pos) {
+.substring <- function(x, pos) {
   pStart <- c(1L, pos+1L)
   pEnd <- c(pos, nchar(x))
   substring(x, pStart, pEnd)

@@ -34,11 +34,7 @@
 
   pos <- .cleavePos(x, pattern=pattern, exception=exception)
 
-  peptides <- mapply(function(y, p) {
-    pStart <- c(1L, p+1L)
-    pEnd <- c(pStart[-1L]-1L, nchar(y))
-    substring(y, pStart, pEnd)
-  }, y=x, p=pos, SIMPLIFY=FALSE)
+  peptides <- mapply(.substring, x=x, pos=pos, SIMPLIFY=FALSE)
 
   if (any(missedCleavages != 0L)) {
     missedCleavages <- missedCleavages+1L
