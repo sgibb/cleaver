@@ -47,13 +47,17 @@
           comb <- comb[, ncol(comb):1L, drop=FALSE]
           p <- apply(comb, 1L, function(i){paste0(p[i], collapse="")})
         } else if (n < m) {
-          p <- character()
-        }
-        if (unique) {
-          p <- unique(p)
+          if (any(missedCleavages < m)) {
+            p <- character()
+          } else {
+            p <- paste0(p, collapse="")
+          }
         }
         p
       }))
+      if (unique) {
+        p <- unique(p)
+      }
       p
     })
   } else {
