@@ -1,6 +1,14 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.3.3 [2014-04-28]:
+- Avoid duplicated digest of peptides results in a hugh speed improvement and a
+  hugh memory reduction (removes fix from 1.1.8 and partly reintroduces original
+  algorithm).
+- Remove memory test and "memoryThreshold" argument (fails on different
+  platforms and is not important anymore using the "new" cleavage algorithm).
+- Change default of "unique" argument to "unique=TRUE".
+
 Version 1.3.2 [2014-04-25]:
 - Introduce simple memory test and "memoryThreshold" argument to avoid the
   calculation of ridiculous high numbers of "missedCleavages" and peptide

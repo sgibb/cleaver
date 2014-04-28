@@ -27,59 +27,16 @@
 
 .rxPos <- function(x, pattern) {
   rx <- gregexpr(pattern=pattern, text=x, perl=TRUE)
-  lapply(rx, function(x)as.vector(x[x > 0]))
+  lapply(rx, function(x)as.vector(x[x > 0L]))
 }
 
-.substrings <- function(x, pos) {
-  pStart <- c(1, pos+1)
+.substring <- function(x, pos) {
+  pStart <- c(1L, pos+1L)
   pEnd <- c(pos, nchar(x))
-  substring(x, pStart, pEnd)
-}
-
-.substrings.matrix <- function(x, pos) {
-  pStart <- cbind(1, pos+1)
-  pEnd <- cbind(pos, nchar(x))
   substring(x, pStart, pEnd)
 }
 
 .unlist <- function(x) {
   unlist(x=x, recursive=FALSE, use.names=FALSE)
-}
-
-.formatMemoryUsage <- function(x) {
-  iec <- c("B", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB")
-  l <- trunc(log(x)/log(1024L))
-  i <- pmin(l+1L, 9L)
-
-  return(paste(round(x/(1024L^l), digits=3L), iec[i]))
-}
-
-.testMemoryUsage <- function(pos, missedCleavages, memoryThreshold) {
-  ## estimate memory usage if missedCleavages >= 1
-  if (any(missedCleavages > 0L)) {
-    n <- sapply(pos, length)
-    ncomb <- sum(sapply(missedCleavages+1L, choose, n=n))
-
-    ## roughly estimate memory size (we know it is not correct; R allocates
-    ## memory for characters in chunks
-    ## (object.size(character(1L)) == object.size(character(2L))) and
-    ## we also ignore the memory usage of the list)
-    memory <- ncomb*object.size(character(1L))
-
-    level <- sum(memory > memoryThreshold)
-
-    if (level) {
-      msg <- paste0("You ask for ", max(missedCleavages), " missing cleavages.",
-                    " That will result in ", ncomb, " peptides and will use ",
-                    "nearly ", .formatMemoryUsage(memory), " of your memory. ",
-                    "Please look at ", sQuote("?cleave"), ".")
-      if (level == 1L) {
-        warning(msg, immediate.=TRUE)
-      } else {
-        stop(msg)
-      }
-    }
-  }
-  return(NULL)
 }
 

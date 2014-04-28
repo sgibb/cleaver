@@ -7,16 +7,13 @@
 \title{Cleavage of polypeptide sequences}
 \usage{
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
-                             custom = NULL, unique = FALSE,
-                             memoryThreshold = c(2L, 4L)*1024L^3L)
+                             custom = NULL, unique = TRUE)
 
 \S4method{cleave}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
-                            custom = NULL, unique = FALSE,
-                            memoryThreshold = c(2L, 4L)*1024L^3L)
+                            custom = NULL, unique = TRUE)
 
 \S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
-                               custom = NULL, unique = FALSE,
-                               memoryThreshold = c(2L, 4L)*1024L^3L)
+                               custom = NULL, unique = TRUE)
 }
 \arguments{
   \item{x}{polypeptide sequences.}
@@ -34,13 +31,6 @@
 
   \item{unique}{\code{logical}, if \code{TRUE} all duplicated cleavage products
     per peptide are removed.}
-
-  \item{memoryThreshold}{\code{numeric}, of length 2. \code{cleave} guesses
-    the memory usage of the cleavage result. If the guessed memory usage is
-    above \code{memoryThreshold[1]} (default: 2 GiB) or above
-    \code{memoryThreshold[2]} (default: 4 GiB) a warning respectively an error
-    is thrown. This test is only used if there is any \code{missedCleavages}
-    above 0. You should think twice before you change these thresholds.}
 }
 \value{
   a \code{list} of splitted polypeptides if input \code{x} was a
@@ -197,7 +187,7 @@ gaju <- AAStringSet("LAAGKVEDSD")
 
 cleave(gaju)
 # AAStringSetList of length 1
-# [["LAAGKVEDSD"]] LAAGK VEDSD LAAGKVEDSD
+# [["LAAGKVEDSD"]] LAAGK VEDSD
 
 
 ## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)
@@ -205,19 +195,12 @@ enob <- "SITKIKAREILD"
 
 cleave(enob, "trypsin", missedCleavages=2)
 # $SITKIKAREILD
-# [1] "SITK"     "IKAREILD" "SITKIK"   "AREILD"   "SITKIKAR" "EILD"
+# [1] "SITKIKAR" "IKAREILD"
 
 cleave(enob, "trypsin", missedCleavages=0:2)
 # $SITKIKAREILD
-#  [1] "SITK"     "IK"       "AR"       "EILD"     "SITK"     "IK"
-#  [7] "AREILD"   "SITK"     "IKAR"     "EILD"     "SITKIK"   "AR"
-# [13] "EILD"     "SITK"     "IKAREILD" "SITKIK"   "AREILD"   "SITKIKAR"
-# [19] "EILD"
-
-cleave(enob, "trypsin", missedCleavages=0:2, unique=TRUE)
-# $SITKIKAREILD
-# [1] "SITK"     "IK"       "AR"       "EILD"     "AREILD"   "IKAR"
-# [7] "SITKIK"   "IKAREILD" "SITKIKAR"
+# [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"
+# [7] "AREILD"   "SITKIKAR" "IKAREILD"
 
 ## define own cleavage rule: cleave at K
 cleave(enob, custom="K")
@@ -225,7 +208,7 @@ cleave(enob, custom="K")
 # [1] "SITK"   "IK"     "AREILD"
 
 ## define own cleavage rule: cleave at K but not if followed by A
-cleave(enob, custom=c("K", "KA"))
+cleave(enob, custom=c("K", "K(?=A)"))
 # $SITKIKAREILD
 # [1] "SITK"     "IKAREILD"
 
