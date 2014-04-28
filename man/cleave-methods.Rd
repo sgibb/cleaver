@@ -7,13 +7,13 @@
 \title{Cleavage of polypeptide sequences}
 \usage{
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
-                             custom = NULL, unique = FALSE)
+                             custom = NULL, unique = TRUE)
 
 \S4method{cleave}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
-                            custom = NULL, unique = FALSE)
+                            custom = NULL, unique = TRUE)
 
 \S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
-                               custom = NULL, unique = FALSE)
+                               custom = NULL, unique = TRUE)
 }
 \arguments{
   \item{x}{polypeptide sequences.}

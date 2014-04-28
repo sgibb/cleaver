@@ -14,7 +14,7 @@
 ## See <http://www.gnu.org/licenses/>
 
 .cleave <- function(x, enzym="trypsin", missedCleavages=0L,
-                    custom=NULL, unique=FALSE, use.names=TRUE) {
+                    custom=NULL, unique=TRUE, use.names=TRUE) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
