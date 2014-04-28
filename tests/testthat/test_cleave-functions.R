@@ -21,32 +21,22 @@ test_that("cleave", {
   expect_equal(cleave(peptides, "trypsin", missedCleavages=0:1),
                trypsinMissed01)
   expect_equal(cleave(peptides, "pepsin"), pepsin)
+  expect_equal(cleave("AKAKBKCK", unique=TRUE)[[1]], c("AK", "BK", "CK"))
 })
 
 test_that("cleave missedCleavages > 1", {
   peptides <- c(
     "enob"="SITKIKAREILD")
   trypsinMissed2 <- list(
-    "enob"=c("SITK", "SITKIK", "SITKIKAR",
-             "IKAREILD","AREILD", "EILD"))
+    "enob"=c("SITKIKAR", "IKAREILD"))
   trypsinMissed02 <- list(
     "enob"=c("SITK", "IK", "AR", "EILD", # 0
-             "SITK", "SITK", "SITKIK",   # 1
-             "IK", "IKAR",  "AR",
-             "AREILD", "EILD", "EILD",
-             "SITK", "SITKIK",          # 2
-             "SITKIKAR", "IKAREILD",
-             "AREILD", "EILD"))
-  trypsinUniqueMissed02 <- list(
-    "enob"=c("SITK", "IK", "AR", "EILD",
-             "SITKIK", "IKAR", "AREILD",
-             "SITKIKAR", "IKAREILD"))
+             "SITKIK", "IKAR", "AREILD", # 1
+             "SITKIKAR", "IKAREILD"))    # 2
 
   expect_equal(cleave(peptides, "trypsin", missedCleavages=2), trypsinMissed2)
   expect_equal(cleave(peptides, "trypsin", missedCleavages=0:2),
                trypsinMissed02)
-  expect_equal(cleave(peptides, "trypsin", missedCleavages=0:2, unique=TRUE),
-               trypsinUniqueMissed02)
 })
 
 test_that("cleave custom rules", {

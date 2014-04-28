@@ -16,30 +16,26 @@
 setMethod(f="cleave",
           signature=signature(x="character"),
           definition=function(x, enzym="trypsin", missedCleavages=0,
-                              custom=NULL, unique=FALSE,
-                              memoryThreshold=c(2L, 4L)*1024L^3L) {
+                              custom=NULL, unique=TRUE) {
   return(.cleave(x=x, enzym=enzym, missedCleavages=missedCleavages,
-                 custom=custom, unique=unique, memoryThreshold=memoryThreshold))
+                 custom=custom, unique=unique))
 })
 
 setMethod(f="cleave",
           signature=signature(x="AAString"),
           definition=function(x, enzym="trypsin", missedCleavages=0,
-                              custom=NULL, unique=FALSE,
-                              memoryThreshold=c(2L, 4L)*1024L^3L) {
+                              custom=NULL, unique=TRUE) {
   return(cleave(AAStringSet(x), enzym=enzym, missedCleavages=missedCleavages,
-                custom=custom, unique=unique, memoryThreshold=memoryThreshold))
+                custom=custom, unique=unique))
 })
 
 setMethod(f="cleave",
           signature=signature(x="AAStringSet"),
           definition=function(x, enzym="trypsin", missedCleavages=0,
-                              custom=NULL, unique=FALSE,
-                              memoryThreshold=c(2L, 4L)*1024L^3L) {
+                              custom=NULL, unique=TRUE) {
   return(Biostrings::AAStringSetList(cleave(as.character(x), enzym=enzym,
                                             missedCleavages=missedCleavages,
                                             custom=custom,
-                                            unique=unique,
-                                            memoryThreshold=memoryThreshold)))
+                                            unique=unique)))
 })
 
