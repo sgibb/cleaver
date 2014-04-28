@@ -197,9 +197,6 @@ cleave(enob, "trypsin", missedCleavages=2)
 # $SITKIKAREILD
 # [1] "SITKIKAR" "IKAREILD"
 
-# $SITKIKAREILD
-# [1] "SITK"     "IKAREILD" "SITKIK"   "AREILD"   "SITKIKAR" "EILD"
-
 cleave(enob, "trypsin", missedCleavages=0:2)
 # $SITKIKAREILD
 # [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"
@@ -211,7 +208,7 @@ cleave(enob, custom="K")
 # [1] "SITK"   "IK"     "AREILD"
 
 ## define own cleavage rule: cleave at K but not if followed by A
-cleave(enob, custom=c("K", "KA"))
+cleave(enob, custom=c("K", "K(?=A)"))
 # $SITKIKAREILD
 # [1] "SITK"     "IKAREILD"
 
