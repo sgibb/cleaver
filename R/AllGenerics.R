@@ -13,6 +13,10 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
+if (is.null(getGeneric("cleavageSites"))) {
+  setGeneric("cleavageSites", function(x, ...)standardGeneric("cleavageSites"))
+}
+
 if (is.null(getGeneric("cleave"))) {
   setGeneric("cleave", function(x, ...)standardGeneric("cleave"))
 }

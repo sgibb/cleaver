@@ -1,11 +1,21 @@
 \name{cleave}
 \docType{methods}
+\alias{cleavageSites}
+\alias{cleavageSites,character-method}
+\alias{cleavageSites,AAString-method}
+\alias{cleavageSites,AAStringSet-method}
 \alias{cleave}
 \alias{cleave,character-method}
 \alias{cleave,AAString-method}
 \alias{cleave,AAStringSet-method}
 \title{Cleavage of polypeptide sequences}
 \usage{
+\S4method{cleavageSites}{character}(x, enzym = "trypsin", custom = NULL)
+
+\S4method{cleavageSites}{AAString}(x, enzym = "trypsin", custom = NULL)
+
+\S4method{cleavageSites}{AAStringSet}(x, enzym = "trypsin", custom = NULL)
+
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
                              custom = NULL, unique = TRUE)
 
@@ -33,12 +43,27 @@
     per peptide are removed.}
 }
 \value{
-  a \code{list} of splitted polypeptides if input \code{x} was a
-  \code{character} or a \code{\linkS4class{AAStringSetList}} if input
-  \code{x} was an \code{\linkS4class{AAStringSet}}).
+  \describe{
+    \item{\code{cleavageSites}}{
+      returns a \code{list} of the same length as \code{x}. Each element
+      contains an \code{integer} vector with the positions after that the enzym
+      would cut the polypeptide.
+    }
+    \item{\code{cleave}}{
+      If \code{x} is a \code{character} it returns a \code{list} of the same
+      length as \code{x}. Each element contains a \code{character} vector with
+      the corresponding cleavage products of the polypeptides.
+      If \code{x} is an \code{\linkS4class{AAString}} or an
+      \code{\linkS4class{AAStringSet}} it returns a
+      \code{\linkS4class{AAStringSetList}} of the same length as \code{x}.
+      Each element contains a \code{\linkS4class{AAString}} with
+      the corresponding cleavage products of the polypeptides.
+    }
+  }
 }
 \description{
-  This function cleaves polypeptide sequences.
+  This functions cleave polypeptide sequences. Use \code{cleavageSites} to find
+  the cleavage sites and \code{cleave} to get the cleavage products.
 }
 \details{
   The cleavage rules are taken from:
@@ -164,6 +189,10 @@ library("cleaver")
 ## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)
 gaju <- "LAAGKVEDSD"
 
+cleavageSites(gaju, "trypsin")
+# $LAAGKVEDSD
+# [1] 5
+
 cleave(gaju, "trypsin")
 # $LAAGKVEDSD
 # [1] "LAAGK" "VEDSD"
@@ -192,6 +221,14 @@ cleave(gaju)
 
 ## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)
 enob <- "SITKIKAREILD"
+
+cleavageSites(enob, "trypsin")
+# $SITKIKAREILD
+# [1] 4 6 8
+
+cleave(enob, "trypsin")
+# $SITKIKAREILD
+# [1] "SITK" "IK"   "AR"   "EILD"
 
 cleave(enob, "trypsin", missedCleavages=2)
 # $SITKIKAREILD

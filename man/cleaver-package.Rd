@@ -4,7 +4,8 @@
 \title{Cleavage of polypeptide sequences}
 \description{
   This package cleaves polypeptide sequences. It provides
-  only one function: \code{\link[cleaver]{cleave}}
+  only two functions: \code{\link[cleaver]{cleavageSites}} and
+  \code{\link[cleaver]{cleave}}.
 }
 \details{
   The cleavage rules are taken from:
@@ -30,7 +31,7 @@
   \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 }
 \seealso{
-  \code{\link[cleaver]{cleave}}
+  \code{\link[cleaver]{cleavageSites}} and \code{\link[cleaver]{cleave}}
 }
 \keyword{package}
 
