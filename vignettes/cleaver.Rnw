@@ -59,7 +59,11 @@ help("cleave")
 
 Cleaving of \emph{Gastric juice peptide 1 (P01358)} using \emph{Trypsin}:
 <<>>=
+## cleave it
 cleave("LAAGKVEDSD", enzym="trypsin")
+
+## get only cleavage sites
+cleavageSites("LAAGKVEDSD", enzym="trypsin")
 @
 
 Sometimes cleavage is not perfect and the enzym miss some cleavage positions:

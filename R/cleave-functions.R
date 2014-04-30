@@ -14,25 +14,9 @@
 ## See <http://www.gnu.org/licenses/>
 
 .cleave <- function(x, enzym="trypsin", missedCleavages=0L,
-                    custom=NULL, unique=TRUE, use.names=TRUE) {
+                    custom=NULL, unique=TRUE) {
 
-  enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
-
-  if (is.null(custom)) {
-    pattern <- rules[enzym]
-    exception <- exceptions[enzym]
-  } else {
-    if(!length(custom) %in% c(1L, 2L)) {
-      stop(sQuote("custom"), " has to be of length 1 or 2!")
-    }
-    if (!is.character(custom)) {
-      stop(sQuote("custom"), " has to be of type ", sQuote("character"), "!")
-    }
-    pattern <- custom[1L]
-    exception <- custom[2L]
-  }
-
-  pos <- .cleavePos(x, pattern=pattern, exception=exception)
+  pos <- .cleavageSites(x=x, enzym=enzym, custom=custom)
 
   peptides <- mapply(.substring, x=x, pos=pos, SIMPLIFY=FALSE)
 
