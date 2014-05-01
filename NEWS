@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.3.5 [2014-04-30]:
+- Fix defintion of cleavageSites,AAStringSet.
+
 Version 1.3.4 [2014-04-30]:
 - Add cleavageSites method for character, AAString and AAStringSet.
 
