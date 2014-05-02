@@ -16,38 +16,13 @@
 .cleave <- function(x, enzym="trypsin", missedCleavages=0L,
                     custom=NULL, unique=TRUE) {
 
-  pos <- .cleavageSites(x=x, enzym=enzym, custom=custom)
+  pos <- .cleavageSites(x=x, enzym=enzym, custom=custom, missedCleavages)
 
-  peptides <- mapply(.substring, x=x, pos=pos, SIMPLIFY=FALSE)
+  peptides <- mapply(function(xx, pp)substring(xx, pp[,1L], pp[,2L]),
+                     xx=x, pp=pos, SIMPLIFY=FALSE, USE.NAMES=FALSE)
 
-  if (any(missedCleavages != 0L)) {
-    missedCleavages <- missedCleavages+1L
-    peptides <- lapply(peptides, function(p) {
-      n <- length(p)
-      idx <- 1L:n
-      p <- .unlist(lapply(missedCleavages, function(m) {
-        if (m != 1L && n >= m) {
-          comb <- embed(idx, m)
-          comb <- comb[, ncol(comb):1L, drop=FALSE]
-          p <- apply(comb, 1L, function(i){paste0(p[i], collapse="")})
-        } else if (n < m) {
-          if (any(missedCleavages < m)) {
-            p <- character()
-          } else {
-            p <- paste0(p, collapse="")
-          }
-        }
-        p
-      }))
-      if (unique) {
-        p <- unique(p)
-      }
-      p
-    })
-  } else {
-    if (unique) {
-      peptides <- lapply(peptides, unique)
-    }
+  if (unique) {
+    peptides <- lapply(peptides, unique)
   }
   return(peptides)
 }
