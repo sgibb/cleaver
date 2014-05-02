@@ -54,10 +54,13 @@
       length as \code{x}. Each element contains a \code{character} vector with
       the corresponding cleavage products of the polypeptides.
       If \code{x} is an \code{\linkS4class{AAString}} or an
-      \code{\linkS4class{AAStringSet}} it returns a
-      \code{\linkS4class{AAStringSetList}} of the same length as \code{x}.
-      Each element contains a \code{\linkS4class{AAString}} with
-      the corresponding cleavage products of the polypeptides.
+      \code{\linkS4class{AAStringSet}} it returns an
+      \code{\linkS4class{AAStringSet}} or an
+      \code{\linkS4class{AAStringSetList}} instance of the same length as
+      \code{x}.
+      Each element contains an
+      \code{\linkS4class{AAString}} or an \code{\linkS4class{AAStringSet}}
+      instance with the corresponding cleavage products of the polypeptides.
     }
   }
 }
