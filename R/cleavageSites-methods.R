@@ -28,7 +28,6 @@ setMethod(f="cleavageSites",
 setMethod(f="cleavageSites",
           signature=signature(x="AAStringSet"),
           definition=function(x, enzym="trypsin", custom=NULL) {
-  return(Biostrings::AAStringSetList(cleavageSites(as.character(x), enzym=enzym,
-                                                   custom=custom)))
+  return(cleavageSites(as.character(x), enzym=enzym, custom=custom))
 })
 
