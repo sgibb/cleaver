@@ -1,6 +1,6 @@
 context("rules")
 
-test_that(".cleavePos", {
+test_that(".cleavagePos", {
   peptides <- c(
     gaju="LAAGKVEDSD",
     ins=paste("MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAED",
@@ -288,8 +288,8 @@ test_that(".cleavePos", {
 
   for (i in seq(along=cleavageResults)) {
     enzyme <- names(cleavageResults)[i]
-    expect_equal(cleaver:::.cleavePos(peptides, cleaver:::rules[enzyme],
-                                      cleaver:::exceptions[enzyme]),
+    expect_equal(cleaver:::.cleavagePos(peptides, cleaver:::rules[enzyme],
+                                        cleaver:::exceptions[enzyme]),
                  unname(cleavageResults[[i]]))
 
   }

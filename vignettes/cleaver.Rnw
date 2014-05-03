@@ -61,7 +61,8 @@ Cleaving of \emph{Gastric juice peptide 1 (P01358)} using \emph{Trypsin}:
 <<>>=
 ## cleave it
 cleave("LAAGKVEDSD", enzym="trypsin")
-
+## get the cleavage ranges
+cleavageRanges("LAAGKVEDSD", enzym="trypsin")
 ## get only cleavage sites
 cleavageSites("LAAGKVEDSD", enzym="trypsin")
 @
@@ -70,18 +71,21 @@ Sometimes cleavage is not perfect and the enzym miss some cleavage positions:
 <<>>=
 ## miss one cleavage position
 cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=1)
-
+cleavageRanges("LAAGKVEDSD", enzym="trypsin", missedCleavages=1)
 ## miss zero or one cleavage positions
 cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
+cleavageRanges("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
 @
 
 Combine \cleaver{} and the \Biocpkg{Biostrings} R package\citep{Biostrings}:
 <<>>=
 ## create AAStringSet object
-gaju <- AAStringSet("LAAGKVEDSD")
+p <- AAStringSet(c(gaju="LAAGKVEDSD", pnm="AGEPKLDAGV"))
 
 ## cleave it
-cleave(gaju, enzym="trypsin")
+cleave(p, enzym="trypsin")
+cleavageRanges(p, enzym="trypsin")
+cleavageSites(p, enzym="trypsin")
 @
 
 

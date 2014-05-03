@@ -1,21 +1,19 @@
 \name{cleave}
 \docType{methods}
-\alias{cleavageSites}
-\alias{cleavageSites,character-method}
-\alias{cleavageSites,AAString-method}
-\alias{cleavageSites,AAStringSet-method}
 \alias{cleave}
 \alias{cleave,character-method}
 \alias{cleave,AAString-method}
 \alias{cleave,AAStringSet-method}
+\alias{cleavageRanges}
+\alias{cleavageRanges,character-method}
+\alias{cleavageRanges,AAString-method}
+\alias{cleavageRanges,AAStringSet-method}
+\alias{cleavageSites}
+\alias{cleavageSites,character-method}
+\alias{cleavageSites,AAString-method}
+\alias{cleavageSites,AAStringSet-method}
 \title{Cleavage of polypeptide sequences}
 \usage{
-\S4method{cleavageSites}{character}(x, enzym = "trypsin", custom = NULL)
-
-\S4method{cleavageSites}{AAString}(x, enzym = "trypsin", custom = NULL)
-
-\S4method{cleavageSites}{AAStringSet}(x, enzym = "trypsin", custom = NULL)
-
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
                              custom = NULL, unique = TRUE)
 
@@ -24,6 +22,21 @@
 
 \S4method{cleave}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
                                custom = NULL, unique = TRUE)
+
+\S4method{cleavageRanges}{character}(x, enzym = "trypsin", missedCleavages = 0,
+                                     custom = NULL)
+
+\S4method{cleavageRanges}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
+                                    custom = NULL)
+
+\S4method{cleavageRanges}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
+                                       custom = NULL)
+
+\S4method{cleavageSites}{character}(x, enzym = "trypsin", custom = NULL)
+
+\S4method{cleavageSites}{AAString}(x, enzym = "trypsin", custom = NULL)
+
+\S4method{cleavageSites}{AAStringSet}(x, enzym = "trypsin", custom = NULL)
 }
 \arguments{
   \item{x}{polypeptide sequences.}
@@ -44,26 +57,57 @@
 }
 \value{
   \describe{
-    \item{\code{cleavageSites}}{
-      returns a \code{list} of the same length as \code{x}. Each element
-      contains an \code{integer} vector with the positions after that the enzym
-      would cut the polypeptide.
-    }
     \item{\code{cleave}}{
       If \code{x} is a \code{character} it returns a \code{list} of the same
       length as \code{x}. Each element contains a \code{character} vector with
       the corresponding cleavage products of the polypeptides.
       If \code{x} is an \code{\linkS4class{AAString}} or an
-      \code{\linkS4class{AAStringSet}} it returns a
-      \code{\linkS4class{AAStringSetList}} of the same length as \code{x}.
-      Each element contains a \code{\linkS4class{AAString}} with
-      the corresponding cleavage products of the polypeptides.
+      \code{\linkS4class{AAStringSet}} an
+      \code{\linkS4class{AAStringSet}} or an
+      \code{\linkS4class{AAStringSetList}} instance of the same length as
+      \code{x} is returned.
+      Each element contains an
+      \code{\linkS4class{AAString}} or an \code{\linkS4class{AAStringSet}}
+      instance with the corresponding cleavage products of the polypeptides.
     }
+    \item{\code{cleavageRanges}}{
+      If \code{x} is a \code{character} it returns a \code{list} of the same
+      length as \code{x}. Each element contains a two-column \code{matrix} with
+      the start and end positions of the peptides.
+      If \code{x} is an \code{\linkS4class{AAString}} or an
+      \code{\linkS4class{AAStringSet}} instance an
+      \code{\linkS4class{IRanges}} or an \code{\linkS4class{IRangesList}} of the
+      same length as \code{x} is returned.
+    }
+    \item{\code{cleavageSites}}{
+      Returns a \code{list} of the same length as \code{x}. Each element
+      contains an \code{integer} vector with the cleavage positions.
+    }
+  }
+
+  Overview:
+
+  \tabular{llll}{
+    Input \tab \code{cleave} \tab \code{cleavageRanges}
+      \tab \code{cleavageSites} \cr
+
+    \code{character} \tab \code{list} of \code{character}
+      \tab \code{list} of \code{matrix}
+      \tab \code{list} of \code{integer} \cr
+
+    \code{\linkS4class{AAString}} \tab \code{\linkS4class{AAStringSet}}
+      \tab \code{\linkS4class{IRanges}}
+      \tab \code{list} of \code{integer} \cr
+
+    \code{\linkS4class{AAStringSet}} \tab \code{\linkS4class{AAStringSetList}}
+      \tab \code{\linkS4class{IRangesList}}
+      \tab \code{list} of \code{integer} \cr
   }
 }
 \description{
   This functions cleave polypeptide sequences. Use \code{cleavageSites} to find
-  the cleavage sites and \code{cleave} to get the cleavage products.
+  the cleavage sites, \code{cleavageRanges} to find the cleavage
+  ranges and \code{cleave} to get the cleavage products.
 }
 \details{
   The cleavage rules are taken from:
@@ -189,21 +233,40 @@ library("cleaver")
 ## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)
 gaju <- "LAAGKVEDSD"
 
-cleavageSites(gaju, "trypsin")
-# $LAAGKVEDSD
-# [1] 5
-
 cleave(gaju, "trypsin")
 # $LAAGKVEDSD
 # [1] "LAAGK" "VEDSD"
+
+cleavageRanges(gaju, "trypsin")
+# $LAAGKVEDSD
+#      start end
+# [1,]     1   5
+# [2,]     6  10
+
+cleavageSites(gaju, "trypsin")
+# $LAAGKVEDSD
+# [1] 5
 
 cleave(gaju, "trypsin", missedCleavages=1)
 # $LAAGKVEDSD
 # [1] "LAAGKVEDSD"
 
+cleavageRanges(gaju, "trypsin", missedCleavages=1)
+# $LAAGKVEDSD
+#      start end
+# [1,]     1  10
+
 cleave(gaju, "trypsin", missedCleavages=0:1)
 # $LAAGKVEDSD
 # [1] "LAAGK" "VEDSD" "LAAGKVEDSD"
+
+cleavageRanges(gaju, "trypsin", missedCleavages=0:1)
+# $LAAGKVEDSD
+#      start end
+# [1,]     1   5
+# [2,]     6  10
+# [3,]     1  10
+
 
 cleave(gaju, "pepsin")
 # $LAAGKVEDSD
@@ -221,10 +284,6 @@ cleave(gaju)
 
 ## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)
 enob <- "SITKIKAREILD"
-
-cleavageSites(enob, "trypsin")
-# $SITKIKAREILD
-# [1] 4 6 8
 
 cleave(enob, "trypsin")
 # $SITKIKAREILD
@@ -244,10 +303,27 @@ cleave(enob, custom="K")
 # $SITKIKAREILD
 # [1] "SITK"   "IK"     "AREILD"
 
+cleavageRanges(enob, custom="K")
+# $SITKIKAREILD
+#      start end
+# [1,]     1   4
+# [2,]     5   6
+# [3,]     7  12
+
 ## define own cleavage rule: cleave at K but not if followed by A
 cleave(enob, custom=c("K", "K(?=A)"))
 # $SITKIKAREILD
 # [1] "SITK"     "IKAREILD"
+
+cleavageRanges(enob, custom=c("K", "K(?=A)"))
+# $SITKIKAREILD
+#      start end
+# [1,]     1   4
+# [2,]     5  12
+
+cleavageSites(enob, custom=c("K", "K(?=A)"))
+# $SITKIKAREILD
+# [1] 4
 
 }
 \author{
@@ -264,7 +340,9 @@ cleave(enob, custom=c("K", "K(?=A)"))
 \seealso{
 \code{\linkS4class{AAString}},
 \code{\linkS4class{AAStringSet}},
-\code{\linkS4class{AAStringSetList}}
+\code{\linkS4class{AAStringSetList}},
+\code{\linkS4class{IRanges}},
+\code{\linkS4class{IRangesList}}
 }
 \keyword{methods}
 
