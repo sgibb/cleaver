@@ -10,11 +10,14 @@
 \alias{cleave,AAStringSet-method}
 \title{Cleavage of polypeptide sequences}
 \usage{
-\S4method{cleavageSites}{character}(x, enzym = "trypsin", custom = NULL)
+\S4method{cleavageSites}{character}(x, enzym = "trypsin", missedCleavages = 0,
+                                    custom = NULL)
 
-\S4method{cleavageSites}{AAString}(x, enzym = "trypsin", custom = NULL)
+\S4method{cleavageSites}{AAString}(x, enzym = "trypsin", missedCleavages = 0,
+                                   custom = NULL)
 
-\S4method{cleavageSites}{AAStringSet}(x, enzym = "trypsin", custom = NULL)
+\S4method{cleavageSites}{AAStringSet}(x, enzym = "trypsin", missedCleavages = 0,
+                                      custom = NULL)
 
 \S4method{cleave}{character}(x, enzym = "trypsin", missedCleavages = 0,
                              custom = NULL, unique = TRUE)
@@ -45,19 +48,23 @@
 \value{
   \describe{
     \item{\code{cleavageSites}}{
-      returns a \code{list} of the same length as \code{x}. Each element
-      contains an \code{integer} vector with the positions after that the enzym
-      would cut the polypeptide.
+      If \code{x} is a \code{character} it returns a \code{list} of the same
+      length as \code{x}. Each element contains a two-column \code{matrix} with
+      the start and end positions of the peptides.
+      If \code{x} is an \code{\linkS4class{AAString}} or an
+      \code{\linkS4class{AAStringSet}} instance an
+      \code{\linkS4class{IRanges}} or an \code{\linkS4class{IRangesList}} of the
+      same length as \code{x} is returned.
     }
     \item{\code{cleave}}{
       If \code{x} is a \code{character} it returns a \code{list} of the same
       length as \code{x}. Each element contains a \code{character} vector with
       the corresponding cleavage products of the polypeptides.
       If \code{x} is an \code{\linkS4class{AAString}} or an
-      \code{\linkS4class{AAStringSet}} it returns an
+      \code{\linkS4class{AAStringSet}} an
       \code{\linkS4class{AAStringSet}} or an
       \code{\linkS4class{AAStringSetList}} instance of the same length as
-      \code{x}.
+      \code{x} is returned.
       Each element contains an
       \code{\linkS4class{AAString}} or an \code{\linkS4class{AAStringSet}}
       instance with the corresponding cleavage products of the polypeptides.
@@ -194,15 +201,29 @@ gaju <- "LAAGKVEDSD"
 
 cleavageSites(gaju, "trypsin")
 # $LAAGKVEDSD
-# [1] 5
+#      start end
+# [1,]     1   5
+# [2,]     6  10
 
 cleave(gaju, "trypsin")
 # $LAAGKVEDSD
 # [1] "LAAGK" "VEDSD"
 
+cleavageSites(gaju, "trypsin", missedCleavages=1)
+# $LAAGKVEDSD
+#      start end
+# [1,]     1  10
+
 cleave(gaju, "trypsin", missedCleavages=1)
 # $LAAGKVEDSD
 # [1] "LAAGKVEDSD"
+
+cleavageSites(gaju, "trypsin", missedCleavages=0:1)
+# $LAAGKVEDSD
+#      start end
+# [1,]     1   5
+# [2,]     6  10
+# [3,]     1  10
 
 cleave(gaju, "trypsin", missedCleavages=0:1)
 # $LAAGKVEDSD
@@ -225,10 +246,6 @@ cleave(gaju)
 ## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)
 enob <- "SITKIKAREILD"
 
-cleavageSites(enob, "trypsin")
-# $SITKIKAREILD
-# [1] 4 6 8
-
 cleave(enob, "trypsin")
 # $SITKIKAREILD
 # [1] "SITK" "IK"   "AR"   "EILD"
@@ -243,11 +260,24 @@ cleave(enob, "trypsin", missedCleavages=0:2)
 # [7] "AREILD"   "SITKIKAR" "IKAREILD"
 
 ## define own cleavage rule: cleave at K
+cleavageSites(enob, custom="K")
+# $SITKIKAREILD
+#      start end
+# [1,]     1   4
+# [2,]     5   6
+# [3,]     7  12
+
 cleave(enob, custom="K")
 # $SITKIKAREILD
 # [1] "SITK"   "IK"     "AREILD"
 
 ## define own cleavage rule: cleave at K but not if followed by A
+cleavageSites(enob, custom=c("K", "K(?=A)"))
+# $SITKIKAREILD
+#      start end
+# [1,]     1   4
+# [2,]     5  12
+
 cleave(enob, custom=c("K", "K(?=A)"))
 # $SITKIKAREILD
 # [1] "SITK"     "IKAREILD"
@@ -267,7 +297,9 @@ cleave(enob, custom=c("K", "K(?=A)"))
 \seealso{
 \code{\linkS4class{AAString}},
 \code{\linkS4class{AAStringSet}},
-\code{\linkS4class{AAStringSetList}}
+\code{\linkS4class{AAStringSetList}},
+\code{\linkS4class{IRanges}},
+\code{\linkS4class{IRangesList}}
 }
 \keyword{methods}
 
