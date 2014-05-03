@@ -19,7 +19,7 @@
   pos <- .cleavageSites(x=x, enzym=enzym, custom=custom, missedCleavages)
 
   peptides <- mapply(function(xx, pp)substring(xx, pp[,1L], pp[,2L]),
-                     xx=x, pp=pos, SIMPLIFY=FALSE, USE.NAMES=FALSE)
+                     xx=x, pp=pos, SIMPLIFY=FALSE, USE.NAMES=TRUE)
 
   if (unique) {
     peptides <- lapply(peptides, unique)
