@@ -3,5 +3,6 @@ import(IRanges)
 importFrom(Biostrings, AAString,
                        AAStringSet,
                        AAStringSetList)
-exportMethods(cleavageSites)
-exportMethods(cleave)
+exportMethods(cleave,
+              cleavageRanges,
+              cleavageSites)

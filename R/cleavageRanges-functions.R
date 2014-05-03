@@ -1,4 +1,4 @@
-## Copyright 2013-2014 Sebastian Gibb
+## Copyright 2014 Sebastian Gibb
 ## <mail@sebastiangibb.de>
 ##
 ## This is free software: you can redistribute it and/or modify
@@ -13,17 +13,13 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
-.cleave <- function(x, enzym="trypsin", missedCleavages=0L,
-                    custom=NULL, unique=TRUE) {
+.cleavageRanges <- function(x, enzym="trypsin", custom=NULL,
+                           missedCleavages=0L) {
 
-  pos <- .cleavageRanges(x=x, enzym=enzym, custom=custom, missedCleavages)
+  sites <- .cleavageSites(x=x, enzym=enzym, custom=custom,
+                          missedCleavages=missedCleavages)
 
-  peptides <- mapply(function(xx, r)substring(xx, r[,1L], r[,2L]),
-                     xx=x, r=pos, SIMPLIFY=FALSE, USE.NAMES=TRUE)
-
-  if (unique) {
-    peptides <- lapply(peptides, unique)
-  }
-  return(peptides)
+  mapply(.pos, pos=sites, n=nchar(x), MoreArgs=list(m=missedCleavages),
+         SIMPLIFY=FALSE, USE.NAMES=TRUE)
 }
 

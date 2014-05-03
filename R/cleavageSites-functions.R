@@ -13,7 +13,8 @@
 ##
 ## See <http://www.gnu.org/licenses/>
 
-.cleavageSites <- function(x, enzym="trypsin", custom=NULL) {
+.cleavageSites <- function(x, enzym="trypsin", custom=NULL,
+                           missedCleavages=0L) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
@@ -36,6 +37,7 @@
   if (!length(nm)) {
     nm <- x
   }
-  return(setNames(.cleavePos(x, pattern=pattern, exception=exception), nm))
+  return(setNames(.cleavagePos(x, pattern=pattern, exception=exception,
+                               missedCleavages=missedCleavages), nm))
 }
 
