@@ -50,7 +50,7 @@
       pEnd <- n
     }
   }
-  matrix(c(pStart, pEnd), ncol=2L)
+  matrix(c(pStart, pEnd), ncol=2L, dimnames=list(c(), c("start", "end")))
 }
 
 .sequence <- function(nvec) {
