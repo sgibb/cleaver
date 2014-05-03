@@ -14,7 +14,7 @@
 ## See <http://www.gnu.org/licenses/>
 
 ## helper functions
-.cleavePos <- function(x, pattern, exception, missedCleavages) {
+.cleavagePos <- function(x, pattern, exception, missedCleavages) {
   pos <- .rxPos(x, pattern=pattern)
 
   if (!missing(exception) && !is.na(exception)) {
@@ -22,8 +22,7 @@
                   SIMPLIFY=FALSE)
   }
 
-  mapply(.pos, pos=pos, n=nchar(x), MoreArgs=list(m=missedCleavages),
-         SIMPLIFY=FALSE, USE.NAMES=FALSE)
+  pos
 }
 
 .rxPos <- function(x, pattern) {

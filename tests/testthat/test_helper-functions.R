@@ -5,7 +5,3 @@ test_that(".rxPos", {
                list(integer(), 7))
 })
 
-test_that(".substring", {
-  expect_equal(cleaver:::.substring("foobar", c(3, 5)), c("foo", "ba", "r"))
-})
-

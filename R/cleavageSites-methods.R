@@ -15,35 +15,23 @@
 
 setMethod(f="cleavageSites",
           signature=signature(x="character"),
-          definition=function(x, enzym="trypsin", custom=NULL,
-                              missedCleavages=0L) {
-  return(.cleavageSites(x=x,
-                        enzym=enzym,
-                        custom=custom,
-                        missedCleavages=missedCleavages))
+          definition=function(x, enzym="trypsin", custom=NULL) {
+  return(.cleavageSites(x=x, enzym=enzym, custom=custom))
 })
 
 setMethod(f="cleavageSites",
           signature=signature(x="AAString"),
-          definition=function(x, enzym="trypsin", custom=NULL,
-                              missedCleavages=0L) {
-  sites <- .cleavageSites(x=as.character(x),
-                          enzym=enzym,
-                          custom=custom,
-                          missedCleavages=missedCleavages)[[1L]]
-  return(IRanges(start=sites[, 1L], end=sites[, 2L]))
+          definition=function(x, enzym="trypsin", custom=NULL) {
+  return(.cleavageSites(x=as.character(x),
+                        enzym=enzym,
+                        custom=custom))
 })
 
 setMethod(f="cleavageSites",
           signature=signature(x="AAStringSet"),
-          definition=function(x, enzym="trypsin", custom=NULL,
-                              missedCleavages=0L) {
-  sites <- .cleavageSites(x=as.character(x),
-                          enzym=enzym,
-                          custom=custom,
-                          missedCleavages=missedCleavages)
-  return(IRangesList(lapply(sites, function(s) {
-    IRanges(start=s[, 1L], end=s[, 2L])
-  })))
+          definition=function(x, enzym="trypsin", custom=NULL) {
+  return(.cleavageSites(x=as.character(x),
+                        enzym=enzym,
+                        custom=custom))
 })
 
