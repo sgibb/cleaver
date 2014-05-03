@@ -84,10 +84,30 @@
       contains an \code{integer} vector with the cleavage positions.
     }
   }
+
+  Overview:
+
+  \tabular{llll}{
+    Input \tab \code{cleave} \tab \code{cleavageRanges}
+      \tab \code{cleavageSites} \cr
+
+    \code{character} \tab \code{list} of \code{character}
+      \tab \code{list} of \code{matrix}
+      \tab \code{list} of \code{integer} \cr
+
+    \code{\linkS4class{AAString}} \tab \code{\linkS4class{AAStringSet}}
+      \tab \code{\linkS4class{IRanges}}
+      \tab \code{list} of \code{integer} \cr
+
+    \code{\linkS4class{AAStringSet}} \tab \code{\linkS4class{AAStringSetList}}
+      \tab \code{\linkS4class{IRangesList}}
+      \tab \code{list} of \code{integer} \cr
+  }
 }
 \description{
-  This functions cleave polypeptide sequences. Use \code{cleavageRanges} to find
-  the cleavage sites and \code{cleave} to get the cleavage products.
+  This functions cleave polypeptide sequences. Use \code{cleavageSites} to find
+  the cleavage sites, \code{cleavageRanges} to find the cleavage
+  ranges and \code{cleave} to get the cleavage products.
 }
 \details{
   The cleavage rules are taken from:
