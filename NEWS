@@ -1,6 +1,10 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.3.7 [2014-05-08]:
+- Create an IRangesList using `split` instead of `lapply` in the
+  cleavageRanges,AAStringSet-method is more than two times faster.
+
 Version 1.3.6 [2014-05-03]:
 - Add cleavageRanges method for character, AAString and AAStringSet.
 - cleave,AAString returns an AAStringSet instead of an AAStringSetList object.
