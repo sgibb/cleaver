@@ -42,8 +42,10 @@ setMethod(f="cleavageRanges",
                            enzym=enzym,
                            missedCleavages=missedCleavages,
                            custom=custom)
-  return(IRangesList(lapply(sites, function(s) {
-    IRanges(start=s[, 1L], end=s[, 2L])
-  })))
+  nm <- names(x)
+  f <- rep.int(seq_along(sites), vapply(sites, nrow, double(1L)))
+  sites <- do.call(rbind, sites)
+  ir <- IRanges(start = sites[, 1L], end = sites[, 2L])
+  return(setNames(split(ir, f), nm))
 })
 
