@@ -1,6 +1,10 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.5.1 [2015-01-24]:
+- Add test case if number of cleavage sites is smaller than the number of
+  allowed missed cleavages.
+
 Version 1.3.8 [2014-09-28]:
 - Use title case in the "Title:" field of the DESCRIPTION file.
 
