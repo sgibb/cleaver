@@ -1,6 +1,6 @@
 # cleaver
 [![Build Status](https://travis-ci.org/sgibb/cleaver.svg?branch=master)](https://travis-ci.org/sgibb/cleaver?branch=master)
-[![Coverage Status](https://coveralls.io/repos/sgibb/cleaver/badge.svg?branch=master))](https://coveralls.io/r/sgibb/cleaver?branch=master)
+[![Coverage Status](https://coveralls.io/repos/sgibb/cleaver/badge.svg?branch=master)](https://coveralls.io/r/sgibb/cleaver?branch=master)
 
 ## Description
 
