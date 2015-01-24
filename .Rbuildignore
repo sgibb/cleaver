@@ -1,6 +1,7 @@
 ^README\.md$
 ^\.git$
 ^\.gitignore$
+^\.travis.yml$
 ^vignettes/figure$
 ^vignettes/*.pdf$
 .*.aux$
