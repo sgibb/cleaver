@@ -12,8 +12,11 @@ test_that(".pos", {
                dimnames=list(c(), c("start", "end")))
   m02 <- matrix(c(1, 3, 6, 8, 1, 3, 6, 1, 3, 2, 5, 7, 10, 5, 7, 10, 7, 10),
                 ncol=2L, dimnames=list(c(), c("start", "end")))
+  m5 <- matrix(c(1, 10), ncol=2L,
+               dimnames=list(c(), c("start", "end")))
   expect_equal(cleaver:::.pos(c(2, 5, 7), 10, 0), m0)
   expect_equal(cleaver:::.pos(c(2, 5, 7), 10, 2), m2)
+  expect_equal(cleaver:::.pos(c(2, 5, 7), 10, 5), m5)
   expect_equal(cleaver:::.pos(c(2, 5, 7), 10, 0:2), m02)
 })
 
