@@ -23,7 +23,6 @@ opts_chunk$set(tidy.opts=list(width.cutoff=45, tidy=FALSE), fig.align='center', 
 
 <<libraries, echo=FALSE>>=
 suppressPackageStartupMessages(library("UniProt.ws"))
-UniProt.ws <- UniProt.ws()
 suppressPackageStartupMessages(library("BRAIN"))
 @
 
@@ -98,6 +97,9 @@ the \Biocpkg{UniProt.ws} R package\citep{UniProt.ws}.
 <<>>=
 ## load UniProt.ws library
 library("UniProt.ws")
+
+## select species Homo sapiens
+UniProt.ws <- UniProt.ws(taxId=9606)
 
 ## download sequences of Insulin/Somatostatin
 s <- select(UniProt.ws, keys=c("P01308", "P61278"), columns=c("SEQUENCE"))

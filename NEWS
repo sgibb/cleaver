@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.5.3 [2015-02-02]:
+- Set taxId=9606 for UniProt.ws in vignette.
+
 Version 1.5.1 [2015-01-24]:
 - Add test case if number of cleavage sites is smaller than the number of
   allowed missed cleavages.
