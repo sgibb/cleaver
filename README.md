@@ -1,6 +1,12 @@
 # cleaver
-[![Build Status](https://travis-ci.org/sgibb/cleaver.svg?branch=master)](https://travis-ci.org/sgibb/cleaver?branch=master)
-[![Coverage Status](https://coveralls.io/repos/sgibb/cleaver/badge.svg?branch=master)](https://coveralls.io/r/sgibb/cleaver?branch=master)
+[![build status](https://travis-ci.org/sgibb/cleaver.svg?branch=master)](https://travis-ci.org/sgibb/cleaver?branch=master)
+[![codecov.io](https://img.shields.io/codecov/c/github/sgibb/cleaver.svg?branch=master)](https://codecov.io/github/sgibb/cleaver/?branch=master)
+[![license](http://img.shields.io/badge/license-GPL%20%28%3E=%203%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-3.0.html)
+
+[![years in bioc](http://bioconductor.org/shields/years-in-bioc/cleaver.svg)](http://bioconductor.org/packages/release/bioc/html/cleaver.html)
+[![bioc downloads](http://bioconductor.org/shields/downloads/cleaver.svg)](http://bioconductor.org/packages/stats/bioc/cleaver.html)
+Release: [![build release](http://bioconductor.org/shields/build/release/bioc/cleaver.svg)](http://bioconductor.org/checkResults/release/bioc-LATEST/cleaver/)
+Devel: [![build devel](http://bioconductor.org/shields/build/devel/bioc/cleaver.svg)](http://bioconductor.org/checkResults/devel/bioc-LATEST/cleaver/)
 
 ## Description
 

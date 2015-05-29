@@ -15,7 +15,7 @@ bioc_packages:
   - UniProt.ws
 
 after_success:
-  - Rscript -e 'library(covr);coveralls()'
+  - Rscript -e 'library(covr);codecov()'
 
 notifications:
   email:
