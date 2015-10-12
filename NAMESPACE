@@ -1,4 +1,5 @@
 import(methods)
+import(S4Vectors)
 import(IRanges)
 importFrom(Biostrings, AAString,
                        AAStringSet,

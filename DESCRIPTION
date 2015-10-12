@@ -1,12 +1,12 @@
 Package: cleaver
-Version: 1.7.0
+Version: 1.7.1
 Date: 2015-02-02
 Title: Cleavage of Polypeptide Sequences
 Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
         email="mail@sebastiangibb.de"))
 Maintainer: Sebastian Gibb <mail@sebastiangibb.de>
 Depends: R (>= 3.0.0), methods, Biostrings (>= 1.29.8)
-Imports: IRanges
+Imports: S4Vectors, IRanges
 Suggests: testthat (>= 0.8), knitr, BiocStyle (>= 0.0.14), BRAIN,
         UniProt.ws (>= 2.1.4)
 Description: In-silico cleavage of polypeptide sequences. The cleavage
