@@ -1,13 +1,12 @@
 language: r
+sudo: false
+cache: packages
+
 warnings_are_errors: true
 bioc_required: true
 
-r_github_packages:
-  - jimhester/covr
-
-r_binary_packages:
-  - testthat
-  - knitr
+r_packages:
+  - covr
 
 bioc_packages:
   - BiocStyle
@@ -15,7 +14,7 @@ bioc_packages:
   - UniProt.ws
 
 after_success:
-  - Rscript -e 'library(covr);codecov()'
+  - Rscript -e 'covr::codecov()'
 
 notifications:
   email:
