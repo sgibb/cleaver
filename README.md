@@ -14,7 +14,7 @@ This package cleaves polypeptide sequences. The
 cleavage rules are taken from:
 http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 
-cleaver is part of [Bioconductor](http://bioconductor.org/packages/bioc/html/cleaver.html).
+cleaver is part of [Bioconductor](http://bioconductor.org/packages/release/bioc/html/cleaver.html).
 
 ## Install development version (not recommended)
 
