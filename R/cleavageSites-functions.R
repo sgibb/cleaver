@@ -22,7 +22,6 @@
   if (!length(nm)) {
     nm <- x
   }
-  return(setNames(.cleavagePos(x, pattern=pattern, exception=exception,
-                               missedCleavages=missedCleavages), nm))
+  setNames(.cleavagePos(x, pattern=pattern, exception=exception,
+                        missedCleavages=missedCleavages), nm)
 }
-

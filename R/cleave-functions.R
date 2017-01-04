@@ -9,6 +9,5 @@
   if (unique) {
     peptides <- lapply(peptides, unique)
   }
-  return(peptides)
+  peptides
 }
-

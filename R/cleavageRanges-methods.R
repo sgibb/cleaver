@@ -2,10 +2,10 @@ setMethod(f="cleavageRanges",
           signature=signature(x="character"),
           definition=function(x, enzym="trypsin", missedCleavages=0L,
                               custom=NULL) {
-  return(.cleavageRanges(x=x,
-                         enzym=enzym,
-                         missedCleavages=missedCleavages,
-                         custom=custom))
+  .cleavageRanges(x=x,
+                  enzym=enzym,
+                  missedCleavages=missedCleavages,
+                  custom=custom)
 })
 
 setMethod(f="cleavageRanges",
@@ -16,7 +16,7 @@ setMethod(f="cleavageRanges",
                            enzym=enzym,
                            missedCleavages=missedCleavages,
                            custom=custom)[[1L]]
-  return(IRanges(start=sites[, 1L], end=sites[, 2L]))
+  IRanges(start=sites[, 1L], end=sites[, 2L])
 })
 
 setMethod(f="cleavageRanges",
@@ -30,7 +30,6 @@ setMethod(f="cleavageRanges",
   nm <- names(x)
   f <- rep.int(seq_along(sites), vapply(sites, nrow, double(1L)))
   sites <- do.call(rbind, sites)
-  ir <- IRanges(start = sites[, 1L], end = sites[, 2L])
-  return(setNames(split(ir, f), nm))
+  ir <- IRanges(start=sites[, 1L], end=sites[, 2L])
+  setNames(split(ir, f), nm)
 })
-

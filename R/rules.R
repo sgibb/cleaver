@@ -77,4 +77,3 @@ rules <- c(
 exceptions <- c(
   ## Trypsin
   "trypsin"="((?<=[CD])K(?=D))|((?<=C)K(?=[HY]))|((?<=C)R(?=K))|((?<=R)R(?=[HR]))")
-
