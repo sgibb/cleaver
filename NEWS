@@ -1,6 +1,10 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.13.1 [2017-01-04]:
+- Remove GPL headers from *.R files.
+- Remove useless return calls.
+
 Version 1.5.3 [2015-02-02]:
 - Set taxId=9606 for UniProt.ws in vignette.
 
