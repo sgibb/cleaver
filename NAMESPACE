@@ -1,6 +1,7 @@
 import(methods)
 import(S4Vectors)
 import(IRanges)
+importFrom(stats, setNames)
 importFrom(Biostrings, AAString,
                        AAStringSet,
                        AAStringSetList)

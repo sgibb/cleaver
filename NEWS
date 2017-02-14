@@ -4,6 +4,7 @@ RELEASE HISTORY OF THE "cleaver" PACKAGE
 Version 1.13.2 [2017-02-14]:
 - Use `expect_equal` instead of `expect_identical` to avoid failing of the
   `.revsequence` unit test on "toluca2" (Mac OS X Mavericks (10.9.5) / x86_64).
+- Add "importFrom(stats, setNames)" to NAMESPACE.
 
 Version 1.13.1 [2017-01-04]:
 - Remove GPL headers from *.R files.
