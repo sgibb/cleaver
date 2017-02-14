@@ -25,7 +25,7 @@ test_that(".sequence", {
 })
 
 test_that(".revsequence", {
-  expect_identical(cleaver:::.revsequence(1:5), c(5, 4:5, 3:5, 2:5, 1:5))
+  expect_equal(cleaver:::.revsequence(1:5), c(5, 4:5, 3:5, 2:5, 1:5))
 })
 
 test_that(".unlist", {
