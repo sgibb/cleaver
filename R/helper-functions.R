@@ -1,5 +1,5 @@
 ## helper functions
-.cleavagePos <- function(x, pattern, exception, missedCleavages) {
+.cleavagePos <- function(x, pattern, exception) {
   pos <- .rxPos(x, pattern=pattern)
 
   if (!missing(exception) && !is.na(exception)) {

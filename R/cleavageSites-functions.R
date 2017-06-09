@@ -1,5 +1,4 @@
-.cleavageSites <- function(x, enzym="trypsin", custom=NULL,
-                           missedCleavages=0L) {
+.cleavageSites <- function(x, enzym="trypsin", custom=NULL) {
 
   enzym <- match.arg(tolower(enzym), names(rules), several.ok=FALSE)
 
@@ -22,6 +21,5 @@
   if (!length(nm)) {
     nm <- x
   }
-  setNames(.cleavagePos(x, pattern=pattern, exception=exception,
-                        missedCleavages=missedCleavages), nm)
+  setNames(.cleavagePos(x, pattern=pattern, exception=exception), nm)
 }
