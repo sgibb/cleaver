@@ -4,7 +4,7 @@
 
   if (!missing(exception) && !is.na(exception)) {
     pos <- mapply(setdiff, x=pos, y=.rxPos(x, pattern=exception),
-                  SIMPLIFY=FALSE)
+                  SIMPLIFY=FALSE, USE.NAMES=FALSE)
   }
 
   pos
@@ -16,19 +16,19 @@
 }
 
 .pos <- function(pos, n, m) {
-  pStart <- c(1L, pos+1L)
+  pStart <- c(1L, pos + 1L)
   pEnd <- c(pos, n)
 
-  if (any(m > 0)) {
-    mn <- length(pos)-m+1L
+  if (any(m > 0L)) {
+    mn <- length(pos) - m + 1L
 
-    i <- which(mn > 0)
+    i <- which(mn > 0L)
 
     if (length(i)) {
       mn <- mn[i]
       m <- m[i]
       pStart <- pStart[.sequence(mn)]
-      pEnd <-  pEnd[m[1L]+.revsequence(mn)]
+      pEnd <-  pEnd[m[1L] + .revsequence(mn)]
     } else {
       pStart <- 1L
       pEnd <- n
