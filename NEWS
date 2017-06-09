@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.15.1 [2017-06-08]:
+- Remove superfluous "missedCleavages" argument in `cleavageSites`.
+
 Version 1.13.2 [2017-02-14]:
 - Use `expect_equal` instead of `expect_identical` to avoid failing of the
   `.revsequence` unit test on "toluca2" (Mac OS X Mavericks (10.9.5) / x86_64).
