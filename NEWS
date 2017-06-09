@@ -2,6 +2,9 @@ RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
 Version 1.15.1 [2017-06-08]:
+- Don't consider the last aminoacid as cleavage site.
+  `cleavageSites("ACK", custom="K")` results in `integer()` instead of `3` now.
+  Thanks Apurva Hegde <ahegde@tgen.org> for reporting this issue.
 - Remove superfluous "missedCleavages" argument in `cleavageSites`.
 
 Version 1.13.2 [2017-02-14]:

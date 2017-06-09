@@ -1,8 +1,12 @@
 context("helper")
 
 test_that(".rxPos", {
+  expect_equal(cleaver:::.rxPos(c("foobar", "foobar2"), "b"),
+               list(4, 4))
+  expect_equal(cleaver:::.rxPos(c("foobar", "foobar2"), "r"),
+               list(integer(), 6))
   expect_equal(cleaver:::.rxPos(c("foobar", "foobar2"), "\\d"),
-               list(integer(), 7))
+               list(integer(), integer()))
 })
 
 test_that(".pos", {

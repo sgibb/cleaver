@@ -12,7 +12,10 @@
 
 .rxPos <- function(x, pattern) {
   rx <- gregexpr(pattern=pattern, text=x, perl=TRUE)
-  lapply(rx, function(x)as.vector(x[x > 0L]))
+  ## the last character/AA could never be a cleavage site
+  nx <- nchar(x)
+  mapply(function(r, n)r[r > 0L & r < n],
+         r=rx, n=nx, SIMPLIFY=FALSE, USE.NAMES=FALSE)
 }
 
 .pos <- function(pos, n, m) {
