@@ -49,7 +49,7 @@
   \item{custom}{\code{character}, of length 1 or 2. Could be used to define own
     cleaveage rules. The first element would be the pattern and the optional
     second element would be an exception (non-cleavage) pattern. Perl-like
-    regular expressions are supported, see \code{\link[base]{gregexpr}} for
+    regular expressions are supported, see \code{\link[base:grep]{gregexpr}} for
     details. If \code{custom} is set the \code{enzym} is ignored.}
 
   \item{unique}{\code{logical}, if \code{TRUE} all duplicated cleavage products
@@ -345,4 +345,3 @@ cleavageSites(enob, custom=c("K", "K(?=A)"))
 \code{\linkS4class{IRangesList}}
 }
 \keyword{methods}
-

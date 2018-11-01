@@ -3,6 +3,7 @@ RELEASE HISTORY OF THE "cleaver" PACKAGE
 
 Version 1.21.1 [2018-11-01]:
 - Add my ORCID to the Author field in DESCRIPTION.
+- Fix links in manual pages to avoid WARNING on Windows.
 
 Version 1.15.1 [2017-06-08]:
 - Don't consider the last aminoacid as cleavage site.
