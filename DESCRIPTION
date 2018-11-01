@@ -1,8 +1,9 @@
 Package: cleaver
-Version: 1.21.0
+Version: 1.21.1
 Title: Cleavage of Polypeptide Sequences
 Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
-        email="mail@sebastiangibb.de"))
+                    email="mail@sebastiangibb.de",
+                    comment=c(ORCID="0000-0001-7406-4443")))
 Maintainer: Sebastian Gibb <mail@sebastiangibb.de>
 Depends: R (>= 3.0.0), methods, Biostrings (>= 1.29.8)
 Imports: S4Vectors, IRanges

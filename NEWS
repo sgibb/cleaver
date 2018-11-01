@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.21.1 [2018-11-01]:
+- Add my ORCID to the Author field in DESCRIPTION.
+
 Version 1.15.1 [2017-06-08]:
 - Don't consider the last aminoacid as cleavage site.
   `cleavageSites("ACK", custom="K")` results in `integer()` instead of `3` now.
