@@ -1,20 +1,28 @@
 language: r
-sudo: false
+sudo: required
+dist: trusty
 cache: packages
 
+r: bioc-devel
+
 warnings_are_errors: true
-bioc_required: true
 
 r_packages:
   - covr
-
-bioc_packages:
-  - BiocStyle
-  - BRAIN
-  - UniProt.ws
+  - pkgdown
 
 after_success:
   - Rscript -e 'covr::codecov()'
+  - if [ ${TRAVIS_BRANCH} = "master" ] && [ -z "${TRAVIS_PULL_REQUEST_BRANCH}" ] ; then Rscript -e 'pkgdown::build_site()' ; fi
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_PAT
+  keep-history: true
+  local-dir: docs
+  on:
+    branch: master
 
 notifications:
   email:
