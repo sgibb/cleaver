@@ -1,4 +1,4 @@
-\name{cleave}
+\name{cleave-methods}
 \docType{methods}
 \alias{cleave}
 \alias{cleave,character-method}

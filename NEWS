@@ -3,6 +3,7 @@ RELEASE HISTORY OF THE "cleaver" PACKAGE
 
 Version 1.21.2 [2018-11-03]:
 - Convert vignette from Sweave to rmarkdown.
+- Another try to fix links in manual pages to avoid WARNING on Windows.
 
 Version 1.21.1 [2018-11-01]:
 - Add my ORCID to the Author field in DESCRIPTION.
