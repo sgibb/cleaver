@@ -7,8 +7,8 @@ Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
 Maintainer: Sebastian Gibb <mail@sebastiangibb.de>
 Depends: R (>= 3.0.0), methods, Biostrings (>= 1.29.8)
 Imports: S4Vectors, IRanges
-Suggests: testthat (>= 0.8), knitr, BiocStyle (>= 0.0.14), BRAIN,
-        UniProt.ws (>= 2.1.4)
+Suggests: testthat (>= 0.8), knitr, BiocStyle (>= 0.0.14), rmarkdown,
+        BRAIN, UniProt.ws (>= 2.1.4)
 Description: In-silico cleavage of polypeptide sequences. The cleavage
         rules are taken from:
         http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html

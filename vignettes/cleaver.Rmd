@@ -2,8 +2,7 @@
 title: "In-silico cleavage of polypeptides using the cleaver package"
 author:
 - name: Sebastian Gibb
-  affiliation: Department of Anesthesiology and Intensive Care,
-    University Medicine Greifswald, Germany.
+  affiliation: Department of Anesthesiology and Intensive Care, University Medicine Greifswald, Germany.
 package: cleaver
 abstract: >
     This vignette describes the in-silico cleavage of polypeptides using
@@ -20,10 +19,6 @@ vignette: >
     %\VignetteEncoding{UTF-8}
     %\VignettePackage{cleaver}
 ---
-
-```{r style, echo=FALSE, results="asis"}
-BiocStyle::markdown()
-```
 
 ```{r environment, echo=FALSE, warning=FALSE}
 suppressPackageStartupMessages(library("cleaver"))
