@@ -20,10 +20,10 @@ vignette: >
     %\VignettePackage{cleaver}
 ---
 
-```{r environment, echo=FALSE, warning=FALSE}
-suppressPackageStartupMessages(library("cleaver"))
-suppressPackageStartupMessages(library("UniProt.ws"))
-suppressPackageStartupMessages(library("BRAIN"))
+```{r environment, echo=FALSE, message=FALSE, warning=FALSE}
+library("cleaver")
+library("UniProt.ws")
+library("BRAIN")
 ```
 
 # Introduction
