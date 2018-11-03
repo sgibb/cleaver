@@ -1,84 +1,84 @@
-%\VignetteEngine{knitr}
-%\VignetteIndexEntry{in-silico cleavage of polypeptides}
-%\VignetteKeyword{polypeptide, cleavage}
-%\VignettePackage{cleaver}
-\documentclass[12pt,a4paper,english]{scrartcl}
-\usepackage[super]{natbib}
+---
+title: "In-silico cleavage of polypeptides using the cleaver package"
+author:
+- name: Sebastian Gibb
+  affiliation: Department of Anesthesiology and Intensive Care,
+    University Medicine Greifswald, Germany.
+package: cleaver
+abstract: >
+    This vignette describes the in-silico cleavage of polypeptides using
+    the `cleaver` package.
+output:
+    BiocStyle::html_document:
+        toc_float: TRUE
+        tidy: TRUE
+bibliography: cleaver.bib
+vignette: >
+    %\VignetteIndexEntry{In-silico cleavage of polypeptides}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteKeywords{Proteomics, Bioinformatics, Cleavage, Polypeptides}
+    %\VignetteEncoding{UTF-8}
+    %\VignettePackage{cleaver}
+---
 
-<<style, eval=TRUE, echo=FALSE, results="asis">>=
-BiocStyle::latex(use.unsrturl=FALSE)
-@
+```{r style, echo=FALSE, results="asis"}
+BiocStyle::markdown()
+```
 
-\newcommand{\cleaver}{\Biocpkg{cleaver}}
-
-\author{Sebastian Gibb%
-  \thanks{\email{mail@sebastiangibb.de}}
-}
-\date{\today}
-
-<<setup, include=FALSE, cache=FALSE>>=
-library("knitr")
-opts_chunk$set(tidy.opts=list(width.cutoff=45, tidy=FALSE), fig.align='center', comment=NA, prompt=TRUE)
-@
-
-<<libraries, echo=FALSE>>=
+```{r environment, echo=FALSE, warning=FALSE}
+suppressPackageStartupMessages(library("cleaver"))
 suppressPackageStartupMessages(library("UniProt.ws"))
 suppressPackageStartupMessages(library("BRAIN"))
-@
+```
 
-\begin{document}
-
-\title{In-silico cleavage of polypeptides using the \cleaver{} package}
-
-\maketitle
-
-\tableofcontents
-
-\section{Introduction}
+# Introduction
 
 Most proteomics experiments need protein (peptide) separation and cleavage
 procedures before these molecules could be analyzed or identified
-by mass spectrometry or other analytical tools. \\
-\cleaver{} allows in-silico cleavage of polypeptide sequences to e.g. create
-theoretical mass spectrometry data. \\
+by mass spectrometry or other analytical tools.
+
+`r BiocStyle::Biocpkg("cleaver")` allows in-silico cleavage of polypeptide
+sequences to e.g. create theoretical mass spectrometry data.
+
 The cleavage rules are taken from the
-\href{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}{ExPASy
-PeptideCutter tool}\citep{peptidecutter}.
+[ExPASy PeptideCutter tool](https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html)
+[@peptidecutter].
 
-\section{Simple Usage}
+# Simple Usage
 
-Loading the \cleaver{} package:
-<<>>=
+Loading the `r BiocStyle::Biocpkg("cleaver")` package:
+```{r}
 library("cleaver")
-@
+```
 
 Getting help and list all available cleavage rules:
-<<eval=FALSE>>=
+```{r, eval=FALSE}
 help("cleave")
-@
+```
 
-Cleaving of \emph{Gastric juice peptide 1 (P01358)} using \emph{Trypsin}:
-<<>>=
+Cleaving of *Gastric juice peptide 1 (P01358)* using *Trypsin*:
+```{r}
 ## cleave it
 cleave("LAAGKVEDSD", enzym="trypsin")
 ## get the cleavage ranges
 cleavageRanges("LAAGKVEDSD", enzym="trypsin")
 ## get only cleavage sites
 cleavageSites("LAAGKVEDSD", enzym="trypsin")
-@
+```
 
 Sometimes cleavage is not perfect and the enzym miss some cleavage positions:
-<<>>=
+```{r}
 ## miss one cleavage position
 cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=1)
 cleavageRanges("LAAGKVEDSD", enzym="trypsin", missedCleavages=1)
 ## miss zero or one cleavage positions
 cleave("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
 cleavageRanges("LAAGKVEDSD", enzym="trypsin", missedCleavages=0:1)
-@
+```
 
-Combine \cleaver{} and the \Biocpkg{Biostrings} R package\citep{Biostrings}:
-<<>>=
+Combine `r BiocStyle::Biocpkg("cleaver")` and
+`r BiocStyle::Biocpkg("Biostrings")` [@Biostrings]:
+```{r}
 ## create AAStringSet object
 p <- AAStringSet(c(gaju="LAAGKVEDSD", pnm="AGEPKLDAGV"))
 
@@ -86,15 +86,14 @@ p <- AAStringSet(c(gaju="LAAGKVEDSD", pnm="AGEPKLDAGV"))
 cleave(p, enzym="trypsin")
 cleavageRanges(p, enzym="trypsin")
 cleavageSites(p, enzym="trypsin")
-@
+```
 
+# Insulin \& Somatostatin Example
 
-\section{Insulin \& Somatostatin Example}
-
-Downloading \emph{Insulin (P01308)} and \emph{Somatostatin (P61278)} sequences
-from the \href{http://www.uniprot.org}{UniProt}\citep{uniprot} database using
-the \Biocpkg{UniProt.ws} R package\citep{UniProt.ws}.
-<<>>=
+Downloading *Insulin (P01308)* and *Somatostatin (P61278)* sequences
+from the [UniProt](http://www.uniprot.org)[@uniprot] database using
+`r BiocStyle::Biocpkg("UniProt.ws")` [@UniProt.ws].
+```{r}
 ## load UniProt.ws library
 library("UniProt.ws")
 
@@ -109,23 +108,23 @@ sequences <- setNames(s$SEQUENCE, s$UNIPROTKB)
 
 ## remove whitespaces
 sequences <- gsub(pattern="[[:space:]]", replacement="", x=sequences)
-@
+```
 
-Cleaving using \emph{Pepsin}:
-<<>>=
+Cleaving using *Pepsin*:
+```{r}
 cleave(sequences, enzym="pepsin")
-@
+```
 
-\section{Isotopic Distribution Of Tryptic Digested Insulin}
+# Isotopic Distribution Of Tryptic Digested Insulin
 
 A common use case of in-silico cleavage is the calculation of the
 isotopic distribution of peptides (which were enzymatic digested in the
-in-vitro experimental workflow). Here the
-\Biocpkg{BRAIN} R package\citep{BRAIN, BRAIN2} is used to calculate the isotopic
-distribution of \cleaver{}'s output.
+in-vitro experimental workflow). Here
+`r BiocStyle::Biocpkg("BRAIN")` [@BRAIN; @BRAIN2] is used to calculate
+the isotopic distribution of `r BiocStyle::Biocpkg("cleaver")`'s output.
 (please note: it is only a toy example, e.g. the relation of intensity values
 between peptides isn't correct).
-<<>>=
+```{r}
 ## load BRAIN library
 library("BRAIN")
 
@@ -146,17 +145,12 @@ for (i in seq(along=cleavedInsulin)) {
   ## draw peaks
   lines(d$masses, d$isoDistr, type="h", col=2)
 }
-@
+```
 
-\section{Session Information}
-<<sessioninfo, echo=FALSE, results="asis">>=
-toLatex(sessionInfo())
-@
+# Session Information
 
-\bibliographystyle{plainnat}
-\bibliography{cleaver}
+```{r sessioninfo, echo=FALSE}
+sessionInfo()
+```
 
-\end{document}
-
-\end{document}
-
+# References
