@@ -334,12 +334,12 @@
 <span class='co'>## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)</span>
 <span class='no'>gaju</span> <span class='kw'>&lt;-</span> <span class='st'>"LAAGKVEDSD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleave</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt; [1] "LAAGK" "VEDSD"
 #&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
 <span class='co'># [1] "LAAGK" "VEDSD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageRanges</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleavageRanges</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt;      start end
 #&gt; [1,]     1   5
 #&gt; [2,]     6  10
@@ -348,29 +348,29 @@
 <span class='co'># [1,]     1   5</span>
 <span class='co'># [2,]     6  10</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageSites</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleavageSites</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt; [1] 5
 #&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
 <span class='co'># [1] 5</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleave</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt; [1] "LAAGKVEDSD"
 #&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
 <span class='co'># [1] "LAAGKVEDSD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageRanges</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleavageRanges</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt;      start end
 #&gt; [1,]     1  10
 #&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
 <span class='co'>#      start end</span>
 <span class='co'># [1,]     1  10</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>0</span>:<span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleave</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>0</span>:<span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt; [1] "LAAGK"      "VEDSD"      "LAAGKVEDSD"
 #&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
 <span class='co'># [1] "LAAGK" "VEDSD" "LAAGKVEDSD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageRanges</a></span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>0</span>:<span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleavageRanges</span>(<span class='no'>gaju</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>0</span>:<span class='fl'>1</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt;      start end
 #&gt; [1,]     1   5
 #&gt; [2,]     6  10
@@ -382,7 +382,7 @@
 <span class='co'># [3,]     1  10</span>
 
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>gaju</span>, <span class='st'>"pepsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
+<span class='fu'>cleave</span>(<span class='no'>gaju</span>, <span class='st'>"pepsin"</span>)</div><div class='output co'>#&gt; $LAAGKVEDSD
 #&gt; [1] "LAAGKVEDSD"
 #&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
 <span class='co'># [1] "LAAGKVEDSD"</span>
@@ -392,7 +392,7 @@
 <span class='co'>## use AAStringSet</span>
 <span class='no'>gaju</span> <span class='kw'>&lt;-</span> <span class='fu'>AAStringSet</span>(<span class='st'>"LAAGKVEDSD"</span>)
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>gaju</span>)</div><div class='output co'>#&gt; AAStringSetList of length 1
+<span class='fu'>cleave</span>(<span class='no'>gaju</span>)</div><div class='output co'>#&gt; AAStringSetList of length 1
 #&gt; [["LAAGKVEDSD"]] LAAGK VEDSD</div><div class='input'><span class='co'># AAStringSetList of length 1</span>
 <span class='co'># [["LAAGKVEDSD"]] LAAGK VEDSD</span>
 
@@ -400,17 +400,17 @@
 <span class='co'>## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)</span>
 <span class='no'>enob</span> <span class='kw'>&lt;-</span> <span class='st'>"SITKIKAREILD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>enob</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleave</span>(<span class='no'>enob</span>, <span class='st'>"trypsin"</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt; [1] "SITK" "IK"   "AR"   "EILD"
 #&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
 <span class='co'># [1] "SITK" "IK"   "AR"   "EILD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>enob</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleave</span>(<span class='no'>enob</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt; [1] "SITKIKAR" "IKAREILD"
 #&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
 <span class='co'># [1] "SITKIKAR" "IKAREILD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>enob</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>0</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleave</span>(<span class='no'>enob</span>, <span class='st'>"trypsin"</span>, <span class='kw'>missedCleavages</span><span class='kw'>=</span><span class='fl'>0</span>:<span class='fl'>2</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt; [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"     "AREILD"  
 #&gt; [8] "SITKIKAR" "IKAREILD"
 #&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
@@ -418,12 +418,12 @@
 <span class='co'># [7] "AREILD"   "SITKIKAR" "IKAREILD"</span>
 
 <span class='co'>## define own cleavage rule: cleave at K</span>
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='st'>"K"</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleave</span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='st'>"K"</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt; [1] "SITK"   "IK"     "AREILD"
 #&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
 <span class='co'># [1] "SITK"   "IK"     "AREILD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageRanges</a></span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='st'>"K"</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleavageRanges</span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='st'>"K"</span>)</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt;      start end
 #&gt; [1,]     1   4
 #&gt; [2,]     5   6
@@ -435,12 +435,12 @@
 <span class='co'># [3,]     7  12</span>
 
 <span class='co'>## define own cleavage rule: cleave at K but not if followed by A</span>
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleave</a></span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span>))</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleave</span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span>))</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt; [1] "SITK"     "IKAREILD"
 #&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
 <span class='co'># [1] "SITK"     "IKAREILD"</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageRanges</a></span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span>))</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleavageRanges</span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span>))</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt;      start end
 #&gt; [1,]     1   4
 #&gt; [2,]     5  12
@@ -449,7 +449,7 @@
 <span class='co'># [1,]     1   4</span>
 <span class='co'># [2,]     5  12</span>
 
-<span class='fu'><a href='http://www.rdocumentation.org/packages/cleaver/topics/cleave-methods'>cleavageSites</a></span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span>))</div><div class='output co'>#&gt; $SITKIKAREILD
+<span class='fu'>cleavageSites</span>(<span class='no'>enob</span>, <span class='kw'>custom</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span>))</div><div class='output co'>#&gt; $SITKIKAREILD
 #&gt; [1] 4
 #&gt; </div><div class='input'># $SITKIKAREILD
 # [1] 4

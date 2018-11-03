@@ -95,19 +95,19 @@
 <a class="sourceLine" id="cb2-4" data-line-number="4">## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5">gaju &lt;-<span class="st"> "LAAGKVEDSD"</span></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw">cleave</span>(gaju, <span class="st">"trypsin"</span>)</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="kw"><a href="reference/cleave-methods.html">cleave</a></span>(gaju, <span class="st">"trypsin"</span>)</a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co"># $LAAGKVEDSD</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co"># [1] "LAAGK" "VEDSD"</span></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="kw">cleave</span>(gaju, <span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="kw"><a href="reference/cleave-methods.html">cleave</a></span>(gaju, <span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co"># $LAAGKVEDSD</span></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co"># [1] "LAAGKVEDSD"</span></a>
 <a class="sourceLine" id="cb2-14" data-line-number="14"></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="kw">cleave</span>(gaju, <span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="kw"><a href="reference/cleave-methods.html">cleave</a></span>(gaju, <span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co"># $LAAGKVEDSD</span></a>
 <a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co"># [1] "LAAGK" "VEDSD" "LAAGKVEDSD"</span></a>
 <a class="sourceLine" id="cb2-18" data-line-number="18"></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="kw">cleave</span>(gaju, <span class="st">"pepsin"</span>)</a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="kw"><a href="reference/cleave-methods.html">cleave</a></span>(gaju, <span class="st">"pepsin"</span>)</a>
 <a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co"># $LAAGKVEDSD</span></a>
 <a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co"># [1] "LAAGKVEDSD"</span></a>
 <a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co"># (no cleavage)</span></a></code></pre></div>
