@@ -10,3 +10,4 @@
 .*.log$
 .*.out$
 .*.tex$
+.editorconfig
