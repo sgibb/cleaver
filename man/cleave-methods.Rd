@@ -111,7 +111,7 @@
 }
 \details{
   The cleavage rules are taken from:
-  \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
+  \url{https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 
   Cleavage rules (cleavage between P1 and P1'):
   \tabular{llllllll}{
@@ -335,7 +335,7 @@ cleavageSites(enob, custom=c("K", "K(?=A)"))
   Identification and Analysis Tools on the ExPASy Server".
   (In) John M. Walker (ed): The Proteomics Protocols
   Handbook, Humana Press (2005).\cr
-  \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
+  \url{https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 }
 \seealso{
 \code{\linkS4class{AAString}},

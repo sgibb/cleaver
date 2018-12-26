@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.21.4 [2018-12-26]:
+- Use "https" in hyperlinks (where possible).
+
 Version 1.21.3 [2018-12-26]:
 - Correct cleavage rules for "pepsin" and "pepsin1.3". According to the
   peptidecutter documentation "pepsin1.3" is more specific (cleaves at [FL])

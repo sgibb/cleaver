@@ -11,7 +11,7 @@
 }
 \details{
   The cleavage rules are taken from:
-  \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
+  \url{https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 
   \tabular{ll}{
     Package: \tab cleaver\cr
@@ -30,7 +30,7 @@
   Identification and Analysis Tools on the ExPASy Server".
   (In) John M. Walker (ed): The Proteomics Protocols
   Handbook, Humana Press (2005).\cr
-  \url{http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
+  \url{https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html}
 }
 \seealso{
   \code{\link[cleaver:cleave-methods]{cleave}},
