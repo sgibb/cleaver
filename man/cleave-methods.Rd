@@ -153,11 +153,11 @@
     \code{lysn} \tab - \tab - \tab - \tab - \tab K \tab - \cr
     \code{neutrophil elastase} \tab - \tab - \tab - \tab A,V \tab - \tab - \cr
     \code{ntcb} \tab - \tab - \tab - \tab - \tab C \tab - \cr
-    \code{pepsin1.3} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L,W,Y
+    \code{pepsin1.3} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L
+      \tab not P \cr
+    \code{pepsin} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L,W,Y
       \tab not P \cr
     \tab - \tab not H,K,R \tab not P \tab F,L,W,Y \tab - \tab not P \cr
-    \code{pepsin} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L
-      \tab not P \cr
     \tab - \tab not H,K,R \tab not P \tab F,L \tab - \tab not P \cr
     \code{proline endopeptidase} \tab - \tab - \tab not H,K,R \tab P \tab not P
       \tab - \cr

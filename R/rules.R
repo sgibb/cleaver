@@ -58,9 +58,9 @@ rules <- c(
   ## NTCB (2-nitro-5-thiocyanobenzoic acid)
   "ntcb"="\\w(?=C)",
   ## Pepsin (pH 1.3)
-  "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
+  "pepsin1.3"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FL][^P]))|((?<=([^HKR][^P])|(^[^P]))[FL](?=\\w[^P]))",
   ## Pepsin (pH > 2.0)
-  "pepsin"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FL][^P]))|((?<=([^HKR][^P])|(^[^P]))[FL](?=\\w[^P]))",
+  "pepsin"="((?<=([^HKR][^P])|(^[^P]))[^R](?=[FLWY][^P]))|((?<=([^HKR][^P])|(^[^P]))[FLWY](?=\\w[^P]))",
   ## Proline endopeptidase
   "proline endopeptidase"="(?<=[HKR])P(?=[^P])",
   ## Proteinase K

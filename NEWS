@@ -1,6 +1,13 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.21.3 [2018-12-26]:
+- Correct cleavage rules for "pepsin" and "pepsin1.3". According to the
+  peptidecutter documentation "pepsin1.3" is more specific (cleaves at [FL])
+  than "pepsin" (cleaves [FLWY]); see https://github.com/sgibb/cleaver/issues/6
+  for details.
+  Thanks to Jean Manguy <jean@manguy.eu> for reporting this error.
+
 Version 1.21.2 [2018-11-03]:
 - Convert vignette from Sweave to rmarkdown.
 - Another try to fix links in manual pages to avoid WARNING on Windows.
