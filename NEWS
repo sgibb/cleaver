@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.25.1 [2019-12-30]:
+- Add missing space in vignette.
+
 Version 1.21.4 [2018-12-26]:
 - Use "https" in hyperlinks (where possible).
 
