@@ -86,7 +86,7 @@ cleavageSites(p, enzym="trypsin")
 # Insulin \& Somatostatin Example
 
 Downloading *Insulin (P01308)* and *Somatostatin (P61278)* sequences
-from the [UniProt](http://www.uniprot.org)[@uniprot] database using
+from the [UniProt](http://www.uniprot.org) [@uniprot] database using
 `r BiocStyle::Biocpkg("UniProt.ws")` [@UniProt.ws].
 ```{r}
 ## load UniProt.ws library
