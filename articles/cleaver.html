@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">cleaver</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.21.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.25.1</span>
       </span>
     </div>
 
@@ -89,13 +89,13 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>Most proteomics experiments need protein (peptide) separation and cleavage procedures before these molecules could be analyzed or identified by mass spectrometry or other analytical tools.</p>
-<p><em><a href="https://bioconductor.org/packages/3.10/cleaver">cleaver</a></em> allows in-silico cleavage of polypeptide sequences to e.g. create theoretical mass spectrometry data.</p>
+<p><em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> allows in-silico cleavage of polypeptide sequences to e.g. create theoretical mass spectrometry data.</p>
 <p>The cleavage rules are taken from the <a href="https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html">ExPASy PeptideCutter tool</a> <span class="citation">(Gasteiger et al. 2005)</span>.</p>
 </div>
 <div id="simple-usage" class="section level1">
 <h1 class="hasAnchor">
 <a href="#simple-usage" class="anchor"></a>Simple Usage</h1>
-<p>Loading the <em><a href="https://bioconductor.org/packages/3.10/cleaver">cleaver</a></em> package:</p>
+<p>Loading the <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> package:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"cleaver"</span>)</a></code></pre></div>
 <p>Getting help and list all available cleavage rules:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="st">"cleave"</span>)</a></code></pre></div>
@@ -133,7 +133,7 @@
 ## [1,]     1   5
 ## [2,]     6  10
 ## [3,]     1  10</code></pre>
-<p>Combine <em><a href="https://bioconductor.org/packages/3.10/cleaver">cleaver</a></em> and <em><a href="https://bioconductor.org/packages/3.10/Biostrings">Biostrings</a></em> <span class="citation">(Pages et al., n.d.)</span>:</p>
+<p>Combine <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> and <em><a href="https://bioconductor.org/packages/3.11/Biostrings">Biostrings</a></em> <span class="citation">(Pages et al., n.d.)</span>:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">## create AAStringSet object</a>
 <a class="sourceLine" id="cb17-2" data-line-number="2">p &lt;-<span class="st"> </span><span class="kw">AAStringSet</span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dt">gaju=</span><span class="st">"LAAGKVEDSD"</span>, <span class="dt">pnm=</span><span class="st">"AGEPKLDAGV"</span>))</a>
 <a class="sourceLine" id="cb17-3" data-line-number="3"></a>
@@ -167,7 +167,7 @@
 <div id="insulin-somatostatin-example" class="section level1">
 <h1 class="hasAnchor">
 <a href="#insulin-somatostatin-example" class="anchor"></a>Insulin &amp; Somatostatin Example</h1>
-<p>Downloading <em>Insulin (P01308)</em> and <em>Somatostatin (P61278)</em> sequences from the <a href="http://www.uniprot.org">UniProt</a><span class="citation">(The UniProt Consortium 2012)</span> database using <em><a href="https://bioconductor.org/packages/3.10/UniProt.ws">UniProt.ws</a></em> <span class="citation">(Carlson, n.d.)</span>.</p>
+<p>Downloading <em>Insulin (P01308)</em> and <em>Somatostatin (P61278)</em> sequences from the <a href="http://www.uniprot.org">UniProt</a> <span class="citation">(The UniProt Consortium 2012)</span> database using <em><a href="https://bioconductor.org/packages/3.11/UniProt.ws">UniProt.ws</a></em> <span class="citation">(Carlson, n.d.)</span>.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">## load UniProt.ws library</a>
 <a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"UniProt.ws"</span>)</a>
 <a class="sourceLine" id="cb23-3" data-line-number="3"></a>
@@ -186,33 +186,27 @@
 <p>Cleaving using <em>Pepsin</em>:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(sequences, <span class="dt">enzym=</span><span class="st">"pepsin"</span>)</a></code></pre></div>
 <pre><code>## $P01308
-##  [1] "MA"              "L"               "W"              
-##  [4] "MRLLP"           "LL"              "A"              
-##  [7] "WGPDPAAA"        "F"               "VNQH"           
-## [10] "CGSH"            "VEA"             "Y"              
-## [13] "VCGERG"          "FF"              "YTPKTRREAED"    
-## [16] "QVGQVE"          "GGGPGAGS"        "LQP"            
-## [19] "LA"              "EGS"             "QKRGIVEQCCTSICS"
-## [22] "Q"               "EN"              "CN"             
+##  [1] "MA"              "L"               "W"               "MRLLP"          
+##  [5] "LL"              "A"               "WGPDPAAA"        "F"              
+##  [9] "VNQH"            "CGSH"            "VEA"             "Y"              
+## [13] "VCGERG"          "FF"              "YTPKTRREAED"     "QVGQVE"         
+## [17] "GGGPGAGS"        "LQP"             "LA"              "EGS"            
+## [21] "QKRGIVEQCCTSICS" "Q"               "EN"              "CN"             
 ## 
 ## $P61278
-##  [1] "ML"                    "SCRL"                 
-##  [3] "QCA"                   "L"                    
-##  [5] "AA"                    "SIV"                  
-##  [7] "A"                     "GCVTGAPSDPRL"         
-##  [9] "RQ"                    "FL"                   
-## [11] "QKS"                   "LAAAAGKQEL"           
-## [13] "AK"                    "Y"                    
-## [15] "AE"                    "SEPNQTENDA"           
-## [17] "LEPED"                 "SQAAEQDEMRL"          
-## [19] "EL"                    "QRSANSNPAMAPRERKAGCKN"
-## [21] "FF"                    "W"                    
-## [23] "KT"                    "FTSC"</code></pre>
+##  [1] "ML"                    "SCRL"                  "QCA"                  
+##  [4] "L"                     "AA"                    "SIV"                  
+##  [7] "A"                     "GCVTGAPSDPRL"          "RQ"                   
+## [10] "FL"                    "QKS"                   "LAAAAGKQEL"           
+## [13] "AK"                    "Y"                     "AE"                   
+## [16] "SEPNQTENDA"            "LEPED"                 "SQAAEQDEMRL"          
+## [19] "EL"                    "QRSANSNPAMAPRERKAGCKN" "FF"                   
+## [22] "W"                     "KT"                    "FTSC"</code></pre>
 </div>
 <div id="isotopic-distribution-of-tryptic-digested-insulin" class="section level1">
 <h1 class="hasAnchor">
 <a href="#isotopic-distribution-of-tryptic-digested-insulin" class="anchor"></a>Isotopic Distribution Of Tryptic Digested Insulin</h1>
-<p>A common use case of in-silico cleavage is the calculation of the isotopic distribution of peptides (which were enzymatic digested in the in-vitro experimental workflow). Here <em><a href="https://bioconductor.org/packages/3.10/BRAIN">BRAIN</a></em> <span class="citation">(Claesen et al. 2012; Dittwald et al. 2013)</span> is used to calculate the isotopic distribution of <em><a href="https://bioconductor.org/packages/3.10/cleaver">cleaver</a></em>’s output. (please note: it is only a toy example, e.g. the relation of intensity values between peptides isn’t correct).</p>
+<p>A common use case of in-silico cleavage is the calculation of the isotopic distribution of peptides (which were enzymatic digested in the in-vitro experimental workflow). Here <em><a href="https://bioconductor.org/packages/3.11/BRAIN">BRAIN</a></em> <span class="citation">(Claesen et al. 2012; Dittwald et al. 2013)</span> is used to calculate the isotopic distribution of <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em>’s output. (please note: it is only a toy example, e.g. the relation of intensity values between peptides isn’t correct).</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">## load BRAIN library</a>
 <a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BRAIN"</span>)</a>
 <a class="sourceLine" id="cb29-3" data-line-number="3"></a>
@@ -238,7 +232,7 @@
 <div id="session-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session Information</h1>
-<pre><code>## R version 3.6.1 (2017-01-27)
+<pre><code>## R Under development (unstable) (2019-12-29 r77627)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
 ## 
@@ -259,29 +253,29 @@
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] BRAIN_1.31.0        lattice_0.20-38     PolynomF_2.0-2     
-##  [4] UniProt.ws_2.25.1   RCurl_1.95-4.12     bitops_1.0-6       
-##  [7] RSQLite_2.1.2       cleaver_1.21.4      Biostrings_2.53.2  
-## [10] XVector_0.25.0      IRanges_2.19.16     S4Vectors_0.23.24  
-## [13] BiocGenerics_0.31.6 BiocStyle_2.13.2   
+##  [1] BRAIN_1.33.0        lattice_0.20-38     PolynomF_2.0-2     
+##  [4] UniProt.ws_2.27.0   RCurl_1.95-4.12     bitops_1.0-6       
+##  [7] RSQLite_2.1.5       cleaver_1.25.1      Biostrings_2.55.4  
+## [10] XVector_0.27.0      IRanges_2.21.2      S4Vectors_0.25.8   
+## [13] BiocGenerics_0.33.0 BiocStyle_2.15.3   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_0.2.5     xfun_0.9             purrr_0.3.2         
-##  [4] vctrs_0.2.0          htmltools_0.3.6      BiocFileCache_1.9.1 
-##  [7] yaml_2.2.0           blob_1.2.0           rlang_0.4.0         
-## [10] pkgdown_1.4.1        pillar_1.4.2         glue_1.3.1          
-## [13] DBI_1.0.0            rappdirs_0.3.1       bit64_0.9-7         
-## [16] dbplyr_1.4.2         stringr_1.4.0        zlibbioc_1.31.0     
-## [19] memoise_1.1.0        evaluate_0.14        Biobase_2.45.1      
-## [22] knitr_1.25           curl_4.2             AnnotationDbi_1.47.1
-## [25] Rcpp_1.0.2           backports_1.1.4      BiocManager_1.30.4  
+##  [1] tidyselect_0.2.5     xfun_0.11            purrr_0.3.3         
+##  [4] vctrs_0.2.1          htmltools_0.4.0      BiocFileCache_1.11.4
+##  [7] yaml_2.2.0           blob_1.2.0           rlang_0.4.2         
+## [10] pkgdown_1.4.1        pillar_1.4.3         glue_1.3.1          
+## [13] DBI_1.1.0            rappdirs_0.3.1       bit64_0.9-7         
+## [16] dbplyr_1.4.2         stringr_1.4.0        zlibbioc_1.33.0     
+## [19] memoise_1.1.0        evaluate_0.14        Biobase_2.47.2      
+## [22] knitr_1.26           curl_4.3             AnnotationDbi_1.49.0
+## [25] Rcpp_1.0.3           backports_1.1.5      BiocManager_1.30.10 
 ## [28] desc_1.2.0           fs_1.3.1             bit_1.1-14          
-## [31] digest_0.6.21        stringi_1.4.3        bookdown_0.13       
-## [34] dplyr_0.8.3          rprojroot_1.3-2      grid_3.6.1          
-## [37] tools_3.6.1          magrittr_1.5         tibble_2.1.3        
+## [31] digest_0.6.23        stringi_1.4.3        bookdown_0.16       
+## [34] dplyr_0.8.3          rprojroot_1.3-2      grid_4.0.0          
+## [37] tools_4.0.0          magrittr_1.5         tibble_2.1.3        
 ## [40] crayon_1.3.4         pkgconfig_2.0.3      zeallot_0.1.0       
-## [43] MASS_7.3-51.4        assertthat_0.2.1     rmarkdown_1.15      
-## [46] httr_1.4.1           R6_2.4.0             compiler_3.6.1</code></pre>
+## [43] MASS_7.3-51.5        assertthat_0.2.1     rmarkdown_2.0       
+## [46] httr_1.4.1           R6_2.4.1             compiler_4.0.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
