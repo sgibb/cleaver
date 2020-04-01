@@ -6,19 +6,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>In-silico cleavage of polypeptides using the cleaver package • cleaver</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="In-silico cleavage of polypeptides using the cleaver package">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="cleaver">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -52,7 +52,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/sgibb/cleaver">
+  <a href="https://github.com/sgibb/cleaver/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -70,7 +70,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>In-silico cleavage of polypeptides using the cleaver package</h1>
+      <h1 data-toc-skip>In-silico cleavage of polypeptides using the cleaver package</h1>
                         <h4 class="author">Sebastian Gibb</h4>
             <address class="author_afil">
       Department of Anesthesiology and Intensive Care, University Medicine Greifswald, Germany.<br><small class="dont-index">Source: <a href="https://github.com/sgibb/cleaver/blob/master/vignettes/cleaver.Rmd"><code>vignettes/cleaver.Rmd</code></a></small>
@@ -96,53 +96,53 @@
 <h1 class="hasAnchor">
 <a href="#simple-usage" class="anchor"></a>Simple Usage</h1>
 <p>Loading the <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> package:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"cleaver"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"cleaver"</span>)</pre></body></html></div>
 <p>Getting help and list all available cleavage rules:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="st">"cleave"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="st">"cleave"</span>)</pre></body></html></div>
 <p>Cleaving of <em>Gastric juice peptide 1 (P01358)</em> using <em>Trypsin</em>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">## cleave it</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="co">## cleave it</span>
+<span class="fu"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ## [1] "LAAGK" "VEDSD"</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">## get the cleavage ranges</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="co">## get the cleavage ranges</span>
+<span class="fu"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ##      start end
 ## [1,]     1   5
 ## [2,]     6  10</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">## get only cleavage sites</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="../reference/cleave-methods.html">cleavageSites</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="co">## get only cleavage sites</span>
+<span class="fu"><a href="../reference/cleave-methods.html">cleavageSites</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ## [1] 5</code></pre>
 <p>Sometimes cleavage is not perfect and the enzym miss some cleavage positions:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">## miss one cleavage position</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="co">## miss one cleavage position</span>
+<span class="fu"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>, <span class="kw">missedCleavages</span><span class="kw">=</span><span class="fl">1</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ## [1] "LAAGKVEDSD"</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>, <span class="kw">missedCleavages</span><span class="kw">=</span><span class="fl">1</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ##      start end
 ## [1,]     1  10</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">## miss zero or one cleavage positions</a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="co">## miss zero or one cleavage positions</span>
+<span class="fu"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>, <span class="kw">missedCleavages</span><span class="kw">=</span><span class="fl">0</span>:<span class="fl">1</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ## [1] "LAAGK"      "VEDSD"      "LAAGKVEDSD"</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="dt">enzym=</span><span class="st">"trypsin"</span>, <span class="dt">missedCleavages=</span><span class="dv">0</span><span class="op">:</span><span class="dv">1</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="st">"LAAGKVEDSD"</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>, <span class="kw">missedCleavages</span><span class="kw">=</span><span class="fl">0</span>:<span class="fl">1</span>)</pre></body></html></div>
 <pre><code>## $LAAGKVEDSD
 ##      start end
 ## [1,]     1   5
 ## [2,]     6  10
 ## [3,]     1  10</code></pre>
 <p>Combine <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> and <em><a href="https://bioconductor.org/packages/3.11/Biostrings">Biostrings</a></em> <span class="citation">(Pages et al., n.d.)</span>:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">## create AAStringSet object</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">p &lt;-<span class="st"> </span><span class="kw">AAStringSet</span>(<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dt">gaju=</span><span class="st">"LAAGKVEDSD"</span>, <span class="dt">pnm=</span><span class="st">"AGEPKLDAGV"</span>))</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb17-4" data-line-number="4">## cleave it</a>
-<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(p, <span class="dt">enzym=</span><span class="st">"trypsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="co">## create AAStringSet object</span>
+<span class="no">p</span> <span class="kw">&lt;-</span> <span class="fu">AAStringSet</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">gaju</span><span class="kw">=</span><span class="st">"LAAGKVEDSD"</span>, <span class="kw">pnm</span><span class="kw">=</span><span class="st">"AGEPKLDAGV"</span>))
+
+<span class="co">## cleave it</span>
+<span class="fu"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="no">p</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)</pre></body></html></div>
 <pre><code>## AAStringSetList of length 2
 ## [["gaju"]] LAAGK VEDSD
 ## [["pnm"]] AGEPK LDAGV</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(p, <span class="dt">enzym=</span><span class="st">"trypsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="../reference/cleave-methods.html">cleavageRanges</a></span>(<span class="no">p</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)</pre></body></html></div>
 <pre><code>## IRangesList object of length 2:
 ## $gaju
 ## IRanges object with 2 ranges and 0 metadata columns:
@@ -157,7 +157,7 @@
 ##       &lt;integer&gt; &lt;integer&gt; &lt;integer&gt;
 ##   [1]         1         5         5
 ##   [2]         6        10         5</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw"><a href="../reference/cleave-methods.html">cleavageSites</a></span>(p, <span class="dt">enzym=</span><span class="st">"trypsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="fu"><a href="../reference/cleave-methods.html">cleavageSites</a></span>(<span class="no">p</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)</pre></body></html></div>
 <pre><code>## $gaju
 ## [1] 5
 ## 
@@ -168,23 +168,23 @@
 <h1 class="hasAnchor">
 <a href="#insulin-somatostatin-example" class="anchor"></a>Insulin &amp; Somatostatin Example</h1>
 <p>Downloading <em>Insulin (P01308)</em> and <em>Somatostatin (P61278)</em> sequences from the <a href="http://www.uniprot.org">UniProt</a> <span class="citation">(The UniProt Consortium 2012)</span> database using <em><a href="https://bioconductor.org/packages/3.11/UniProt.ws">UniProt.ws</a></em> <span class="citation">(Carlson, n.d.)</span>.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">## load UniProt.ws library</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"UniProt.ws"</span>)</a>
-<a class="sourceLine" id="cb23-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb23-4" data-line-number="4">## select species Homo sapiens</a>
-<a class="sourceLine" id="cb23-5" data-line-number="5">UniProt.ws &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/UniProt.ws/man/UniProtWS-class.html">UniProt.ws</a></span>(<span class="dt">taxId=</span><span class="dv">9606</span>)</a>
-<a class="sourceLine" id="cb23-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb23-7" data-line-number="7">## download sequences of Insulin/Somatostatin</a>
-<a class="sourceLine" id="cb23-8" data-line-number="8">s &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/UniProt.ws/man/UniProtWS-class.html">select</a></span>(UniProt.ws, <span class="dt">keys=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"P01308"</span>, <span class="st">"P61278"</span>), <span class="dt">columns=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SEQUENCE"</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="co">## load UniProt.ws library</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"UniProt.ws"</span>)
+
+<span class="co">## select species Homo sapiens</span>
+<span class="no">UniProt.ws</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/UniProt.ws/man/UniProtWS-class.html">UniProt.ws</a></span>(<span class="kw">taxId</span><span class="kw">=</span><span class="fl">9606</span>)
+
+<span class="co">## download sequences of Insulin/Somatostatin</span>
+<span class="no">s</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/UniProt.ws/man/UniProtWS-class.html">select</a></span>(<span class="no">UniProt.ws</span>, <span class="kw">keys</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"P01308"</span>, <span class="st">"P61278"</span>), <span class="kw">columns</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"SEQUENCE"</span>))</pre></body></html></div>
 <pre><code>## Getting extra data for P01308, P61278</code></pre>
 <pre><code>## 'select()' returned 1:1 mapping between keys and columns</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">## fetch only sequences</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">sequences &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/setNames.html">setNames</a></span>(s<span class="op">$</span>SEQUENCE, s<span class="op">$</span>UNIPROTKB)</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb26-4" data-line-number="4">## remove whitespaces</a>
-<a class="sourceLine" id="cb26-5" data-line-number="5">sequences &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span>(<span class="dt">pattern=</span><span class="st">"[[:space:]]"</span>, <span class="dt">replacement=</span><span class="st">""</span>, <span class="dt">x=</span>sequences)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="co">## fetch only sequences</span>
+<span class="no">sequences</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/setNames.html">setNames</a></span>(<span class="no">s</span>$<span class="no">SEQUENCE</span>, <span class="no">s</span>$<span class="no">UNIPROTKB</span>)
+
+<span class="co">## remove whitespaces</span>
+<span class="no">sequences</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span>(<span class="kw">pattern</span><span class="kw">=</span><span class="st">"[[:space:]]"</span>, <span class="kw">replacement</span><span class="kw">=</span><span class="st">""</span>, <span class="kw">x</span><span class="kw">=</span><span class="no">sequences</span>)</pre></body></html></div>
 <p>Cleaving using <em>Pepsin</em>:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(sequences, <span class="dt">enzym=</span><span class="st">"pepsin"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="fu"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="no">sequences</span>, <span class="kw">enzym</span><span class="kw">=</span><span class="st">"pepsin"</span>)</pre></body></html></div>
 <pre><code>## $P01308
 ##  [1] "MA"              "L"               "W"               "MRLLP"          
 ##  [5] "LL"              "A"               "WGPDPAAA"        "F"              
@@ -207,32 +207,32 @@
 <h1 class="hasAnchor">
 <a href="#isotopic-distribution-of-tryptic-digested-insulin" class="anchor"></a>Isotopic Distribution Of Tryptic Digested Insulin</h1>
 <p>A common use case of in-silico cleavage is the calculation of the isotopic distribution of peptides (which were enzymatic digested in the in-vitro experimental workflow). Here <em><a href="https://bioconductor.org/packages/3.11/BRAIN">BRAIN</a></em> <span class="citation">(Claesen et al. 2012; Dittwald et al. 2013)</span> is used to calculate the isotopic distribution of <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em>’s output. (please note: it is only a toy example, e.g. the relation of intensity values between peptides isn’t correct).</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1">## load BRAIN library</a>
-<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BRAIN"</span>)</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb29-4" data-line-number="4">## cleave insulin</a>
-<a class="sourceLine" id="cb29-5" data-line-number="5">cleavedInsulin &lt;-<span class="st"> </span><span class="kw"><a href="../reference/cleave-methods.html">cleave</a></span>(sequences[<span class="dv">1</span>], <span class="dt">enzym=</span><span class="st">"trypsin"</span>)[[<span class="dv">1</span>]]</a>
-<a class="sourceLine" id="cb29-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb29-7" data-line-number="7">## create empty plot area</a>
-<a class="sourceLine" id="cb29-8" data-line-number="8"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(<span class="ot">NA</span>, <span class="dt">xlim=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">150</span>, <span class="dv">4300</span>), <span class="dt">ylim=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">0</span>, <span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb29-9" data-line-number="9">     <span class="dt">xlab=</span><span class="st">"mass"</span>, <span class="dt">ylab=</span><span class="st">"relative intensity"</span>,</a>
-<a class="sourceLine" id="cb29-10" data-line-number="10">     <span class="dt">main=</span><span class="st">"tryptic digested insulin - isotopic distribution"</span>)</a>
-<a class="sourceLine" id="cb29-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb29-12" data-line-number="12">## loop through peptides</a>
-<a class="sourceLine" id="cb29-13" data-line-number="13"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="dt">along=</span>cleavedInsulin)) {</a>
-<a class="sourceLine" id="cb29-14" data-line-number="14">  ## count C, H, N, O, S atoms in current peptide</a>
-<a class="sourceLine" id="cb29-15" data-line-number="15">  atoms &lt;-<span class="st"> </span>BRAIN<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/BRAIN/man/getAtomsFromSeq.html">getAtomsFromSeq</a></span>(cleavedInsulin[[i]])</a>
-<a class="sourceLine" id="cb29-16" data-line-number="16">  ## calculate isotopic distribution</a>
-<a class="sourceLine" id="cb29-17" data-line-number="17">  d &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/BRAIN/man/useBRAIN.html">useBRAIN</a></span>(atoms)</a>
-<a class="sourceLine" id="cb29-18" data-line-number="18">  ## draw peaks</a>
-<a class="sourceLine" id="cb29-19" data-line-number="19">  <span class="kw"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span>(d<span class="op">$</span>masses, d<span class="op">$</span>isoDistr, <span class="dt">type=</span><span class="st">"h"</span>, <span class="dt">col=</span><span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb29-20" data-line-number="20">}</a></code></pre></div>
+<div class="sourceCode" id="cb29"><html><body><pre class="r"><span class="co">## load BRAIN library</span>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BRAIN"</span>)
+
+<span class="co">## cleave insulin</span>
+<span class="no">cleavedInsulin</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/cleave-methods.html">cleave</a></span>(<span class="no">sequences</span>[<span class="fl">1</span>], <span class="kw">enzym</span><span class="kw">=</span><span class="st">"trypsin"</span>)<span class="kw">[[</span><span class="fl">1</span>]]
+
+<span class="co">## create empty plot area</span>
+<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="fl">NA</span>, <span class="kw">xlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">150</span>, <span class="fl">4300</span>), <span class="kw">ylim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">1</span>),
+     <span class="kw">xlab</span><span class="kw">=</span><span class="st">"mass"</span>, <span class="kw">ylab</span><span class="kw">=</span><span class="st">"relative intensity"</span>,
+     <span class="kw">main</span><span class="kw">=</span><span class="st">"tryptic digested insulin - isotopic distribution"</span>)
+
+<span class="co">## loop through peptides</span>
+<span class="kw">for</span> (<span class="no">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="kw">along</span><span class="kw">=</span><span class="no">cleavedInsulin</span>)) {
+  <span class="co">## count C, H, N, O, S atoms in current peptide</span>
+  <span class="no">atoms</span> <span class="kw">&lt;-</span> <span class="kw pkg">BRAIN</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/BRAIN/man/getAtomsFromSeq.html">getAtomsFromSeq</a></span>(<span class="no">cleavedInsulin</span><span class="kw">[[</span><span class="no">i</span>]])
+  <span class="co">## calculate isotopic distribution</span>
+  <span class="no">d</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/BRAIN/man/useBRAIN.html">useBRAIN</a></span>(<span class="no">atoms</span>)
+  <span class="co">## draw peaks</span>
+  <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span>(<span class="no">d</span>$<span class="no">masses</span>, <span class="no">d</span>$<span class="no">isoDistr</span>, <span class="kw">type</span><span class="kw">=</span><span class="st">"h"</span>, <span class="kw">col</span><span class="kw">=</span><span class="fl">2</span>)
+}</pre></body></html></div>
 <p><img src="cleaver_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
 </div>
 <div id="session-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session Information</h1>
-<pre><code>## R Under development (unstable) (2020-03-01 r77880)
+<pre><code>## R Under development (unstable) (2020-03-13 r77948)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
 ## 
@@ -255,27 +255,29 @@
 ## other attached packages:
 ##  [1] BRAIN_1.33.0        lattice_0.20-40     PolynomF_2.0-3     
 ##  [4] UniProt.ws_2.27.0   RCurl_1.98-1.1      RSQLite_2.2.0      
-##  [7] cleaver_1.25.1      Biostrings_2.55.4   XVector_0.27.0     
-## [10] IRanges_2.21.3      S4Vectors_0.25.12   BiocGenerics_0.33.0
+##  [7] cleaver_1.25.1      Biostrings_2.55.7   XVector_0.27.2     
+## [10] IRanges_2.21.8      S4Vectors_0.25.14   BiocGenerics_0.33.3
 ## [13] BiocStyle_2.15.6   
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] tidyselect_1.0.0     xfun_0.12            purrr_0.3.3         
-##  [4] vctrs_0.2.3          htmltools_0.4.0      BiocFileCache_1.11.4
-##  [7] yaml_2.2.1           blob_1.2.1           rlang_0.4.4         
-## [10] pkgdown_1.4.1        pillar_1.4.3         glue_1.3.1          
+##  [4] vctrs_0.2.4          htmltools_0.4.0      BiocFileCache_1.11.4
+##  [7] yaml_2.2.1           blob_1.2.1           rlang_0.4.5         
+## [10] pkgdown_1.5.0        pillar_1.4.3         glue_1.3.2          
 ## [13] DBI_1.1.0            rappdirs_0.3.1       bit64_0.9-7         
-## [16] dbplyr_1.4.2         stringr_1.4.0        zlibbioc_1.33.1     
-## [19] memoise_1.1.0        evaluate_0.14        Biobase_2.47.2      
-## [22] knitr_1.28           curl_4.3             AnnotationDbi_1.49.1
-## [25] Rcpp_1.0.3           backports_1.1.5      BiocManager_1.30.10 
-## [28] desc_1.2.0           fs_1.3.1             bit_1.1-15.2        
-## [31] digest_0.6.25        stringi_1.4.6        bookdown_0.17       
-## [34] dplyr_0.8.4          rprojroot_1.3-2      grid_4.0.0          
-## [37] tools_4.0.0          bitops_1.0-6         magrittr_1.5        
-## [40] tibble_2.1.3         crayon_1.3.4         pkgconfig_2.0.3     
-## [43] MASS_7.3-51.5        assertthat_0.2.1     rmarkdown_2.1       
-## [46] httr_1.4.1           R6_2.4.1             compiler_4.0.0</code></pre>
+## [16] dbplyr_1.4.2         lifecycle_0.2.0      stringr_1.4.0       
+## [19] zlibbioc_1.33.1      memoise_1.1.0        evaluate_0.14       
+## [22] Biobase_2.47.3       knitr_1.28           curl_4.3            
+## [25] AnnotationDbi_1.49.1 fansi_0.4.1          Rcpp_1.0.4          
+## [28] backports_1.1.5      BiocManager_1.30.10  desc_1.2.0          
+## [31] fs_1.4.0             bit_1.1-15.2         digest_0.6.25       
+## [34] stringi_1.4.6        bookdown_0.18        dplyr_0.8.5         
+## [37] grid_4.0.0           rprojroot_1.3-2      cli_2.0.2           
+## [40] tools_4.0.0          bitops_1.0-6         magrittr_1.5        
+## [43] tibble_3.0.0         crayon_1.3.4         pkgconfig_2.0.3     
+## [46] MASS_7.3-51.5        ellipsis_0.3.0       assertthat_0.2.1    
+## [49] rmarkdown_2.1        httr_1.4.1           R6_2.4.1            
+## [52] compiler_4.0.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
@@ -303,21 +305,11 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      <li><a href="#simple-usage">Simple Usage</a></li>
-      <li><a href="#insulin-somatostatin-example">Insulin &amp; Somatostatin Example</a></li>
-      <li><a href="#isotopic-distribution-of-tryptic-digested-insulin">Isotopic Distribution Of Tryptic Digested Insulin</a></li>
-      <li><a href="#session-information">Session Information</a></li>
-      <li><a href="#references">References</a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -328,7 +320,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
 </div>
 
       </footer>
