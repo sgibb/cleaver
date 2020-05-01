@@ -89,13 +89,13 @@
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
 <p>Most proteomics experiments need protein (peptide) separation and cleavage procedures before these molecules could be analyzed or identified by mass spectrometry or other analytical tools.</p>
-<p><em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> allows in-silico cleavage of polypeptide sequences to e.g. create theoretical mass spectrometry data.</p>
+<p><em><a href="https://bioconductor.org/packages/3.12/cleaver">cleaver</a></em> allows in-silico cleavage of polypeptide sequences to e.g. create theoretical mass spectrometry data.</p>
 <p>The cleavage rules are taken from the <a href="https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html">ExPASy PeptideCutter tool</a> <span class="citation">(Gasteiger et al. 2005)</span>.</p>
 </div>
 <div id="simple-usage" class="section level1">
 <h1 class="hasAnchor">
 <a href="#simple-usage" class="anchor"></a>Simple Usage</h1>
-<p>Loading the <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> package:</p>
+<p>Loading the <em><a href="https://bioconductor.org/packages/3.12/cleaver">cleaver</a></em> package:</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"cleaver"</span>)</pre></body></html></div>
 <p>Getting help and list all available cleavage rules:</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="st">"cleave"</span>)</pre></body></html></div>
@@ -133,7 +133,7 @@
 ## [1,]     1   5
 ## [2,]     6  10
 ## [3,]     1  10</code></pre>
-<p>Combine <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em> and <em><a href="https://bioconductor.org/packages/3.11/Biostrings">Biostrings</a></em> <span class="citation">(Pages et al., n.d.)</span>:</p>
+<p>Combine <em><a href="https://bioconductor.org/packages/3.12/cleaver">cleaver</a></em> and <em><a href="https://bioconductor.org/packages/3.12/Biostrings">Biostrings</a></em> <span class="citation">(Pages et al., n.d.)</span>:</p>
 <div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="co">## create AAStringSet object</span>
 <span class="no">p</span> <span class="kw">&lt;-</span> <span class="fu">AAStringSet</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="kw">gaju</span><span class="kw">=</span><span class="st">"LAAGKVEDSD"</span>, <span class="kw">pnm</span><span class="kw">=</span><span class="st">"AGEPKLDAGV"</span>))
 
@@ -167,7 +167,7 @@
 <div id="insulin-somatostatin-example" class="section level1">
 <h1 class="hasAnchor">
 <a href="#insulin-somatostatin-example" class="anchor"></a>Insulin &amp; Somatostatin Example</h1>
-<p>Downloading <em>Insulin (P01308)</em> and <em>Somatostatin (P61278)</em> sequences from the <a href="http://www.uniprot.org">UniProt</a> <span class="citation">(The UniProt Consortium 2012)</span> database using <em><a href="https://bioconductor.org/packages/3.11/UniProt.ws">UniProt.ws</a></em> <span class="citation">(Carlson, n.d.)</span>.</p>
+<p>Downloading <em>Insulin (P01308)</em> and <em>Somatostatin (P61278)</em> sequences from the <a href="http://www.uniprot.org">UniProt</a> <span class="citation">(The UniProt Consortium 2012)</span> database using <em><a href="https://bioconductor.org/packages/3.12/UniProt.ws">UniProt.ws</a></em> <span class="citation">(Carlson, n.d.)</span>.</p>
 <div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="co">## load UniProt.ws library</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"UniProt.ws"</span>)
 
@@ -206,7 +206,7 @@
 <div id="isotopic-distribution-of-tryptic-digested-insulin" class="section level1">
 <h1 class="hasAnchor">
 <a href="#isotopic-distribution-of-tryptic-digested-insulin" class="anchor"></a>Isotopic Distribution Of Tryptic Digested Insulin</h1>
-<p>A common use case of in-silico cleavage is the calculation of the isotopic distribution of peptides (which were enzymatic digested in the in-vitro experimental workflow). Here <em><a href="https://bioconductor.org/packages/3.11/BRAIN">BRAIN</a></em> <span class="citation">(Claesen et al. 2012; Dittwald et al. 2013)</span> is used to calculate the isotopic distribution of <em><a href="https://bioconductor.org/packages/3.11/cleaver">cleaver</a></em>’s output. (please note: it is only a toy example, e.g. the relation of intensity values between peptides isn’t correct).</p>
+<p>A common use case of in-silico cleavage is the calculation of the isotopic distribution of peptides (which were enzymatic digested in the in-vitro experimental workflow). Here <em><a href="https://bioconductor.org/packages/3.12/BRAIN">BRAIN</a></em> <span class="citation">(Claesen et al. 2012; Dittwald et al. 2013)</span> is used to calculate the isotopic distribution of <em><a href="https://bioconductor.org/packages/3.12/cleaver">cleaver</a></em>’s output. (please note: it is only a toy example, e.g. the relation of intensity values between peptides isn’t correct).</p>
 <div class="sourceCode" id="cb29"><html><body><pre class="r"><span class="co">## load BRAIN library</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"BRAIN"</span>)
 
@@ -232,7 +232,7 @@
 <div id="session-information" class="section level1">
 <h1 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session Information</h1>
-<pre><code>## R Under development (unstable) (2020-03-13 r77948)
+<pre><code>## R Under development (unstable) (2020-05-01 r78341)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## Running under: Ubuntu 14.04.5 LTS
 ## 
@@ -253,31 +253,30 @@
 ## [8] methods   base     
 ## 
 ## other attached packages:
-##  [1] BRAIN_1.33.0        lattice_0.20-40     PolynomF_2.0-3     
-##  [4] UniProt.ws_2.27.0   RCurl_1.98-1.1      RSQLite_2.2.0      
-##  [7] cleaver_1.25.1      Biostrings_2.55.7   XVector_0.27.2     
-## [10] IRanges_2.21.8      S4Vectors_0.25.14   BiocGenerics_0.33.3
-## [13] BiocStyle_2.15.6   
+##  [1] BRAIN_1.35.0        lattice_0.20-41     PolynomF_2.0-3     
+##  [4] UniProt.ws_2.29.0   RCurl_1.98-1.2      RSQLite_2.2.0      
+##  [7] cleaver_1.25.1      Biostrings_2.57.0   XVector_0.29.0     
+## [10] IRanges_2.23.1      S4Vectors_0.27.1    BiocGenerics_0.35.0
+## [13] BiocStyle_2.17.0   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] tidyselect_1.0.0     xfun_0.12            purrr_0.3.3         
-##  [4] vctrs_0.2.4          htmltools_0.4.0      BiocFileCache_1.11.4
+##  [1] tidyselect_1.0.0     xfun_0.13            purrr_0.3.4         
+##  [4] vctrs_0.2.4          htmltools_0.4.0      BiocFileCache_1.13.0
 ##  [7] yaml_2.2.1           blob_1.2.1           rlang_0.4.5         
-## [10] pkgdown_1.5.0        pillar_1.4.3         glue_1.3.2          
+## [10] pkgdown_1.5.1        pillar_1.4.3         glue_1.4.0          
 ## [13] DBI_1.1.0            rappdirs_0.3.1       bit64_0.9-7         
-## [16] dbplyr_1.4.2         lifecycle_0.2.0      stringr_1.4.0       
-## [19] zlibbioc_1.33.1      memoise_1.1.0        evaluate_0.14       
-## [22] Biobase_2.47.3       knitr_1.28           curl_4.3            
-## [25] AnnotationDbi_1.49.1 fansi_0.4.1          Rcpp_1.0.4          
-## [28] backports_1.1.5      BiocManager_1.30.10  desc_1.2.0          
-## [31] fs_1.4.0             bit_1.1-15.2         digest_0.6.25       
-## [34] stringi_1.4.6        bookdown_0.18        dplyr_0.8.5         
-## [37] grid_4.0.0           rprojroot_1.3-2      cli_2.0.2           
-## [40] tools_4.0.0          bitops_1.0-6         magrittr_1.5        
-## [43] tibble_3.0.0         crayon_1.3.4         pkgconfig_2.0.3     
-## [46] MASS_7.3-51.5        ellipsis_0.3.0       assertthat_0.2.1    
-## [49] rmarkdown_2.1        httr_1.4.1           R6_2.4.1            
-## [52] compiler_4.0.0</code></pre>
+## [16] dbplyr_1.4.3         lifecycle_0.2.0      stringr_1.4.0       
+## [19] zlibbioc_1.35.0      memoise_1.1.0        evaluate_0.14       
+## [22] Biobase_2.49.0       knitr_1.28           curl_4.3            
+## [25] AnnotationDbi_1.51.0 Rcpp_1.0.4.6         backports_1.1.6     
+## [28] BiocManager_1.30.10  desc_1.2.0           fs_1.4.1            
+## [31] bit_1.1-15.2         digest_0.6.25        stringi_1.4.6       
+## [34] bookdown_0.18        dplyr_0.8.5          grid_4.1.0          
+## [37] rprojroot_1.3-2      tools_4.1.0          bitops_1.0-6        
+## [40] magrittr_1.5         tibble_3.0.1         crayon_1.3.4        
+## [43] pkgconfig_2.0.3      MASS_7.3-51.6        ellipsis_0.3.0      
+## [46] assertthat_0.2.1     rmarkdown_2.1        httr_1.4.1          
+## [49] R6_2.4.1             compiler_4.1.0</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
@@ -320,7 +319,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>
