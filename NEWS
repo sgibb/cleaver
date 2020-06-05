@@ -1,6 +1,11 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.27.1 [2020-06-05]:
+- Fix cleavage rule for glutamyl endopeptidase in documentation
+  Thanks to Mariia Chernigovskaya <mariia.chernigovskaya@medisin.uio.no> for
+  reporting this error.
+
 Version 1.25.1 [2019-12-30]:
 - Add missing space in vignette.
 

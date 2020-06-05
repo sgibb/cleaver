@@ -145,7 +145,7 @@
     \code{factor xa} \tab A,F,G,I,L,T,V,M \tab D,E \tab G \tab R \tab -
       \tab - \cr
     \code{formic acid} \tab - \tab - \tab - \tab D \tab - \tab - \cr
-    \code{glutamyl endopeptidase} \tab - \tab - \tab - \tab D \tab - \tab - \cr
+    \code{glutamyl endopeptidase} \tab - \tab - \tab - \tab E \tab - \tab - \cr
     \code{granzyme-b} \tab I \tab E \tab P \tab D \tab - \tab - \cr
     \code{hydroxylamine} \tab - \tab - \tab - \tab N \tab G \tab - \cr
     \code{iodosobenzoic acid} \tab - \tab - \tab - \tab W \tab - \tab - \cr
