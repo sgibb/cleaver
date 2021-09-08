@@ -1,7 +1,8 @@
 ^README\.md$
 ^\.git$
 ^\.gitignore$
-^\.travis.yml$
+^\.github$
+^_pkgdown\.yml$
 ^vignettes/figure$
 ^vignettes/*.pdf$
 .*.aux$

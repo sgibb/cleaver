@@ -1,12 +1,16 @@
 # cleaver
-[![build status](https://travis-ci.org/sgibb/cleaver.svg?branch=master)](https://travis-ci.org/sgibb/cleaver?branch=master)
-[![codecov.io](https://img.shields.io/codecov/c/github/sgibb/cleaver.svg?branch=master)](https://codecov.io/github/sgibb/cleaver/?branch=master)
-[![license](http://img.shields.io/badge/license-GPL%20%28%3E=%203%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-3.0.html)
 
-[![years in bioc](http://bioconductor.org/shields/years-in-bioc/cleaver.svg)](https://bioconductor.org/packages/release/bioc/html/cleaver.html)
-[![bioc downloads](http://bioconductor.org/shields/downloads/cleaver.svg)](https://bioconductor.org/packages/stats/bioc/cleaver/)
-Release: [![build release](http://bioconductor.org/shields/build/release/bioc/cleaver.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/cleaver/)
-Devel: [![build devel](http://bioconductor.org/shields/build/devel/bioc/cleaver.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/cleaver/)
+<!-- badges: start -->
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![build status](https://github.com/sgibb/cleaver/workflows/R-CMD-check-bioc/badge.svg)](https://github.com/sgibb/cleaver/actions)
+[![codecov.io](https://img.shields.io/codecov/c/github/sgibb/cleaver.svg?branch=master)](https://codecov.io/github/sgibb/cleaver/?branch=master)
+[![license](https://img.shields.io/badge/license-GPL%20%28%3E=%203%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-3.0.html)
+
+[![years in bioc](https://bioconductor.org/shields/years-in-bioc/cleaver.svg)](https://bioconductor.org/packages/release/bioc/html/cleaver.html)
+[![bioc downloads](https://bioconductor.org/shields/downloads/cleaver.svg)](https://bioconductor.org/packages/stats/bioc/cleaver/)
+Release: [![build release](https://bioconductor.org/shields/build/release/bioc/cleaver.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/cleaver/)
+Devel: [![build devel](https://bioconductor.org/shields/build/devel/bioc/cleaver.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/cleaver/)
+<!-- badges: end -->
 
 ## Description
 
