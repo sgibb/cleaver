@@ -25,7 +25,7 @@ cleaver is part of [Bioconductor](https://bioconductor.org/packages/release/bioc
 ```r
 install.packages("devtools")
 library("devtools")
-install_github("cleaver", "sgibb")
+install_github("sgibb/cleaver")
 ```
 
 ## Usage
