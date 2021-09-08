@@ -47,6 +47,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -58,9 +60,15 @@
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -81,12 +89,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../articles/cleaver.html">Get started</a>
 </li>
 <li>
@@ -124,7 +126,7 @@
   ranges and <code>cleave</code> to get the cleavage products.</p>
     </div>
 
-    <pre class="usage"><span class='co'># S4 method for character</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='co'># S4 method for character</span>
 <span class='fu'>cleave</span><span class='op'>(</span><span class='va'>x</span>, enzym <span class='op'>=</span> <span class='st'>"trypsin"</span>, missedCleavages <span class='op'>=</span> <span class='fl'>0</span>,
                              custom <span class='op'>=</span> <span class='cn'>NULL</span>, unique <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
@@ -155,7 +157,7 @@
 <span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>x</span>, enzym <span class='op'>=</span> <span class='st'>"trypsin"</span>, custom <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span>
 
 <span class='co'># S4 method for AAStringSet</span>
-<span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>x</span>, enzym <span class='op'>=</span> <span class='st'>"trypsin"</span>, custom <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+<span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>x</span>, enzym <span class='op'>=</span> <span class='st'>"trypsin"</span>, custom <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -194,19 +196,19 @@
     <dt><code>cleave</code></dt><dd><p>If <code>x</code> is a <code>character</code> it returns a <code>list</code> of the same
       length as <code>x</code>. Each element contains a <code>character</code> vector with
       the corresponding cleavage products of the polypeptides.
-      If <code>x</code> is an <code>AAString</code> or an
-      <code>AAStringSet</code> an
-      <code>AAStringSet</code> or an
-      <code>AAStringSetList</code> instance of the same length as
+      If <code>x</code> is an <code><a href='https://rdrr.io/pkg/Biostrings/man/AAString-class.html'>AAString</a></code> or an
+      <code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code> an
+      <code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code> or an
+      <code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSetList-class.html'>AAStringSetList</a></code> instance of the same length as
       <code>x</code> is returned.
       Each element contains an
-      <code>AAString</code> or an <code>AAStringSet</code>
+      <code><a href='https://rdrr.io/pkg/Biostrings/man/AAString-class.html'>AAString</a></code> or an <code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code>
       instance with the corresponding cleavage products of the polypeptides.</p></dd>
     <dt><code>cleavageRanges</code></dt><dd><p>If <code>x</code> is a <code>character</code> it returns a <code>list</code> of the same
       length as <code>x</code>. Each element contains a two-column <code>matrix</code> with
       the start and end positions of the peptides.
-      If <code>x</code> is an <code>AAString</code> or an
-      <code>AAStringSet</code> instance an
+      If <code>x</code> is an <code><a href='https://rdrr.io/pkg/Biostrings/man/AAString-class.html'>AAString</a></code> or an
+      <code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code> instance an
       <code>IRanges</code> or an <code>IRangesList</code> of the
       same length as <code>x</code> is returned.</p></dd>
     <dt><code>cleavageSites</code></dt><dd><p>Returns a <code>list</code> of the same length as <code>x</code>. Each element
@@ -218,8 +220,8 @@
 <p></p><table class='table'>
 <tr><td>Input</td><td><code>cleave</code></td><td><code>cleavageRanges</code></td><td><code>cleavageSites</code></td></tr>
 <tr><td><code>character</code></td><td><code>list</code> of <code>character</code></td><td><code>list</code> of <code>matrix</code></td><td><code>list</code> of <code>integer</code></td></tr>
-<tr><td><code>AAString</code></td><td><code>AAStringSet</code></td><td><code>IRanges</code></td><td><code>list</code> of <code>integer</code></td></tr>
-<tr><td><code>AAStringSet</code></td><td><code>AAStringSetList</code></td><td><code>IRangesList</code></td><td><code>list</code> of <code>integer</code></td></tr>
+<tr><td><code><a href='https://rdrr.io/pkg/Biostrings/man/AAString-class.html'>AAString</a></code></td><td><code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code></td><td><code>IRanges</code></td><td><code>list</code> of <code>integer</code></td></tr>
+<tr><td><code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code></td><td><code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSetList-class.html'>AAStringSetList</a></code></td><td><code>IRangesList</code></td><td><code>list</code> of <code>integer</code></td></tr>
 </table>
 
 
@@ -334,156 +336,173 @@
   <a href='https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html'>https://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html</a></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code>AAString</code>,
-<code>AAStringSet</code>,
-<code>AAStringSetList</code>,
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/Biostrings/man/AAString-class.html'>AAString</a></code>,
+<code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></code>,
+<code><a href='https://rdrr.io/pkg/Biostrings/man/XStringSetList-class.html'>AAStringSetList</a></code>,
 <code>IRanges</code>,
 <code>IRangesList</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='https://github.com/sgibb/cleaver/'>"cleaver"</a></span><span class='op'>)</span>
-
-<span class='co'>## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)</span>
-<span class='va'>gaju</span> <span class='op'>&lt;-</span> <span class='st'>"LAAGKVEDSD"</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt; [1] "LAAGK" "VEDSD"
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'># [1] "LAAGK" "VEDSD"</span>
-
-<span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt;      start end
-#&gt; [1,]     1   5
-#&gt; [2,]     6  10
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'>#      start end</span>
-<span class='co'># [1,]     1   5</span>
-<span class='co'># [2,]     6  10</span>
-
-<span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt; [1] 5
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'># [1] 5</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt; [1] "LAAGKVEDSD"
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'># [1] "LAAGKVEDSD"</span>
-
-<span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt;      start end
-#&gt; [1,]     1  10
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'>#      start end</span>
-<span class='co'># [1,]     1  10</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt; [1] "LAAGK"      "VEDSD"      "LAAGKVEDSD"
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'># [1] "LAAGK" "VEDSD" "LAAGKVEDSD"</span>
-
-<span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt;      start end
-#&gt; [1,]     1   5
-#&gt; [2,]     6  10
-#&gt; [3,]     1  10
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'>#      start end</span>
-<span class='co'># [1,]     1   5</span>
-<span class='co'># [2,]     6  10</span>
-<span class='co'># [3,]     1  10</span>
-
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"pepsin"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $LAAGKVEDSD
-#&gt; [1] "LAAGKVEDSD"
-#&gt; </div><div class='input'><span class='co'># $LAAGKVEDSD</span>
-<span class='co'># [1] "LAAGKVEDSD"</span>
-<span class='co'># (no cleavage)</span>
-
-
-<span class='co'>## use AAStringSet</span>
-<span class='va'>gaju</span> <span class='op'>&lt;-</span> <span class='fu'>AAStringSet</span><span class='op'>(</span><span class='st'>"LAAGKVEDSD"</span><span class='op'>)</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; AAStringSetList of length 1
-#&gt; [["LAAGKVEDSD"]] LAAGK VEDSD</div><div class='input'><span class='co'># AAStringSetList of length 1</span>
-<span class='co'># [["LAAGKVEDSD"]] LAAGK VEDSD</span>
-
-
-<span class='co'>## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)</span>
-<span class='va'>enob</span> <span class='op'>&lt;-</span> <span class='st'>"SITKIKAREILD"</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, <span class='st'>"trypsin"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt; [1] "SITK" "IK"   "AR"   "EILD"
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'># [1] "SITK" "IK"   "AR"   "EILD"</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt; [1] "SITKIKAR" "IKAREILD"
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'># [1] "SITKIKAR" "IKAREILD"</span>
-
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>2</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt; [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"     "AREILD"  
-#&gt; [8] "SITKIKAR" "IKAREILD"
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'># [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"</span>
-<span class='co'># [7] "AREILD"   "SITKIKAR" "IKAREILD"</span>
-
-<span class='co'>## define own cleavage rule: cleave at K</span>
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='st'>"K"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt; [1] "SITK"   "IK"     "AREILD"
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'># [1] "SITK"   "IK"     "AREILD"</span>
-
-<span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='st'>"K"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt;      start end
-#&gt; [1,]     1   4
-#&gt; [2,]     5   6
-#&gt; [3,]     7  12
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'>#      start end</span>
-<span class='co'># [1,]     1   4</span>
-<span class='co'># [2,]     5   6</span>
-<span class='co'># [3,]     7  12</span>
-
-<span class='co'>## define own cleavage rule: cleave at K but not if followed by A</span>
-<span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt; [1] "SITK"     "IKAREILD"
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'># [1] "SITK"     "IKAREILD"</span>
-
-<span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt;      start end
-#&gt; [1,]     1   4
-#&gt; [2,]     5  12
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'>#      start end</span>
-<span class='co'># [1,]     1   4</span>
-<span class='co'># [2,]     5  12</span>
-
-<span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span><span class='op'>)</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; $SITKIKAREILD
-#&gt; [1] 4
-#&gt; </div><div class='input'><span class='co'># $SITKIKAREILD</span>
-<span class='co'># [1] 4</span>
-
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='https://github.com/sgibb/cleaver/'>"cleaver"</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Gastric juice peptide 1 (UniProtKB/Swiss-Prot: GAJU_HUMAN/P01358)</span></span>
+<span class='r-in'><span class='va'>gaju</span> <span class='op'>&lt;-</span> <span class='st'>"LAAGKVEDSD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "LAAGK" "VEDSD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'># [1] "LAAGK" "VEDSD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      start end</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1,]     1   5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2,]     6  10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'>#      start end</span></span>
+<span class='r-in'><span class='co'># [1,]     1   5</span></span>
+<span class='r-in'><span class='co'># [2,]     6  10</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'># [1] 5</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "LAAGKVEDSD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'># [1] "LAAGKVEDSD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      start end</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1,]     1  10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'>#      start end</span></span>
+<span class='r-in'><span class='co'># [1,]     1  10</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "LAAGK"      "VEDSD"      "LAAGKVEDSD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'># [1] "LAAGK" "VEDSD" "LAAGKVEDSD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>1</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      start end</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1,]     1   5</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2,]     6  10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [3,]     1  10</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'>#      start end</span></span>
+<span class='r-in'><span class='co'># [1,]     1   5</span></span>
+<span class='r-in'><span class='co'># [2,]     6  10</span></span>
+<span class='r-in'><span class='co'># [3,]     1  10</span></span>
+<span class='r-in'></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span>, <span class='st'>"pepsin"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $LAAGKVEDSD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "LAAGKVEDSD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $LAAGKVEDSD</span></span>
+<span class='r-in'><span class='co'># [1] "LAAGKVEDSD"</span></span>
+<span class='r-in'><span class='co'># (no cleavage)</span></span>
+<span class='r-in'></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## use AAStringSet</span></span>
+<span class='r-in'><span class='va'>gaju</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/Biostrings/man/XStringSet-class.html'>AAStringSet</a></span><span class='op'>(</span><span class='st'>"LAAGKVEDSD"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>gaju</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> AAStringSetList of length 1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [["LAAGKVEDSD"]] LAAGK VEDSD</span>
+<span class='r-in'><span class='co'># AAStringSetList of length 1</span></span>
+<span class='r-in'><span class='co'># [["LAAGKVEDSD"]] LAAGK VEDSD</span></span>
+<span class='r-in'></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## Beta-enolase (UniProtKB/Swiss-Prot: ENOB_THUAL/P86978)</span></span>
+<span class='r-in'><span class='va'>enob</span> <span class='op'>&lt;-</span> <span class='st'>"SITKIKAREILD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, <span class='st'>"trypsin"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "SITK" "IK"   "AR"   "EILD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'># [1] "SITK" "IK"   "AR"   "EILD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "SITKIKAR" "IKAREILD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'># [1] "SITKIKAR" "IKAREILD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, <span class='st'>"trypsin"</span>, missedCleavages<span class='op'>=</span><span class='fl'>0</span><span class='op'>:</span><span class='fl'>2</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"     "AREILD"  </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [8] "SITKIKAR" "IKAREILD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'># [1] "SITK"     "IK"       "AR"       "EILD"     "SITKIK"   "IKAR"</span></span>
+<span class='r-in'><span class='co'># [7] "AREILD"   "SITKIKAR" "IKAREILD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## define own cleavage rule: cleave at K</span></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='st'>"K"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "SITK"   "IK"     "AREILD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'># [1] "SITK"   "IK"     "AREILD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='st'>"K"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      start end</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1,]     1   4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2,]     5   6</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [3,]     7  12</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'>#      start end</span></span>
+<span class='r-in'><span class='co'># [1,]     1   4</span></span>
+<span class='r-in'><span class='co'># [2,]     5   6</span></span>
+<span class='r-in'><span class='co'># [3,]     7  12</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>## define own cleavage rule: cleave at K but not if followed by A</span></span>
+<span class='r-in'><span class='fu'>cleave</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "SITK"     "IKAREILD"</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'># [1] "SITK"     "IKAREILD"</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageRanges</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>      start end</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1,]     1   4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [2,]     5  12</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'>#      start end</span></span>
+<span class='r-in'><span class='co'># [1,]     1   4</span></span>
+<span class='r-in'><span class='co'># [2,]     5  12</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>cleavageSites</span><span class='op'>(</span><span class='va'>enob</span>, custom<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"K"</span>, <span class='st'>"K(?=A)"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> $SITKIKAREILD</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] 4</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-in'><span class='co'># $SITKIKAREILD</span></span>
+<span class='r-in'><span class='co'># [1] 4</span></span>
+<span class='r-in'></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -495,11 +514,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Sebastian Gibb.</p>
+  <p><p>Developed by Sebastian Gibb.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -507,6 +526,8 @@
 
   
 
+
+  
 
   </body>
 </html>
