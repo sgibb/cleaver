@@ -1,5 +1,5 @@
 Package: cleaver
-Version: 1.35.0
+Version: 1.35.1
 Title: Cleavage of Polypeptide Sequences
 Authors@R: c(person("Sebastian", "Gibb", role=c("aut", "cre"),
                     email="mail@sebastiangibb.de",
@@ -8,7 +8,7 @@ Maintainer: Sebastian Gibb <mail@sebastiangibb.de>
 Depends: R (>= 3.0.0), methods, Biostrings (>= 1.29.8)
 Imports: S4Vectors, IRanges
 Suggests: testthat (>= 0.8), knitr, BiocStyle (>= 0.0.14), rmarkdown,
-        BRAIN, UniProt.ws (>= 2.1.4)
+        BRAIN, UniProt.ws (>= 2.36.5)
 Description: In-silico cleavage of polypeptide sequences. The cleavage
         rules are taken from:
         http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html

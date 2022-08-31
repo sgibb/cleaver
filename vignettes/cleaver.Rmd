@@ -93,13 +93,17 @@ from the [UniProt](http://www.uniprot.org) [@uniprot] database using
 library("UniProt.ws")
 
 ## select species Homo sapiens
-UniProt.ws <- UniProt.ws(taxId=9606)
+up <- UniProt.ws(taxId=9606)
 
 ## download sequences of Insulin/Somatostatin
-s <- select(UniProt.ws, keys=c("P01308", "P61278"), columns=c("SEQUENCE"))
+s <- select(up,
+    keys=c("P01308", "P61278"),
+    columns=c("sequence"),
+    keytype="UniProtKB"
+)
 
 ## fetch only sequences
-sequences <- setNames(s$SEQUENCE, s$UNIPROTKB)
+sequences <- setNames(s$Sequence, s$Entry)
 
 ## remove whitespaces
 sequences <- gsub(pattern="[[:space:]]", replacement="", x=sequences)
