@@ -7,7 +7,6 @@
 [![license](https://img.shields.io/badge/license-GPL%20%28%3E=%203%29-brightgreen.svg?style=flat)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 [![years in bioc](https://bioconductor.org/shields/years-in-bioc/cleaver.svg)](https://bioconductor.org/packages/release/bioc/html/cleaver.html)
-[![bioc downloads](https://bioconductor.org/shields/downloads/cleaver.svg)](https://bioconductor.org/packages/stats/bioc/cleaver/)
 [![Ranking by downloads](http://bioconductor.org/shields/downloads/release/cleaver.svg)](https://bioconductor.org/packages/stats/bioc/cleaver/)
 Release: [![build release](https://bioconductor.org/shields/build/release/bioc/cleaver.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/cleaver/)
 Devel: [![build devel](https://bioconductor.org/shields/build/devel/bioc/cleaver.svg)](https://bioconductor.org/checkResults/devel/bioc-LATEST/cleaver/)
