@@ -53,6 +53,8 @@ rules <- c(
   "lysc"="K(?=\\w)",
   ## LysN
   "lysn"="\\w(?=K)",
+  ## LysargiNase
+  "lysarginase"="\\w(?=[KR])",
   ## Neutrophil elastase
   "neutrophil elastase"="[AV](?=\\w)",
   ## NTCB (2-nitro-5-thiocyanobenzoic acid)

@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.41.1 [2023-11-30]:
+- Add LysargiNase cleavage rule.
+
 Version 1.35.1 [2022-08-31]:
 - Fix: adapt vignette code to new UniProt.ws.
 
