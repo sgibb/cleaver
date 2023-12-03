@@ -151,6 +151,7 @@
     \code{iodosobenzoic acid} \tab - \tab - \tab - \tab W \tab - \tab - \cr
     \code{lysc} \tab - \tab - \tab - \tab K \tab - \tab - \cr
     \code{lysn} \tab - \tab - \tab - \tab - \tab K \tab - \cr
+    \code{lysarginase} \tab - \tab - \tab - \tab - \tab K,R \tab - \cr
     \code{neutrophil elastase} \tab - \tab - \tab - \tab A,V \tab - \tab - \cr
     \code{ntcb} \tab - \tab - \tab - \tab - \tab C \tab - \cr
     \code{pepsin1.3} \tab - \tab not H,K,R \tab not P \tab not R \tab F,L
@@ -215,6 +216,7 @@
     \code{iodosobenzoic acid} \tab Iodosobenzoic acid \cr
     \code{lysc} \tab LysC \cr
     \code{lysn} \tab LysN \cr
+    \code{lysarginase} \tab LysargiNase \cr
     \code{neutrophil elastase} \tab Neutrophil elastase \cr
     \code{ntcb} \tab NTCB (2-nitro-5-thiocyanobenzoic acid) \cr
     \code{pepsin1.3} \tab Pepsin (pH == 1.3) \cr

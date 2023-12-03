@@ -1,6 +1,9 @@
 RELEASE HISTORY OF THE "cleaver" PACKAGE
 ========================================
 
+Version 1.41.2 [2023-12-03]:
+- Add missing documentation for LysargiNase.
+
 Version 1.41.1 [2023-11-30]:
 - Add LysargiNase cleavage rule.
 
